@@ -2,101 +2,115 @@
 
 @section('content')
 
-<section class="wrapper bg-dark">
-  <div class="swiper-container swiper-hero dots-over" data-margin="0" data-autoplay="true" data-autoplaytime="5000" data-nav="true" data-dots="true" data-items="1">
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image" data-image-src="dist/assets/img/photos/bg7.jpg">
-          <div class="container h-100">
-            <div class="row h-100">
-              <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start">
-                <h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">We bring solutions to make life easier.</h2>
-                <p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">We are a creative company that focuses on long term relationships with customers.</p>
-                <div class="animate__animated animate__slideInUp animate__delay-3s"><a href="#" class="btn btn-lg btn-outline-white rounded-pill">Read More</a></div>
-              </div>
-              <!--/column -->
-            </div>
-            <!--/.row -->
-          </div>
-          <!--/.container -->
-        </div>
-        <!--/.swiper-slide -->
-        <div class="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image" data-image-src="dist/assets/img/photos/bg8.jpg">
-          <div class="container h-100">
-            <div class="row h-100">
-              <div class="col-md-11 col-lg-8 col-xl-7 col-xxl-6 mx-auto text-center justify-content-center align-self-center">
-                <h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">We are trusted by over a million customers.</h2>
-                <p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">Here a few reasons why our customers choose us.</p>
-                <div class="animate__animated animate__slideInUp animate__delay-3s"><a href="dist/assets/media/movie.mp4" class="btn btn-circle btn-white btn-play ripple mx-auto mb-5" data-glightbox><i class="icn-caret-right"></i></a></div>
-              </div>
-              <!--/column -->
-            </div>
-            <!--/.row -->
-          </div>
-          <!--/.container -->
-        </div>
-        <!--/.swiper-slide -->
-        <div class="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image" data-image-src="dist/assets/img/photos/bg9.jpg">
-          <div class="container h-100">
-            <div class="row h-100">
-              <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-5 col-xl-6 offset-xl-6 col-xxl-5 offset-xxl-6 text-center text-lg-start justify-content-center align-self-center align-items-start">
-                <h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">Just sit and relax.</h2>
-                <p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">We make sure your spending is stress free so that you can have the perfect control.</p>
-                <div class="animate__animated animate__slideInUp animate__delay-3s"><a href="#" class="btn btn-lg btn-outline-white rounded-pill">Contact Us</a></div>
-              </div>
-              <!--/column -->
-            </div>
-            <!--/.row -->
-          </div>
-          <!--/.container -->
-        </div>
-        <!--/.swiper-slide -->
+<section class="wrapper bg-soft-primary">
+  <div class="container py-10 py-md-12 text-center">
+    <div class="row">
+      <div class="col-md-7 col-lg-6 col-xl-5 mx-auto">
+        <h1 class="display-1 mb-3">PUB</h1>
+        
       </div>
-      <!--/.swiper-wrapper -->
+      <!-- /column -->
     </div>
-    <!-- /.swiper -->
+    <!-- /.row -->
   </div>
-  <!-- /.swiper-container -->
+  <!-- /.container -->
 </section>
+<!-- /section -->
 <section class="wrapper bg-light angled lower-end">
-  <div class="container py-14 py-md-16">
+  <div class="container py-6 py-md-8">
     <div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
-      <div class="col-lg-6 position-relative order-lg-2">
-        <div class="shape bg-dot primary rellax w-16 h-20" data-rellax-speed="1" style="top: 3rem; left: 5.5rem"></div>
-        <div class="overlap-grid overlap-grid-2">
-          <div class="item">
-            <figure class="rounded shadow"><img src="dist/assets/img/photos/about2.jpg" srcset="dist/assets/img/photos/about2@2x.jpg 2x" alt=""></figure>
+      <div class="col-lg-7 position-relative ">
+        <div class="card">
+          <div class="card-body">
+              <div class="swiper-container dots-over" data-margin="5" data-dots="true" data-nav="true" data-autoheight="true">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide bg-overlay bg-overlay-400 rounded">
+                        <img src="dist/assets/img/photos/is1.jpg" alt="" />
+                        <div class="caption-wrapper p-12">
+                          <div class="caption bg-white rounded px-4 py-3 mt-auto animate__animated animate__slideInDown animate__delay-1s"><h5 class="mb-0">Actualités</h5></div>
+                          <!--/.caption -->
+                        </div>
+                        <!--/.caption-wrapper -->
+                      </div>
+                      <!--/.swiper-slide -->
+                      <div class="swiper-slide rounded">
+                        <img src="dist/assets/img/photos/is2.jpg" alt="" />
+                        <div class="caption-wrapper p-12">
+                          <div class="caption bg-white rounded px-4 py-3 mx-auto mt-auto animate__animated animate__slideInDown animate__delay-1s"><h5 class="mb-0">Actualités</h5></div>
+                          <!--/.caption -->
+                        </div>
+                        <!--/.caption-wrapper -->
+                      </div>
+                      <!--/.swiper-slide -->
+                      <div class="swiper-slide"><img src="dist/assets/img/photos/is3.jpg" class="rounded" alt="" /></div>
+                    </div>
+                    <!--/.swiper-wrapper -->
+                  </div>
+                  <!-- /.swiper -->
+              </div>
+                <!-- /.swiper-container -->
           </div>
-          <div class="item">
-            <figure class="rounded shadow"><img src="dist/assets/img/photos/about3.jpg" srcset="dist/assets/img/photos/about3@2x.jpg 2x" alt=""></figure>
-          </div>
+          <!--/.card-body -->
+          
         </div>
       </div>
       <!--/column -->
-      <div class="col-lg-6">
-        <img src="dist/assets/img/icons/lineal/megaphone.svg" class="svg-inject icon-svg icon-svg-md mb-4" alt="" />
-        <h2 class="display-4 mb-3">Who Are We?</h2>
-        <p class="lead fs-lg">We are a digital and branding company that believes in the power of creative strategy and along with great design.</p>
-        <p class="mb-6">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+      <div class="col-lg-5">
+        
+        <h4 class="display-6 mb-3">Classement</h4>
+
         <div class="row gy-3 gx-xl-8">
-          <div class="col-xl-6">
-            <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-              <li><span><i class="uil uil-check"></i></span><span>Aenean eu leo quam ornare curabitur blandit tempus.</span></li>
-              <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Nullam quis risus eget urna mollis ornare donec elit.</span></li>
-            </ul>
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--/.card-body -->
+            
           </div>
-          <!--/column -->
-          <div class="col-xl-6">
-            <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-              <li><span><i class="uil uil-check"></i></span><span>Etiam porta sem malesuada magna mollis euismod.</span></li>
-              <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Fermentum massa vivamus faucibus amet euismod.</span></li>
-            </ul>
-          </div>
-          <!--/column -->
         </div>
         <!--/.row -->
       </div>
       <!--/column -->
+      
     </div>
     <!--/.row -->
     <div class="row mb-5">

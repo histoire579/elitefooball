@@ -57,9 +57,9 @@ p{
     color: #08367A;
     font-family: myriad pro bold;
     font-size: 20px;
-}
+}*/
 
-/* .navbar-stick:not(.navbar-dark) {
+ .navbar-stick:not(.navbar-dark) {
     box-shadow: 0 0 1.25rem rgb(30 34 40 / 6%);
     background: rgba(255,255,255,.97);
 } 
@@ -88,6 +88,14 @@ p{
     bottom: -4rem;
 }
 
+@media (min-width: 992px)
+{
+    .row-cols-lg-6>* {
+        flex: 0 0 auto;
+        width: 14%;
+    }
+}
+/*
 .btn-primary {
     color: #fff;
     background-color: #F39200;
