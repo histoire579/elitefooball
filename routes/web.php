@@ -32,6 +32,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/elite1/calendrier', function () {
+    return view('front.elite1.calendrier');
+});
+
 
 
 Route::namespace('App\Http\Controllers\Admin')->group(function ()

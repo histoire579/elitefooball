@@ -40,12 +40,12 @@
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/about.html">
+                        <li class="col"><a class="dropdown-item" href="/">
                             
                             <span>Accueil</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/blog.html">
+                        <li class="col"><a class="dropdown-item" href="/elite1/calendrier">
                             
                             <span>Calendrier & Résultats</span>
                           </a>
