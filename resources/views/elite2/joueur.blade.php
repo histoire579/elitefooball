@@ -23,7 +23,7 @@
 					<div class="tab-content">
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">ARBITRES</h4>
+								<h4 class="display-6 mb-8 mt-6 text-center">JOUEURS</h4>
 								<div class="row mb-6">
 									<div class="col-md-6">
 										<div class="form-select-wrapper mb-4">
@@ -32,6 +32,17 @@
 												<option value="1">2022/2023</option>
 												<option value="2">2021/2022</option>
 												<option value="3">2020/2021</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-select-wrapper mb-4">
+											<select class="form-select" aria-label="Default select example">
+												<option selected>Selectionner un club</option>
+												<option value="1">club 1</option>
+												<option value="2">club 2</option>
+												<option value="3">club 3</option>
 											</select>
 										</div>
 									</div>
@@ -45,36 +56,26 @@
 											<table class="table-hover table">
 												<thead>
 													<tr>
-														<th scope="col">Arbitres</th>
-														<th scope="col">Nombre de matchs</th>
-														<th scope="col">Carton jaunes</th>
-														<th scope="col">Carton rouges</th>
+														<th scope="col">Joueurs</th>
+														<th scope="col">Postes</th>
+														<th scope="col">Nationnalié</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<td>...</td>
 														<th>...</th>
-														<td>...</td>
-														<th>...</th>
+														<td>Drapeau ---- Nom</td>
 													</tr>
 													<tr>
 														<td>...</td>
 														<th>...</th>
-														<td>...</td>
-														<th>...</th>
+														<td>Drapeau ---- Nom</td>
 													</tr>
 													<tr>
 														<td>...</td>
 														<th>...</th>
-														<td>...</td>
-														<th>...</th>
-													</tr>
-													<tr>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<th>...</th>
+														<td>Drapeau ---- Nom</td>
 													</tr>
 												</tbody>
 											</table>
