@@ -14,7 +14,7 @@ class AccueilController extends Controller
      */
     public function index()
     {
-        return view('elite1.arbitre');
+        return view('elite1.classement');
     }
 
     /**

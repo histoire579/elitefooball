@@ -25,7 +25,7 @@
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">JOUEURS</h4>
 								<div class="row mb-6">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
 												<option selected>Selectionner une saison</option>
@@ -36,7 +36,7 @@
 										</div>
 									</div>
 
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
 												<option selected>Selectionner un club</option>
