@@ -45,33 +45,27 @@
                             <span>Accueil</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/blog.html">
-                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/blog.html">    
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html">
-                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html"> 
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
-                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">                            
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
-                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">                            
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
-                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">                            
                             <span>Arbitres</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">
-                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">                            
                             <span>Statistiques</span>
                           </a>
                         </li>
