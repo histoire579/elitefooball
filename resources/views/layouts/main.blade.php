@@ -2,20 +2,22 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
-  <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
-  <meta name="author" content="elemis">
-  @yield('extra-meta')
-  <title>Elitefootball </title>
-  <link href="{{ asset('dist/assets/img/favicon.png') }}" rel="shortcut icon">
-  <link href="{{ asset('dist/assets/css/plugins.css') }}" rel="stylesheet">
-  <link href="{{ asset('dist/assets/css/style.css') }}" rel="stylesheet">
-  <link href="{{ asset('dist/assets/css/elitefoot.css') }}" rel="stylesheet">
-  <link href="{{ asset('dist/assets/css/fonts/dm.css') }}" rel="preload"  as="style" onload="this.rel='stylesheet'">
-  @yield('extra-css')
-  @yield('extra-script')
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
+	<meta name="keywords"
+		content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
+	<meta name="author" content="elemis">
+	@yield('extra-meta')
+	<title>Elitefootball </title>
+	<link href="{{ asset('dist/assets/img/favicon.png') }}" rel="shortcut icon">
+	<link href="{{ asset('dist/assets/css/plugins.css') }}" rel="stylesheet">
+	<link href="{{ asset('dist/assets/css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('dist/assets/css/elitefoot.css') }}" rel="stylesheet">
+	<link href="{{ asset('dist/assets/css/fonts/dm.css') }}" rel="preload" as="style" onload="this.rel='stylesheet'">
+	@yield('extra-css')
+	@yield('extra-script')
 </head>
 
 <body>
@@ -45,27 +47,33 @@
                             <span>Accueil</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/blog.html">    
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/blog.html">
+                            
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html"> 
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html">
+                            
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
+                            
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
+                            
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
+                            
                             <span>Arbitres</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">                            
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">
+                            
                             <span>Statistiques</span>
                           </a>
                         </li>
@@ -272,19 +280,63 @@
     <!-- /header -->
     @yield('content')
   <!-- /.content-wrapper py-13 py-md-15 -->
-  <footer>
-    <div class="container pb-7">
-      <div class="d-md-flex align-items-center justify-content-between">
-        <p class="mb-2 mb-lg-0">© 2021 Sandbox. All rights reserved.</p>
-        <nav class="nav social social-muted mb-0 text-md-end">
-          <a href="#"><i class="uil uil-twitter"></i></a>
-          <a href="#"><i class="uil uil-facebook-f"></i></a>
-          <a href="#"><i class="uil uil-dribbble"></i></a>
-          <a href="#"><i class="uil uil-instagram"></i></a>
-          <a href="#"><i class="uil uil-youtube"></i></a>
-        </nav>
-        <!-- /.social -->
+  <footer class="bg-dark text-inverse">
+    <div class="container py-13 py-md-15">
+      <div class="row gy-6 gy-lg-0">
+        <div class="col-lg-4">
+          <div class="widget">
+            <img class="mb-4" src="dist/assets/img/logo-light.png" srcset="distassets/img/logo-light@2x.png 2x" alt="" />
+            <p class="mb-4">© 2021 Sandbox. All rights reserved.</p>
+            <nav class="nav social social-white">
+              <a href="#"><i class="uil uil-twitter"></i></a>
+              <a href="#"><i class="uil uil-facebook-f"></i></a>
+              <a href="#"><i class="uil uil-dribbble"></i></a>
+              <a href="#"><i class="uil uil-instagram"></i></a>
+              <a href="#"><i class="uil uil-youtube"></i></a>
+            </nav>
+            <!-- /.social -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-4 col-lg-2 offset-lg-2">
+          <div class="widget">
+            <h4 class="widget-title mb-3 text-white">Need Help?</h4>
+            <ul class="list-unstyled mb-0">
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Get Started</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-4 col-lg-2">
+          <div class="widget">
+            <h4 class="widget-title mb-3 text-white">Learn More</h4>
+            <ul class="list-unstyled mb-0">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Features</a></li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-4 col-lg-2">
+          <div class="widget">
+            <h4 class="widget-title mb-3 text-white">Get in Touch</h4>
+            <address>Moonshine St. 14/05 Light City, London, United Kingdom</address>
+            <a href="mailto:first.last@email.com">info@email.com</a><br /> 00 (123) 456 78 90
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
       </div>
+      <!--/.row -->
     </div>
     <!-- /.container -->
   </footer>
@@ -308,15 +360,11 @@
       s0.parentNode.insertBefore(s1,s0);
       })();
   </script> --}}
-  <!--End of Tawk.to Script-->
-<!--End of Tawk.to Script-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript">
-
-        
-
-  </script>
-  @yield('extra-js')
+		<!--End of Tawk.to Script-->
+		<!--End of Tawk.to Script-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript"></script>
+		@yield('extra-js')
 </body>
 
 </html>
