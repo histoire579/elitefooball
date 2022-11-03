@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TchatController;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +19,31 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 /* Route::get('/', function () {
     return view('menu');
 }); */
-Route::get('/', [App\Http\Controllers\AccueilController::class, 'index']);  
+
+Route::get('/', [App\Http\Controllers\AccueilController::class, 'index']);
 
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
     session()->put('locale', $locale);
 
     return redirect()->back();
+});
+
+//elite 1
+Route::get('elite1/classement', function () {
+    return view('elite1.classement');
+});
+Route::get('elite1/club', function () {
+    return view('elite1.club');
+});
+
+
+//elite 2
+Route::get('elite2/classement', function () {
+    return view('elite2.classement');
+});
+Route::get('elite2/club', function () {
+    return view('elite2.club');
 });
 
 
@@ -38,22 +57,17 @@ Route::get('/elite1/calendrier', function () {
 
 
 
-Route::namespace('App\Http\Controllers\Admin')->group(function ()
-{
+Route::namespace('App\Http\Controllers\Admin')->group(function () {
     //login
-    Route::get('/administration', function (){
+    Route::get('/administration', function () {
         return redirect('/administration/login');
     });
-    Route::get('/administration/login','Auth\LoginController@showLoginForm')->name('administration.login');
+    Route::get('/administration/login', 'Auth\LoginController@showLoginForm')->name('administration.login');
     Route::post('/administration/login', 'Auth\LoginController@login');
-    Route::get('/administration/home','AdminController@index')->name('administration.home');
+    Route::get('/administration/home', 'AdminController@index')->name('administration.home');
     //logout
     Route::post('/administration/logout', 'Auth\LoginController@logout')->name('administration.logout');
     //register
     Route::get('/administration/register', 'Auth\RegisterController@showRegistrationForm')->name('administration.register');
     Route::post('/administration/register', 'Auth\RegisterController@register');
-
 });
-
-
-
