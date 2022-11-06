@@ -21,7 +21,7 @@ class JoueurController extends Controller
         $saisons = Saison::orderBy('libelle','desc')->get();
         $saison_id = $saisons->max('id');
         $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where('saison_id', $saison_id)->orderBy('created_at','desc')->paginate(10);
-        $competition = Competition::where('libelle', "Elite One")->first();
+        $competition = Competition::where('libelle', "Elite 1")->first();
         $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $saison_id]])->get();
         return view('elite1.joueur')
         ->with('detail_club_saisons', $detail_club_saisons)
@@ -39,9 +39,27 @@ class JoueurController extends Controller
         $saisons = Saison::orderBy('libelle','desc')->get();
         $saison_id = $saisons->max('id');
         $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where('saison_id', $saison_id)->orderBy('created_at','desc')->paginate(10);
-        $competition = Competition::where('libelle', "Elite Two")->first();
+        $competition = Competition::where('libelle', "Elite 2")->first();
         $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $saison_id]])->get();
         return view('elite2.joueur')
+        ->with('detail_club_saisons', $detail_club_saisons)
+        ->with('saisons', $saisons)
+        ->with('detail_competition_saisons', $detail_competition_saisons);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index_elite_guinness()
+    {
+        $saisons = Saison::orderBy('libelle','desc')->get();
+        $saison_id = $saisons->max('id');
+        $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where('saison_id', $saison_id)->orderBy('created_at','desc')->paginate(10);
+        $competition = Competition::where('libelle', "Guinness super league")->first();
+        $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $saison_id]])->get();
+        return view('guinness.joueur')
         ->with('detail_club_saisons', $detail_club_saisons)
         ->with('saisons', $saisons)
         ->with('detail_competition_saisons', $detail_competition_saisons);
@@ -123,7 +141,7 @@ class JoueurController extends Controller
     {
         $saisons = Saison::orderBy('libelle','desc')->get();
         $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
-        $competition = Competition::where('libelle', "Elite One")->first();
+        $competition = Competition::where('libelle', "Elite 1")->first();
         $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
         return view('elite1.joueur')
         ->with('detail_club_saisons', $detail_club_saisons)
@@ -141,9 +159,27 @@ class JoueurController extends Controller
     {
         $saisons = Saison::orderBy('libelle','desc')->get();
         $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
-        $competition = Competition::where('libelle', "Elite Two")->first();
+        $competition = Competition::where('libelle', "Elite 2")->first();
         $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
         return view('elite2.joueur')
+        ->with('detail_club_saisons', $detail_club_saisons)
+        ->with('saisons', $saisons)
+        ->with('detail_competition_saisons', $detail_competition_saisons);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function joueur_by_club_guinness(Request $request)
+    {
+        $saisons = Saison::orderBy('libelle','desc')->get();
+        $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
+        $competition = Competition::where('libelle', "Guinness super league")->first();
+        $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+        return view('guinness.joueur')
         ->with('detail_club_saisons', $detail_club_saisons)
         ->with('saisons', $saisons)
         ->with('detail_competition_saisons', $detail_competition_saisons);
