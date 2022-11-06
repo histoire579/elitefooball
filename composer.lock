@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/asm89/stack-cors.git",
-                "reference": "73e5b88775c64ccc0b84fb60836b30dc9d92ac4a"
+                "reference": "73e5b88775c64ccc0b84fb60836b30dc9d92ac4a"  
             },
             "dist": {
                 "type": "zip",

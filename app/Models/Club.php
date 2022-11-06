@@ -9,6 +9,7 @@ class Club extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'nom',
         'siege',
         'bp',
         'telephone',

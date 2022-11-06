@@ -26,7 +26,7 @@
       <nav class="navbar navbar-expand-lg center-nav navbar-light navbar-bg-light">
         <div class="container flex-lg-row flex-nowrap align-items-center">
           <div class="navbar-brand w-100">
-            <a href="./index.html">
+            <a href="/menu">
               <img src="dist//assets/img/logo.png" srcset="dist//assets/img/logo@2x.png 2x" alt="" />
             </a>
           </div>
@@ -42,7 +42,7 @@
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/about.html">
+                        <li class="col"><a class="dropdown-item" href="/menu">
                             
                             <span>Accueil</span>
                           </a>
@@ -52,17 +52,17 @@
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html">
+                        <li class="col"><a class="dropdown-item" href="/elite1/classement">
                             
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
+                        <li class="col"><a class="dropdown-item" href="/elite1/club">
                             
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
+                        <li class="col"><a class="dropdown-item" href="/elite1/joueur">
                             
                             <span>Joueurs</span>
                           </a>
@@ -255,11 +255,10 @@
           <div class="navbar-other w-100 d-flex ms-auto">
             <ul class="navbar-nav flex-row align-items-center ms-auto">
               <li class="nav-item dropdown language-select text-uppercase">
-                <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En</a>
+                <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fr</a>
                 <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="dropdown-item" href="#">Fr</a></li>
                   <li class="nav-item"><a class="dropdown-item" href="#">En</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="#">De</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="#">Es</a></li>
                 </ul>
               </li>
               <li class="nav-item d-none d-md-block">
