@@ -54,6 +54,19 @@ Route::get('/elite2/club', function () {
     return view('elite2.club');
 });
 
+//Guinness
+Route::get('/guinness/joueur_guinness', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_guinness'])->name('joueur_elite_guinness');
+Route::get('/guinness/joueur_by_club_guinness', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_guinness'])->name('joueur_by_club_guinness');
+Route::get('/guinness/detail_joueur', function () {
+    return view('guinness.detail_joueur');
+});
+Route::get('/guinness/classement', function () {
+    return view('guinness.classement');
+});
+Route::get('/guinness/club', function () {
+    return view('guinness.club');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

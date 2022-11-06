@@ -10,7 +10,7 @@
 		content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
 	<meta name="author" content="elemis">
 	@yield('extra-meta')
-	<title>Elitefootball </title>
+	<title>EliteFootball </title>
 	<link href="{{ asset('dist/assets/img/favicon.png') }}" rel="shortcut icon">
 	<link href="{{ asset('dist/assets/css/plugins.css') }}" rel="stylesheet">
 	<link href="{{ asset('dist/assets/css/style.css') }}" rel="stylesheet">
@@ -134,6 +134,54 @@
                   <!--/.dropdown-menu -->
                 </li>
                 <li class="nav-item dropdown dropdown-mega">
+                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Guinness super league</a>
+                  <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
+                    <li class="mega-menu-content">
+                      <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/about.html">
+                            
+                            <span>Accueil</span>
+                          </a>
+                        </li>
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/blog.html">
+                            
+                            <span>Calendrier & Résultats</span>
+                          </a>
+                        </li>
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html">
+                            
+                            <span>Classement</span>
+                          </a>
+                        </li>
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
+                            
+                            <span>Clubs</span>
+                          </a>
+                        </li>
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
+                            
+                            <span>Joueurs</span>
+                          </a>
+                        </li>
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
+                            
+                            <span>Arbitres</span>
+                          </a>
+                        </li>
+                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">
+                            
+                            <span>Statistiques</span>
+                          </a>
+                        </li>
+            
+                      </ul>
+                      <!--/.row -->
+                    </li>
+                    <!--/.mega-menu-content-->
+                  </ul>
+                  <!--/.dropdown-menu -->
+                </li>
+                <li class="nav-item dropdown dropdown-mega">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Coupe du Cameroun</a>
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
@@ -181,7 +229,6 @@
                   </ul>
                   <!--/.dropdown-menu -->
                 </li>
-                
                 <li class="nav-item dropdown dropdown-mega">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Autres compétitions</a>
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
@@ -284,7 +331,7 @@
       <div class="row gy-6 gy-lg-0">
         <div class="col-lg-4">
           <div class="widget">
-            <img class="mb-4" src="dist/assets/img/logo-light.png" srcset="distassets/img/logo-light@2x.png 2x" alt="" />
+            <img class="mb-4" src="dist/assets/img/logo-light.png" srcset="dist/assets/img/logo-light@2x.png 2x" alt="" />
             <p class="mb-4">© 2021 Sandbox. All rights reserved.</p>
             <nav class="nav social social-white">
               <a href="#"><i class="uil uil-twitter"></i></a>
