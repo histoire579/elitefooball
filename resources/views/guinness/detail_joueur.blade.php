@@ -6,7 +6,6 @@
 			<div class="row">
 				<div class="col-md-7 col-lg-6 col-xl-5 mx-auto">
 					<h1 class="display-1 mb-3">PUB</h1>
-
 				</div>
 				<!-- /column -->
 			</div>
@@ -38,159 +37,123 @@
 					<div class="tab-content">
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">PROFIL</h4>
-								<div class="row mb-6">
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<h4 class="display-6 mb-8 mt-6 text-center">Nom du joueur</h4>
+								<div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
+									<div class="col-lg-12">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card">
+												<div class="card-body">
+													<img src="{{ asset('dist\assets\img\avatars\t2.jpg') }}" alt="">
+												</div>
+												<table class="table table-striped">
+													<tbody>
+														<tr>
+															<td>Club <td>Mark</td></td>
+														</tr>
+														<tr>
+															<td>Poste  <td>Jacob</td></td>
+														</tr>
+														<tr>
+															<td>Dorssad <td>Jacob</td></td>
+														</tr>
+														<tr>
+															<td>Nationnaltié <td>Jacob</td></td>
+														</tr>
+														<tr>
+															<td>Date & Lieu de naissance <td>Jacob</td></td>
+														</tr>
+														<tr>
+															<td>Taille <td>Jacob</td></td>
+														</tr>
+														<tr>
+															<td>Adresse (Pied fort) <td>Jacob</td></td>
+														</tr>
+													</tbody>
+												</table>
+												<!--/.card-body -->
+											</div>
 										</div>
+										<!--/.row -->
 									</div>
+									<!--/column -->
 
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
-											</select>
+									<div class="col-lg-7">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card">
+												<div class="card-body">
+													<table class="table table-striped">
+														<thead>
+															<tr>
+																<th scope="col">Saisons</th>
+																<th scope="col">Compétitions</th>
+																<th scope="col">Clubs</th>
+																<th scope="col">MJ</th>
+																<th scope="col">MinJ</th>
+																<th scope="col">BM</th>
+																<th scope="col">PD</th>
+																<th scope="col">CJ</th>
+																<th scope="col">CR</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>...</td>
+																<td>...</td>
+																<th>...</th>
+																<td>...</td>
+																<td>...</td>
+																<td>...</td>
+																<th>...</th>
+																<td>...</td>
+																<td>...</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<!--/.card-body -->
+											</div>
 										</div>
+										<!--/.row -->
 									</div>
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une phase</option>
-												<option value="1">Poule A</option>
-												<option value="2">Poule B</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Général</option>
-												<option value="1">Dom</option>
-												<option value="2">Ext</option>
-												<option value="3">1ere Mt</option>
-												<option value="3">2e Mt</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
-									</div>
-								</div>
-								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
-													<tr>
-														<th scope="col">Rang</th>
-														<th scope="col">Ev</th>
-														<th scope="col">Clubs</th>
-														<th scope="col">Points</th>
-														<th scope="col">MJ</th>
-														<th scope="col">MG</th>
-														<th scope="col">MN</th>
-														<th scope="col">MP</th>
-														<th scope="col">BM</th>
-														<th scope="col">BE</th>
-														<th scope="col">Dif</th>
-														<th scope="col">Forme</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-										<!--/.card-body -->
+									<!--/column -->
 
+									<div class="col-lg-5">
+										<div class="row gy-3 gx-xl-8">
+										  <div class="card">
+											<div class="card-body">
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th scope="col">Saisons</th>
+															<th scope="col">Compétitions</th>
+															<th scope="col">Palmarès</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>...</td>
+															<th>...</th>
+															<td>...</td>
+														</tr>
+													</tbody>
+												  </table>
+											</div>
+											<!--/.card-body -->
+										  </div>
+										</div>
+										<!--/.row -->
 									</div>
+									<!--/column -->
 								</div>
 								<!--/.row -->
 							</div>
 						</div>
+						
 						<div class="tab-pane fade" id="tab1-2">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">STATISTIQUES</h4>
+								<h4 class="display-6 mb-8 mt-6 text-center">Nom du joueur</h4>
 								<div class="row mb-6">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
 												<option selected>Selectionner une saison</option>
@@ -201,13 +164,14 @@
 										</div>
 									</div>
 
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
+												<option value="Général" selected>Général</option>
+												<option value="Domicil">Domicil</option>
+												<option value="Extérieur">Extérieur </option>
+												<option value="1ère Mit-temps">1ère Mit-temps</option>
+												<option value="2ère Mit-temps">2ère Mit-temps</option>
 											</select>
 										</div>
 									</div>
@@ -221,73 +185,125 @@
 											<table class="table-hover table">
 												<thead>
 													<tr>
-														<th scope="col">Rang</th>
-														<th scope="col">Jouer</th>
-														<th scope="col">Clubs</th>
-														<th scope="col">Buts Marqués</th>
-														<th scope="col">Penaltys</th>
-														<th scope="col">Matchs Afférents</th>
-														<th scope="col">Minutes Jouées</th>
-														<th scope="col">Points Rapportés</th>
+														<th scope="col">Matchs joués</th>
+														<th scope="col">Minutes jouées</th>
+														<th scope="col">Buts marqués</th>
+														<th scope="col">Fautes subies</th>
+														<th scope="col">Carton jaunes</th>
+														<th scope="col">Caton rouges</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<th scope="row">1</th>
 														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
 														<th>...</th>
 														<td>...</td>
 														<td>...</td>
 														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
 													</tr>
 												</tbody>
 											</table>
 										</div>
 										<!--/.card-body -->
-
 									</div>
+								</div>
+								<br>
+								<div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+										  <div class="card">
+											<div class="card-body">
+											  <table class="table table-striped">
+												<tbody>
+												  <tr>
+													<td>Matchs Comme Entrant <td>Mark</td></td>
+												  </tr>
+												  <tr>
+													<td>Matchs Comme Remplaçant  <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Passes Décisives <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Tirs <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Tirs Cadrés <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Hors-Jeu <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Centres <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Matchs Gagnés <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Penaltys Marqués <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Coups Francs Marqués <td>Jacob</td></td>
+												  </tr>
+												</tbody>
+											  </table>
+											</div>
+											<!--/.card-body -->
+										  </div>
+										</div>
+										<!--/.row -->
+									</div>
+									<!--/column -->
+
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+										  <div class="card">
+											<div class="card-body">
+											  <table class="table table-striped">
+												<tbody>
+												  <tr>
+													<td>Fautes Commises <td>Mark</td></td>
+												  </tr>
+												  <tr>
+													<td>Ballons Récupérés <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Ballons Interceptés <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Passes <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Matchs Sans Encaisser <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Buts Encaissés <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Buts Contre Son Camp <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Matchs Perdus <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Penaltys Concédés <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td>Penaltys Arrêtés <td>Jacob</td></td>
+												  </tr>
+												  <tr>
+													<td> <td></td></td>
+												  </tr>
+												</tbody>
+											  </table>
+											</div>
+											<!--/.card-body -->
+										  </div>
+										</div>
+										<!--/.row -->
+									</div>
+									<!--/column -->
 								</div>
 								<!--/.row -->
 							</div>
@@ -297,10 +313,7 @@
 					<!-- /.tab-content -->
 				</div>
 				<!--/column -->
-
-
 			</div>
-
 		</div>
 		<!-- /.container -->
 	</section>
