@@ -16,12 +16,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-/* Route::get('/', function () {
-    return view('menu');
-}); */
-
-Route::get('/', [App\Http\Controllers\AccueilController::class, 'index']);
-
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
     session()->put('locale', $locale);
@@ -29,29 +23,40 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-//elite 1
-Route::get('elite1/classement', function () {
+/* Route::get('/', function () {
+    return view('menu');
+}); */
+Route::get('/', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_one']);
+
+//Elite 1
+Route::get('/elite1/joueur_one', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_one'])->name('joueur_elite_one');
+Route::get('/elite1/joueur_by_club_one', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_one'])->name('joueur_by_club_one');
+Route::get('/elite1/classement', function () {
     return view('elite1.classement');
 });
-Route::get('elite1/club', function () {
+Route::get('/elite1/club', function () {
     return view('elite1.club');
 });
+Route::get('/elite1/detail_joueur', function () {
+    return view('elite1.detail_joueur');
+});
 
-
-//elite 2
-Route::get('elite2/classement', function () {
+//Elite 2
+Route::get('/elite2/joueur_two', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_two'])->name('joueur_elite_two');
+Route::get('/elite2/joueur_by_club_two', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_two'])->name('joueur_by_club_two');
+Route::get('/elite2/detail_joueur', function () {
+    return view('elite2.detail_joueur');
+});
+Route::get('/elite2/classement', function () {
     return view('elite2.classement');
 });
-Route::get('elite2/club', function () {
+Route::get('/elite2/club', function () {
     return view('elite2.club');
 });
-
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
 
 Route::namespace('App\Http\Controllers\Admin')->group(function () {
     //login

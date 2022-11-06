@@ -14,6 +14,7 @@ class ClubFactory extends Factory
     public function definition()
     {
         return [
+            'nom' => $this->faker->name(),
             'siege' => $this->faker->Address(),
             'bp' => $this->faker->ean8(),
             'telephone' => $this->faker->phoneNumber(),

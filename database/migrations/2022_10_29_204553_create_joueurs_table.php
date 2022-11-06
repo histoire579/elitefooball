@@ -19,6 +19,7 @@ class CreateJoueursTable extends Migration
             $table->string('nom', 100);
             $table->date('date_nais');
             $table->string('nationalite', 60);
+            $table->string('drapeau', 255);
             $table->string('lieu_nais', 60);
             $table->integer('taille');
             $table->integer('poids');
