@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 
-class AccueilController extends Controller
+class AcceuilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AccueilController extends Controller
      */
     public function index()
     {
-        return view('elite1.classement');
+        return view('menu');
     }
 
     /**

@@ -62,7 +62,7 @@
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="/elite1/joueur">
+                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_elite_one') }}">
                             
                             <span>Joueurs</span>
                           </a>
@@ -110,7 +110,7 @@
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_elite_two') }}">
                             
                             <span>Joueurs</span>
                           </a>
@@ -158,7 +158,7 @@
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_elite_guinness') }}">
                             
                             <span>Joueurs</span>
                           </a>

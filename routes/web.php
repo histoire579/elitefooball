@@ -26,7 +26,7 @@ Route::get('language/{locale}', function ($locale) {
 /* Route::get('/', function () {
     return view('menu');
 }); */
-Route::get('/', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_one']);
+Route::get('/', [App\Http\Controllers\AcceuilController::class, 'index']);
 
 //Elite 1
 Route::get('/elite1/joueur_one', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_one'])->name('joueur_elite_one');
