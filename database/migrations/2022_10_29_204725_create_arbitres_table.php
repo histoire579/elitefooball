@@ -19,6 +19,7 @@ class CreateArbitresTable extends Migration
             $table->string('nom', 100);
             $table->date('date_nais');
             $table->string('nationalite', 60);
+            $table->string('nationalite_en', 60);
             $table->string('lieu_nais', 60);
             $table->string('status');
             $table->date('annee_debut_elite');

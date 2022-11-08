@@ -10,6 +10,10 @@ class Actualite extends Model
     use HasFactory;
     protected $fillable = [
         'photo',
-        'message'
+        'titre',
+        'titre_en',
+        'message',
+        'message_en',
+        'slug'
     ];
 }

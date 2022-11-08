@@ -10,7 +10,8 @@ class Journee extends Model
     use HasFactory;
     protected $fillable = [
         'saison_id',
-        'libelle'
+        'libelle',
+        'libelle_en'
     ];
 
     public function saison(){

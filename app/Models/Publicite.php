@@ -9,7 +9,9 @@ class Publicite extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'photo',
-        'message'
+        'image',
+        'raisan_sociale',
+        'site'
+
     ];
 }

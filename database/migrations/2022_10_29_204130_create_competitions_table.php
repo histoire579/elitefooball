@@ -16,6 +16,7 @@ class CreateCompetitionsTable extends Migration
         Schema::create('competitions', function (Blueprint $table) {
             $table->integerIncrements('id');
             $table->string('libelle', 60)->unique();
+            $table->string('libelle_en', 60)->unique();
             $table->timestamps();
         });
     }

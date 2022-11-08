@@ -12,7 +12,8 @@ class PalmaresJoueur extends Model
         'saison_id',
         'competition_id',
         'joueur_id',
-        'recompence'
+        'recompence',
+        'recompence_en'
     ];
 
     public function saison(){

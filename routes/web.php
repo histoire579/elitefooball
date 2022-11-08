@@ -70,4 +70,12 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
     //register
     Route::get('/administration/register', 'Auth\RegisterController@showRegistrationForm')->name('administration.register');
     Route::post('/administration/register', 'Auth\RegisterController@register');
+
+     //competition
+     Route::get('/administration/competition','CompetitionController@index')->name('administration.competition');
+     Route::post('/administration/competition','CompetitionController@store');
+     Route::get('/administration/competition/add','CompetitionController@Add')->name('administration.competition-add');
+     Route::get('/administration/competition/edit/{id}','CompetitionController@edit')->name('administration.competition.edit');
+     Route::post('/administration/competition/edit/{id}','CompetitionController@update');
+     Route::get('/administration/competition/destroy/{id}','CompetitionController@destroy')->name('administration.competition.delete');
 });

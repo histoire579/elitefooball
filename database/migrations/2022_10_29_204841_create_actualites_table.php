@@ -16,7 +16,11 @@ class CreateActualitesTable extends Migration
         Schema::create('actualites', function (Blueprint $table) {
             $table->integerIncrements('id');
             $table->string('photo', 255);
+            $table->string('titre', 255);
+            $table->string('titre_en', 255);
             $table->text('message');
+            $table->text('message_en');
+            $table->string('slug', 255);
             $table->timestamps();
         });
     }

@@ -20,6 +20,7 @@ class CreateDetailMatchesTable extends Migration
             $table->unsignedInteger('match_id');
             $table->foreign('match_id')->references('id')->on('matches')->onDelete('restrict');
             $table->text('detail');
+            $table->text('detail_en');
             $table->timestamps();
         });
     }

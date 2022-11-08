@@ -16,7 +16,8 @@ class CreatePublicitesTable extends Migration
         Schema::create('publicites', function (Blueprint $table) {
             $table->integerIncrements('id');
             $table->string('photo', 255);
-            $table->text('message');
+            $table->string('raison_sociale', 255);
+            $table->string('site', 255);
             $table->timestamps();
         });
     }

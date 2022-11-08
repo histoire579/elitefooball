@@ -13,6 +13,7 @@ class Arbitre extends Model
         'nom',
         'date_nais',
         'nationalite',
+        'nationalite_en',
         'lieu_nais',
         'status',
         'annee_debut_elite'

@@ -9,7 +9,8 @@ class Poste extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'libelle'
+        'libelle',
+        'libelle_en'
     ];
 
     public function detail_club_saison(){

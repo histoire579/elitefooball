@@ -9,7 +9,8 @@ class Competition extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'libelle'
+        'libelle',
+        'libelle_en'
     ];
 
     public function match(){

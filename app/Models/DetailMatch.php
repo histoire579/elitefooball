@@ -11,6 +11,7 @@ class DetailMatch extends Model
     protected $fillable = [
         'saison_id',
         'match_id',
+        'detail',
         'detail'
     ];
 
