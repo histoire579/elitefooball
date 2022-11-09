@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Competition;
+use App\Models\Saison;
 use Illuminate\Http\Request;
 
-class CompetitionController extends Controller
+class SaisonController extends Controller
 {
-     /**
+
+      /**
      * Create a new controller instance.
      *
      * @return void
@@ -17,7 +18,6 @@ class CompetitionController extends Controller
     {
         $this->middleware('auth:admin');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -25,13 +25,13 @@ class CompetitionController extends Controller
      */
     public function index()
     {
-        $competition=Competition::all();
-        return view('admin.page.competition.index')->with('competitions',$competition);
+        $saison=Saison::all();
+        return view('admin.page.saison.index')->with('saisons',$saison);
     }
 
     public function Add()
     {
-        return view('admin.page.competition.add');
+        return view('admin.page.saison.add');
     }
 
     /**
@@ -52,13 +52,13 @@ class CompetitionController extends Controller
      */
     public function store(Request $request)
     {
-        $competition=new Competition();
-        $competition->libelle=$request->libelle;
-        $competition->libelle_en=$request->libelle_en;
+        $saison=new Saison();
+        $saison->libelle=$request->libelle;
+        $saison->libelle_en=$request->libelle_en;
         
-        $competition->save();
+        $saison->save();
 
-        if ($competition) {
+        if ($saison) {
             return redirect()->back()->with('success','Enregistrer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');
@@ -68,10 +68,10 @@ class CompetitionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Competition  $competition
+     * @param  \App\Models\Saison  $saison
      * @return \Illuminate\Http\Response
      */
-    public function show(Competition $competition)
+    public function show(Saison $saison)
     {
         //
     }
@@ -79,32 +79,32 @@ class CompetitionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Competition  $competition
+     * @param  \App\Models\Saison  $saison
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $competition=Competition::find($id);
-        return view('admin.page.competition.update')->with('competition',$competition);
+        $saison=Saison::find($id);
+        return view('admin.page.saison.update')->with('saison',$saison);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Competition  $competition
+     * @param  \App\Models\Saison  $saison
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $competition=Competition::find($id);
-        $competition->libelle=$request->libelle;
-        $competition->libelle_en=$request->libelle_en;
+        $saison=Saison::find($id);
+        $saison->libelle=$request->libelle;
+        $saison->libelle_en=$request->libelle_en;
         
-        $competition->save();
+        $saison->save();
 
-        if ($competition) {
-            return redirect()->route('administration.competition')->with('success','Enregistrer avec succès!');
+        if ($saison) {
+            return redirect()->route('administration.saison')->with('success','Enregistrer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');
         }
@@ -113,15 +113,15 @@ class CompetitionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Competition  $competition
+     * @param  \App\Models\Saison  $saison
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $competition=Competition::find($id);
+        $saison=Saison::find($id);
        
-        $competition->delete();
-        if ($competition){
+        $saison->delete();
+        if ($saison){
             return redirect()->back()->with('success','Supprimer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');

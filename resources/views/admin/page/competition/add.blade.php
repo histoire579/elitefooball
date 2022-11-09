@@ -6,7 +6,10 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
+                <a href="/administration/competition" type="button" class="btn btn-outline-primary waves-effect waves-light mb-5"><i class="fas fa-angle-left"></i> Retour</a>
+                @include('admin.page.message')
                 <form method="POST" action="{{route('administration.competition')}}" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group row">
                         <label for="libelle" class="col-md-2 col-form-label">Libelle</label>
                         <div class="col-md-10">

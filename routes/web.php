@@ -78,4 +78,12 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
      Route::get('/administration/competition/edit/{id}','CompetitionController@edit')->name('administration.competition.edit');
      Route::post('/administration/competition/edit/{id}','CompetitionController@update');
      Route::get('/administration/competition/destroy/{id}','CompetitionController@destroy')->name('administration.competition.delete');
+
+     //competition
+     Route::get('/administration/saison','SaisonController@index')->name('administration.saison');
+     Route::post('/administration/saison','SaisonController@store');
+     Route::get('/administration/saison/add','SaisonController@Add')->name('administration.saison-add');
+     Route::get('/administration/saison/edit/{id}','SaisonController@edit')->name('administration.saison.edit');
+     Route::post('/administration/saison/edit/{id}','SaisonController@update');
+     Route::get('/administration/saison/destroy/{id}','SaisonController@destroy')->name('administration.saison.delete');
 });
