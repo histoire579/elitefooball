@@ -24,6 +24,10 @@
         <!-- App Css-->
         <link href="/dash/assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
+        <link href="/dash/assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="{{ asset('dash/assets/libs/bootstrap-fileupload/bootstrap-fileupload.css') }}" rel="stylesheet">
+
     </head>
 
     <body data-sidebar="dark">
@@ -153,34 +157,17 @@
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="mdi mdi-account-group"></i>
-                                    <span>Authentication</span>
+                                <a href="/administration/stade" class=" waves-effect">
+                                    <i class="mdi mdi-file-code-outline"></i>
+                                    <span>Stade</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="auth-login.html">Login</a></li>
-                                    <li><a href="auth-register.html">Register</a></li>
-                                    <li><a href="auth-recoverpw.html">Recover Password</a></li>
-                                    <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                                </ul>
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="mdi mdi-google-pages"></i>
-                                    <span>Pages</span>
+                                <a href="/administration/poste" class=" waves-effect">
+                                    <i class="mdi mdi-file-powerpoint-box-outline"></i>
+                                    <span>Poste</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="pages-starter.html">Starter Page</a></li>
-                                    <li><a href="pages-maintenance.html">Maintenance</a></li>
-                                    <li><a href="pages-comingsoon.html">Coming Soon</a></li>
-                                    <li><a href="pages-timeline.html">Timeline</a></li>
-                                    <li><a href="pages-gallery.html">Gallery</a></li>
-                                    <li><a href="pages-faqs.html">FAQs</a></li>
-                                    <li><a href="pages-pricing.html">Pricing</a></li>
-                                    <li><a href="pages-404.html">Error 404</a></li>
-                                    <li><a href="pages-500.html">Error 500</a></li>
-                                </ul>
                             </li>
 
                             <li class="menu-title">Components</li>
@@ -398,6 +385,10 @@
 
         <!-- Datatable init js -->
         <script src="/dash/assets/js/pages/datatables.init.js"></script>
+        <!-- dropzone js -->
+        <script src="/dash/assets/libs/dropzone/min/dropzone.min.js"></script>
+
+        <script src="{{ asset('dash/assets/libs/bootstrap-fileupload/bootstrap-fileupload.js') }}" defer></script>
 
         <script src="/dash/assets/js/app.js"></script>
 

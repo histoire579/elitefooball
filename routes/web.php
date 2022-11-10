@@ -79,11 +79,27 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
      Route::post('/administration/competition/edit/{id}','CompetitionController@update');
      Route::get('/administration/competition/destroy/{id}','CompetitionController@destroy')->name('administration.competition.delete');
 
-     //competition
+     //saison
      Route::get('/administration/saison','SaisonController@index')->name('administration.saison');
      Route::post('/administration/saison','SaisonController@store');
      Route::get('/administration/saison/add','SaisonController@Add')->name('administration.saison-add');
      Route::get('/administration/saison/edit/{id}','SaisonController@edit')->name('administration.saison.edit');
      Route::post('/administration/saison/edit/{id}','SaisonController@update');
      Route::get('/administration/saison/destroy/{id}','SaisonController@destroy')->name('administration.saison.delete');
+
+     //stade
+     Route::get('/administration/stade','StadeController@index')->name('administration.stade');
+     Route::post('/administration/stade','StadeController@store');
+     Route::get('/administration/stade/add','StadeController@Add')->name('administration.stade-add');
+     Route::get('/administration/stade/edit/{id}','StadeController@edit')->name('administration.stade.edit');
+     Route::post('/administration/stade/edit/{id}','StadeController@update');
+     Route::get('/administration/stade/destroy/{id}','StadeController@destroy')->name('administration.stade.delete');
+
+     //poste
+     Route::get('/administration/poste','PosteController@index')->name('administration.poste');
+     Route::post('/administration/poste','PosteController@store');
+     Route::get('/administration/poste/add','PosteController@Add')->name('administration.poste-add');
+     Route::get('/administration/poste/edit/{id}','PosteController@edit')->name('administration.poste.edit');
+     Route::post('/administration/poste/edit/{id}','PosteController@update');
+     Route::get('/administration/poste/destroy/{id}','PosteController@destroy')->name('administration.poste.delete');
 });
