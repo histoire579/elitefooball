@@ -118,4 +118,20 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/administration/pub/edit/{id}','PubController@edit')->name('administration.pub.edit');
     Route::post('/administration/pub/edit/{id}','PubController@update');
     Route::get('/administration/pub/destroy/{id}','PubController@destroy')->name('administration.pub.delete');
+
+    //partenaire
+    Route::get('/administration/partenaire','PartenaireController@index')->name('administration.partenaire');
+    Route::post('/administration/partenaire','PartenaireController@store');
+    Route::get('/administration/partenaire/add','PartenaireController@Add')->name('administration.partenaire-add');
+    Route::get('/administration/partenaire/edit/{id}','PartenaireController@edit')->name('administration.partenaire.edit');
+    Route::post('/administration/partenaire/edit/{id}','PartenaireController@update');
+    Route::get('/administration/partenaire/destroy/{id}','PartenaireController@destroy')->name('administration.partenaire.delete');
+
+    //arbitre
+    Route::get('/administration/arbitre','ArbitreController@index')->name('administration.arbitre');
+    Route::post('/administration/arbitre','ArbitreController@store');
+    Route::get('/administration/arbitre/add','ArbitreController@Add')->name('administration.arbitre-add');
+    Route::get('/administration/arbitre/edit/{id}','ArbitreController@edit')->name('administration.arbitre.edit');
+    Route::post('/administration/arbitre/edit/{id}','ArbitreController@update');
+    Route::get('/administration/arbitre/destroy/{id}','ArbitreController@destroy')->name('administration.arbitre.delete');
 });

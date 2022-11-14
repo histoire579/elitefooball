@@ -171,6 +171,13 @@
                             </li>
 
                             <li>
+                                <a href="/administration/arbitre" class=" waves-effect">
+                                    <i class="mdi mdi-format-underline"></i>
+                                    <span>Arbitres</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="/administration/actualite" class=" waves-effect">
                                     <i class="mdi mdi-format-underline"></i>
                                     <span>Actualités</span>
@@ -188,17 +195,13 @@
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <a href="/administration/partenaire" class=" waves-effect">
                                     <i class="mdi mdi-black-mesa"></i>
-                                    <span>Icons</span>
+                                    <span>Partenaires</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="icons-materialdesign.html">Material Design</a></li>
-                                    <li><a href="icons-dripicons.html">Dripicons</a></li>
-                                    <li><a href="icons-fontawesome.html">Font Awesome 5</a></li>
-                                    <li><a href="icons-themify.html">Themify</a></li>
-                                </ul>
                             </li>
+
+                            
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
