@@ -10,8 +10,9 @@ class Publicite extends Model
     use HasFactory;
     protected $fillable = [
         'image',
-        'raisan_sociale',
-        'site'
-
+        'raison_sociale',
+        'site',
+        'debut',
+        'fin'
     ];
 }

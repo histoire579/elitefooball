@@ -12,8 +12,11 @@ class Actualite extends Model
         'photo',
         'titre',
         'titre_en',
+        'short',
+        'short_en',
         'message',
         'message_en',
+        'dates',
         'slug'
     ];
 }

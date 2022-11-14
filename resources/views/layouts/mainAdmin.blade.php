@@ -3,12 +3,12 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Data Tables | Apaxy - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>Elitefootball Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{asset('dash/assets/images/favicon.ico')}}">
 
         <!-- DataTables -->
         <link href="/dash/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -170,48 +170,21 @@
                                 </a>
                             </li>
 
-                            <li class="menu-title">Components</li>
-
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <a href="/administration/actualite" class=" waves-effect">
                                     <i class="mdi mdi-format-underline"></i>
-                                    <span>Bootstrap UI</span>
+                                    <span>Actualités</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ui-alerts.html">Alerts</a></li>
-                                    <li><a href="ui-badge.html">Badge</a></li>
-                                    <li><a href="ui-buttons.html">Buttons</a></li>
-                                    <li><a href="ui-cards.html">Cards</a></li>
-                                    <li><a href="ui-dropdowns.html">Dropdowns</a></li>
-                                    <li><a href="ui-navs.html">Navs</a></li>
-                                    <li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
-                                    <li><a href="ui-modals.html">Modals</a></li>
-                                    <li><a href="ui-images.html">Images</a></li>
-                                    <li><a href="ui-progressbars.html">Progress Bars</a></li>
-                                    <li><a href="ui-pagination.html">Pagination</a></li>
-                                    <li><a href="ui-popover-tooltips.html">Popover & Tooltips</a></li>
-                                    <li><a href="ui-spinner.html">Spinner</a></li>
-                                    <li><a href="ui-carousel.html">Carousel</a></li>
-                                    <li><a href="ui-video.html">Video</a></li>
-                                    <li><a href="ui-typography.html">Typography</a></li>
-                                    <li><a href="ui-grid.html">Grid</a></li>
-                                </ul>
                             </li>
 
+
+                            
+
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="mdi mdi-package-variant-closed"></i>
-                                    <span>Advanced UI</span>
+                                <a href="/administration/pub" class=" waves-effect">
+                                    <i class="mdi mdi-file-code-outline"></i>
+                                    <span>Publicités</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="advanced-alertify.html">Alertify</a></li>
-                                    <li><a href="advanced-rating.html">Rating</a></li>
-                                    <li><a href="advanced-nestable.html">Nestable</a></li>
-                                    <li><a href="advanced-rangeslider.html">Range Slider</a></li>
-                                    <li><a href="advanced-sweet-alert.html">Sweet-Alert</a></li>
-                                    <li><a href="advanced-lightbox.html">Lightbox</a></li>
-                                    <li><a href="advanced-maps.html">Maps</a></li>
-                                </ul>
                             </li>
 
                             <li>
@@ -389,6 +362,12 @@
         <script src="/dash/assets/libs/dropzone/min/dropzone.min.js"></script>
 
         <script src="{{ asset('dash/assets/libs/bootstrap-fileupload/bootstrap-fileupload.js') }}" defer></script>
+
+        <!--tinymce js-->
+        <script src="{{asset('dash/assets/libs/tinymce/tinymce.min.js')}}"></script>
+
+        <!-- init js -->
+        <script src="{{asset('dash/assets/js/pages/form-editor.init.js')}}"></script>
 
         <script src="/dash/assets/js/app.js"></script>
 

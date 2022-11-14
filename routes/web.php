@@ -102,4 +102,20 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
      Route::get('/administration/poste/edit/{id}','PosteController@edit')->name('administration.poste.edit');
      Route::post('/administration/poste/edit/{id}','PosteController@update');
      Route::get('/administration/poste/destroy/{id}','PosteController@destroy')->name('administration.poste.delete');
+
+    //actualite
+    Route::get('/administration/actualite','ActualiteController@index')->name('administration.actualite');
+    Route::post('/administration/actualite','ActualiteController@store');
+    Route::get('/administration/actualite/add','ActualiteController@Add')->name('administration.actualite-add');
+    Route::get('/administration/actualite/edit/{id}','ActualiteController@edit')->name('administration.actualite.edit');
+    Route::post('/administration/actualite/edit/{id}','ActualiteController@update');
+    Route::get('/administration/actualite/destroy/{id}','ActualiteController@destroy')->name('administration.actualite.delete');
+
+    //pub
+    Route::get('/administration/pub','PubController@index')->name('administration.pub');
+    Route::post('/administration/pub','PubController@store');
+    Route::get('/administration/pub/add','PubController@Add')->name('administration.pub-add');
+    Route::get('/administration/pub/edit/{id}','PubController@edit')->name('administration.pub.edit');
+    Route::post('/administration/pub/edit/{id}','PubController@update');
+    Route::get('/administration/pub/destroy/{id}','PubController@destroy')->name('administration.pub.delete');
 });

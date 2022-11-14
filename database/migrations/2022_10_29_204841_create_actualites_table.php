@@ -18,8 +18,11 @@ class CreateActualitesTable extends Migration
             $table->string('photo', 255);
             $table->string('titre', 255);
             $table->string('titre_en', 255);
-            $table->text('message');
-            $table->text('message_en');
+            $table->text('short')->nullable();
+            $table->text('short_en')->nullable();
+            $table->text('message')->nullable();
+            $table->text('message_en')->nullable();
+            $table->date('dates');
             $table->string('slug', 255);
             $table->timestamps();
         });
