@@ -21,7 +21,7 @@ class CreateFeuilleMatchesTable extends Migration
             $table->foreign('club_id')->references('id')->on('clubs')->onDelete('restrict');
             $table->unsignedInteger('joueur_id');
             $table->foreign('joueur_id')->references('id')->on('joueurs')->onDelete('restrict');
-            $table->string('titularisation', 60);
+            $table->string('titularisation', 100);
             $table->timestamps();
         });
     }

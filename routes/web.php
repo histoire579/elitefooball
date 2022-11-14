@@ -23,49 +23,40 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-/* Route::get('/', function () {
-    return view('menu');
-}); */
-Route::get('/', [App\Http\Controllers\AcceuilController::class, 'index']);
+Route::get('/', [App\Http\Controllers\Web\ClubController::class, 'index_club_one'])->name('club_elite_one');
 
-//Elite 1
+//*************Elite 1
+
+//Joueur
 Route::get('/elite1/joueur_one', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_one'])->name('joueur_elite_one');
 Route::get('/elite1/joueur_by_club_one', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_one'])->name('joueur_by_club_one');
-Route::get('/elite1/classement', function () {
-    return view('elite1.classement');
-});
-Route::get('/elite1/club', function () {
-    return view('elite1.club');
-});
-Route::get('/elite1/detail_joueur', function () {
-    return view('elite1.detail_joueur');
-});
+Route::get('/elite1/detail_joueur_one/{saison_id}/{joueur_id}', [App\Http\Controllers\Web\DetailJoueurController::class, 'index_elite_one'])->name('detail_joueur_elite_one');
+Route::get('/elite1/joueur_domiciliation_one/{saison_id}/{joueur_id}/{domiciliation}', [App\Http\Controllers\Web\DetailJoueurController::class, 'joueur_domiciliation_one'])->name('joueur_domiciliation_one');
 
-//Elite 2
+//Club
+Route::get('/elite1/club_one', [App\Http\Controllers\Web\ClubController::class, 'index_club_one'])->name('club_elite_one');
+
+//*************Elite 2
+
+//Joueur
 Route::get('/elite2/joueur_two', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_two'])->name('joueur_elite_two');
 Route::get('/elite2/joueur_by_club_two', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_two'])->name('joueur_by_club_two');
-Route::get('/elite2/detail_joueur', function () {
-    return view('elite2.detail_joueur');
-});
-Route::get('/elite2/classement', function () {
-    return view('elite2.classement');
-});
-Route::get('/elite2/club', function () {
-    return view('elite2.club');
-});
+Route::get('/elite2/detail_joueur_two/{saison_id}/{joueur_id}', [App\Http\Controllers\Web\DetailJoueurController::class, 'index_elite_two'])->name('detail_joueur_elite_two');
+Route::get('/elite2/joueur_domiciliation_two/{saison_id}/{joueur_id}/{domiciliation}', [App\Http\Controllers\Web\DetailJoueurController::class, 'joueur_domiciliation_two'])->name('joueur_domiciliation_two');
 
-//Guinness
+//Club
+Route::get('/elite2/club_two', [App\Http\Controllers\Web\ClubController::class, 'index_club_two'])->name('club_elite_two');
+
+//************Guinness
+
+//Joueur
 Route::get('/guinness/joueur_guinness', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_guinness'])->name('joueur_elite_guinness');
 Route::get('/guinness/joueur_by_club_guinness', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_guinness'])->name('joueur_by_club_guinness');
-Route::get('/guinness/detail_joueur', function () {
-    return view('guinness.detail_joueur');
-});
-Route::get('/guinness/classement', function () {
-    return view('guinness.classement');
-});
-Route::get('/guinness/club', function () {
-    return view('guinness.club');
-});
+Route::get('/guinness/detail_joueur_guinness/{saison_id}/{joueur_id}', [App\Http\Controllers\Web\DetailJoueurController::class, 'index_elite_guinness'])->name('detail_joueur_elite_guinness');
+Route::get('/guinness/joueur_domiciliation_guinness/{saison_id}/{joueur_id}/{domiciliation}', [App\Http\Controllers\Web\DetailJoueurController::class, 'joueur_domiciliation_guinness'])->name('joueur_domiciliation_guinness');
+
+//Club
+Route::get('/guinness/club_guinness', [App\Http\Controllers\Web\ClubController::class, 'index_club_guinness'])->name('club_elite_guinness');
 
 Auth::routes();
 

@@ -57,7 +57,7 @@
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="/elite1/club">
+                        <li class="col"><a class="dropdown-item" href="{{ route('club_elite_one') }}">
                             
                             <span>Clubs</span>
                           </a>
@@ -105,7 +105,7 @@
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('club_elite_two') }}">
                             
                             <span>Clubs</span>
                           </a>
@@ -153,7 +153,7 @@
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('club_elite_guinness') }}">
                             
                             <span>Clubs</span>
                           </a>

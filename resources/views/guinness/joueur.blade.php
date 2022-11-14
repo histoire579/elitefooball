@@ -24,7 +24,7 @@
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">JOUEURS</h4>
-								<form action="{{ route('joueur_by_club_one') }}" method="GET">
+								<form action="{{ route('joueur_by_club_guinness') }}" method="get">
 									@csrf
 									<div class="row mb-6">
 										<div class="col-md-4">
@@ -53,34 +53,30 @@
 									</div>
 								</form>
 								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
+									<div class="card table-responsive">
+										<table class="table-hover table">
+											<thead>
+												<tr>
+													<th scope="col">Joueurs</th>
+													<th scope="col">Nationalité</th>
+													<th scope="col">Postes</th>
+													<th scope="col">Dorssad</th>
+													<th scope="col">Pieds fort</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($detail_club_saisons as $detail_club_saison)
 													<tr>
-														<th scope="col">Joueurs</th>
-														<th scope="col">Nationalité</th>
-														<th scope="col">Postes</th>
-														<th scope="col">Dorssad</th>
-														<th scope="col">Pieds fort</th>
+														<td><img src="{{ asset($detail_club_saison->joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  {{ $detail_club_saison->joueur->nom }}</td>
+														<td><img src="{{ asset($detail_club_saison->joueur->drapeau) }}" style="height: 50px; width: 50px;" alt="">  {{ $detail_club_saison->joueur->nationalite }}</td>
+														<td>{{ $detail_club_saison->poste->libelle }}</th>
+														<td>{{ $detail_club_saison->dorssad }}</td>
+														<td>{{ $detail_club_saison->joueur->pied_fort }}</td>
+														<td><a href="{{ route('detail_joueur_elite_guinness', [$detail_club_saison->saison_id, $detail_club_saison->joueur_id]) }}" class="btn btn-primary" style="height: 5px;">Detail</a></td>
 													</tr>
-												</thead>
-												<tbody>
-													@foreach ($detail_club_saisons as $detail_club_saison)
-														<tr>
-															<td><img src="{{ asset($detail_club_saison->joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  {{ $detail_club_saison->joueur->nom }}</td>
-															<td><img src="{{ asset($detail_club_saison->joueur->drapeau) }}" style="height: 50px; width: 50px;" alt="">  {{ $detail_club_saison->joueur->nationalite }}</td>
-															<td>{{ $detail_club_saison->poste->libelle }}</th>
-															<td>{{ $detail_club_saison->dorssad }}</td>
-															<td>{{ $detail_club_saison->joueur->pied_fort }}</td>
-															<td><a href="/elite1/detail_joueur" class="btn btn-primary" style="height: 5px;">Detail</a></td>
-														</tr>
-													@endforeach
-												</tbody>
-											</table>
-										</div>
-										<!--/.card-body -->
-
+												@endforeach
+											</tbody>
+										</table>
 									</div>
 								</div>
 								<!--/.row -->
@@ -90,10 +86,7 @@
 					<!-- /.tab-content -->
 				</div>
 				<!--/column -->
-
-
 			</div>
-
 		</div>
 		<!-- /.container -->
 	</section>

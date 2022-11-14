@@ -14,12 +14,15 @@ class ClubFactory extends Factory
     public function definition()
     {
         return [
+            'logo' => $this->faker->imageUrl(),
             'nom' => $this->faker->name(),
             'siege' => $this->faker->Address(),
             'bp' => $this->faker->ean8(),
             'telephone' => $this->faker->phoneNumber(),
             'email' => $this->faker->unique()->safeEmail(),
             'site' => $this->faker->url(),
+            'twitter' => $this->faker->url(),
+            'facebook' => $this->faker->url(),
             'president' => $this->faker->name(),
             'v_president' => $this->faker->name(),
             'secretaire_g' => $this->faker->name(),

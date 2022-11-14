@@ -15,7 +15,7 @@ class CreateJourneesTable extends Migration
     {
         Schema::create('journees', function (Blueprint $table) {
             $table->integerIncrements('id');
-            $table->string('libelle', 60);
+            $table->string('libelle', 100);
             $table->unsignedInteger('saison_id');
             $table->foreign('saison_id')->references('id')->on('saisons')->onDelete('restrict');
             $table->timestamps();
