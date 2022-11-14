@@ -17,6 +17,7 @@ class StatistiqueJoueurFactory extends Factory
             'saison_id' => rand(1,3),
             'match_id' => rand(1,3),
             'joueur_id' => rand(1,3),
+            'tir' => rand(1,30),
             'tir_cadre' => rand(1,30),
             'but_marque' => rand(1,20),
             'passe_decisive' => rand(1,5),
@@ -37,7 +38,8 @@ class StatistiqueJoueurFactory extends Factory
             'penalty_arrete' => rand(1,12),
             'penalty_concede' => rand(1,6),
             'but_contre_camp' => rand(1,3),
-            'homme_match' => $this->faker->sentence(1)
+            'homme_match' => $this->faker->sentence(1),
+            'domiciliation' => $this->faker->sentence(1)
         ];
     }
 }

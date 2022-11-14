@@ -38,7 +38,7 @@ class CreateMatchesTable extends Migration
             $table->unsignedInteger('arbitre4_id');
             $table->foreign('arbitre4_id')->references('id')->on('arbitres')->onDelete('restrict');
             $table->date('date');
-            $table->string('heure', 60);
+            $table->string('heure', 100);
             $table->timestamps();
         });
     }

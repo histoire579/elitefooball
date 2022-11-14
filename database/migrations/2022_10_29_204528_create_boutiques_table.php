@@ -15,9 +15,9 @@ class CreateBoutiquesTable extends Migration
     {
         Schema::create('boutiques', function (Blueprint $table) {
             $table->integerIncrements('id');
-            $table->string('lieu', 60);
-            $table->string('telephone', 60)->unique();
-            $table->string('horaire', 60);
+            $table->string('lieu', 100);
+            $table->string('telephone', 100)->unique();
+            $table->string('horaire', 100);
             $table->integer('maillot_v');
             $table->integer('gajet_v');
             $table->integer('tikect_v');

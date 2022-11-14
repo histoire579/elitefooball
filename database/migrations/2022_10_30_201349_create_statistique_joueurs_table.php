@@ -21,6 +21,7 @@ class CreateStatistiqueJoueursTable extends Migration
             $table->foreign('match_id')->references('id')->on('matches')->onDelete('restrict');
             $table->unsignedInteger('joueur_id');
             $table->foreign('joueur_id')->references('id')->on('joueurs')->onDelete('restrict');
+            $table->integer('tir');
             $table->integer('tir_cadre');
             $table->integer('but_marque');
             $table->integer('passe_decisive');
@@ -41,7 +42,8 @@ class CreateStatistiqueJoueursTable extends Migration
             $table->integer('penalty_arrete');
             $table->integer('penalty_concede');
             $table->integer('but_contre_camp');
-            $table->string('homme_match');
+            $table->string('homme_match', 100);
+            $table->string('domiciliation', 100);
             $table->timestamps();
         });
     }

@@ -15,12 +15,15 @@ class CreateClubsTable extends Migration
     {
         Schema::create('clubs', function (Blueprint $table) {
             $table->integerIncrements('id');
+            $table->string('logo', 255);
             $table->string('nom', 100);
-            $table->string('siege', 60);
-            $table->string('bp', 60);
-            $table->string('telephone', 60);
-            $table->string('email', 60);
+            $table->string('siege', 100);
+            $table->string('bp', 100);
+            $table->string('telephone', 100);
+            $table->string('email', 100);
             $table->string('site', 100);
+            $table->string('twitter', 100);
+            $table->string('facebook', 100);
             $table->string('president', 100);
             $table->string('v_president', 100);
             $table->string('secretaire_g', 100);

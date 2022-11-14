@@ -12,6 +12,7 @@ class StatistiqueJoueur extends Model
         'saison_id',
         'match_id',
         'joueur_id',
+        'tir',
         'tir_cadre',
         'but_marque',
         'passe_decisive',
@@ -32,7 +33,8 @@ class StatistiqueJoueur extends Model
         'penalty_arrete',
         'penalty_concede',
         'but_contre_camp',
-        'homme_match'
+        'homme_match',
+        'domiciliation'
     ];
 
     public function saison(){

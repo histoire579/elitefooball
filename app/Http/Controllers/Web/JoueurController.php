@@ -20,7 +20,7 @@ class JoueurController extends Controller
     {
         $saisons = Saison::orderBy('libelle','desc')->get();
         $saison_id = $saisons->max('id');
-        $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where('saison_id', $saison_id)->orderBy('created_at','desc')->paginate(10);
+        $detail_club_saisons = DetailClubSaison::with('saison','joueur','poste')->where('saison_id', $saison_id)->orderBy('created_at','desc')->paginate(10);
         $competition = Competition::where('libelle', "Elite 1")->first();
         $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $saison_id]])->get();
         return view('elite1.joueur')
