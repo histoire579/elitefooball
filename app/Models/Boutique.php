@@ -12,6 +12,7 @@ class Boutique extends Model
         'lieu',
         'telephone',
         'horaire',
+        'horaire_en',
         'maillot_v',
         'gajet_v',
         'tikect_v'

@@ -15,7 +15,7 @@ class CreateArbitresTable extends Migration
     {
         Schema::create('arbitres', function (Blueprint $table) {
             $table->integerIncrements('id');
-            $table->string('photo', 255);
+            $table->string('photo', 255)->nullable();
             $table->string('nom', 100);
             $table->date('date_nais');
             $table->string('nationalite', 60);

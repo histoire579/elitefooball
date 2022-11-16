@@ -134,4 +134,20 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/administration/arbitre/edit/{id}','ArbitreController@edit')->name('administration.arbitre.edit');
     Route::post('/administration/arbitre/edit/{id}','ArbitreController@update');
     Route::get('/administration/arbitre/destroy/{id}','ArbitreController@destroy')->name('administration.arbitre.delete');
+
+    //boutique
+    Route::get('/administration/boutique','BoutiqueController@index')->name('administration.boutique');
+    Route::post('/administration/boutique','BoutiqueController@store');
+    Route::get('/administration/boutique/add','BoutiqueController@Add')->name('administration.boutique-add');
+    Route::get('/administration/boutique/edit/{id}','BoutiqueController@edit')->name('administration.boutique.edit');
+    Route::post('/administration/boutique/edit/{id}','BoutiqueController@update');
+    Route::get('/administration/boutique/destroy/{id}','BoutiqueController@destroy')->name('administration.boutique.delete');
+
+    //joueur
+    Route::get('/administration/joueur','JoueurController@index')->name('administration.joueur');
+    Route::post('/administration/joueur','JoueurController@store');
+    Route::get('/administration/joueur/add','JoueurController@Add')->name('administration.joueur-add');
+    Route::get('/administration/joueur/edit/{id}','JoueurController@edit')->name('administration.joueur.edit');
+    Route::post('/administration/joueur/edit/{id}','JoueurController@update');
+    Route::get('/administration/joueur/destroy/{id}','JoueurController@destroy')->name('administration.joueur.delete');
 });

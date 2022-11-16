@@ -178,6 +178,13 @@
                             </li>
 
                             <li>
+                                <a href="/administration/joueur" class=" waves-effect">
+                                    <i class="mdi mdi-format-underline"></i>
+                                    <span>Joueurs</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="/administration/actualite" class=" waves-effect">
                                     <i class="mdi mdi-format-underline"></i>
                                     <span>Actualités</span>
