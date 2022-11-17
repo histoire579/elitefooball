@@ -16,7 +16,7 @@ class JoueurController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index_elite_one()
+    public function index_joueur_one()
     {
         $saisons = Saison::orderBy('libelle','desc')->get();
         $saison_id = $saisons->max('id');
@@ -34,7 +34,7 @@ class JoueurController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index_elite_two()
+    public function index_joueur_two()
     {
         $saisons = Saison::orderBy('libelle','desc')->get();
         $saison_id = $saisons->max('id');
@@ -52,7 +52,7 @@ class JoueurController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index_elite_guinness()
+    public function index_joueur_guinness()
     {
         $saisons = Saison::orderBy('libelle','desc')->get();
         $saison_id = $saisons->max('id');
@@ -139,14 +139,28 @@ class JoueurController extends Controller
      */
     public function joueur_by_club_one(Request $request)
     {
-        $saisons = Saison::orderBy('libelle','desc')->get();
-        $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
-        $competition = Competition::where('libelle', "Elite 1")->first();
-        $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
-        return view('elite1.joueur')
-        ->with('detail_club_saisons', $detail_club_saisons)
-        ->with('saisons', $saisons)
-        ->with('detail_competition_saisons', $detail_competition_saisons);
+        if($request->club_id == null)
+        {
+            $saisons = Saison::orderBy('libelle','desc')->get();
+            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where(['saison_id', $request->saison_id])->orderBy('created_at','desc')->paginate(10);
+            $competition = Competition::where('libelle', "Elite 1")->first();
+            $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            return view('elite1.joueur')
+            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('saisons', $saisons)
+            ->with('detail_competition_saisons', $detail_competition_saisons);
+        }
+        else
+        {
+            $saisons = Saison::orderBy('libelle','desc')->get();
+            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
+            $competition = Competition::where('libelle', "Elite 1")->first();
+            $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            return view('elite1.joueur')
+            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('saisons', $saisons)
+            ->with('detail_competition_saisons', $detail_competition_saisons);
+        }
     }
 
     /**
@@ -157,14 +171,28 @@ class JoueurController extends Controller
      */
     public function joueur_by_club_two(Request $request)
     {
-        $saisons = Saison::orderBy('libelle','desc')->get();
-        $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
-        $competition = Competition::where('libelle', "Elite 2")->first();
-        $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
-        return view('elite2.joueur')
-        ->with('detail_club_saisons', $detail_club_saisons)
-        ->with('saisons', $saisons)
-        ->with('detail_competition_saisons', $detail_competition_saisons);
+        if($request->club_id == null)
+        {
+            $saisons = Saison::orderBy('libelle','desc')->get();
+            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where(['saison_id', $request->saison_id])->orderBy('created_at','desc')->paginate(10);
+            $competition = Competition::where('libelle', "Elite 2")->first();
+            $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            return view('elite2.joueur')
+            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('saisons', $saisons)
+            ->with('detail_competition_saisons', $detail_competition_saisons);
+        }
+        else
+        {
+            $saisons = Saison::orderBy('libelle','desc')->get();
+            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
+            $competition = Competition::where('libelle', "Elite 2")->first();
+            $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            return view('elite2.joueur')
+            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('saisons', $saisons)
+            ->with('detail_competition_saisons', $detail_competition_saisons);
+        }
     }
 
     /**
@@ -175,13 +203,27 @@ class JoueurController extends Controller
      */
     public function joueur_by_club_guinness(Request $request)
     {
-        $saisons = Saison::orderBy('libelle','desc')->get();
-        $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
-        $competition = Competition::where('libelle', "Guinness super league")->first();
-        $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
-        return view('guinness.joueur')
-        ->with('detail_club_saisons', $detail_club_saisons)
-        ->with('saisons', $saisons)
-        ->with('detail_competition_saisons', $detail_competition_saisons);
+        if($request->club_id == null)
+        {
+            $saisons = Saison::orderBy('libelle','desc')->get();
+            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where(['saison_id', $request->saison_id])->orderBy('created_at','desc')->paginate(10);
+            $competition = Competition::where('libelle', "Guinness super league")->first();
+            $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            return view('guinness.joueur')
+            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('saisons', $saisons)
+            ->with('detail_competition_saisons', $detail_competition_saisons);
+        }
+        else
+        {
+            $saisons = Saison::orderBy('libelle','desc')->get();
+            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
+            $competition = Competition::where('libelle', "Guinness super league")->first();
+            $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            return view('guinness.joueur')
+            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('saisons', $saisons)
+            ->with('detail_competition_saisons', $detail_competition_saisons);
+        }
     }
 }

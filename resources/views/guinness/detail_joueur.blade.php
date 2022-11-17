@@ -58,25 +58,32 @@
 												<table class="table table-striped">
 													<tbody>
 														<tr>
-															<td>Club <td>{{ $detail_club_saison->club->nom }}</td></td>
+															<td>Club</td>
+															<td>{{ $detail_club_saison->club->nom }}</td>
 														</tr>
 														<tr>
-															<td>Poste  <td>{{ $detail_club_saison->poste->libelle }}</td></td>
+															<td>Poste</td>
+															<td>{{ $detail_club_saison->poste->libelle }}</td>
 														</tr>
 														<tr>
-															<td>Dorssad <td>{{ $detail_club_saison->dorssad }}</td></td>
+															<td>Dorssad</td>
+															<td>{{ $detail_club_saison->dorssad }}</td>
 														</tr>
 														<tr>
-															<td>Nationnaltié <td>{{ $detail_club_saison->joueur->nationalite }}</td></td>
+															<td>Nationnaltié</td>
+															<td>{{ $detail_club_saison->joueur->nationalite }}</td>
 														</tr>
 														<tr>
-															<td>Date & Lieu de naissance <td>{{ $detail_club_saison->joueur->date_nais }} à {{ $detail_club_saison->joueur->lieu_nais }}</td></td>
+															<td>Date & Lieu de naissance</td>
+															<td>{{ $detail_club_saison->joueur->date_nais }} à {{ $detail_club_saison->joueur->lieu_nais }}</td>
 														</tr>
 														<tr>
-															<td>Taille <td>{{ $detail_club_saison->joueur->taille }}</td></td>
+															<td>Taille</td>
+															<td>{{ $detail_club_saison->joueur->taille }}</td>
 														</tr>
 														<tr>
-															<td>Adresse (Pied fort) <td>{{ $detail_club_saison->joueur->pied_fort }}</td></td>
+															<td>Adresse (Pied fort)</td>
+															<td>{{ $detail_club_saison->joueur->pied_fort }}</td>
 														</tr>
 													</tbody>
 												</table>
@@ -110,7 +117,7 @@
 														<tr>
 															<td>{{ $statistique->saison }}</td>
 															<td>...</td>
-															<th>...</th>
+															<td><img src="" style="height: 50px; width: 50px;" alt="">...</td>
 															<td>{{ $statistique->nbre_match }}</td>
 															<td>{{ $statistique->minute_jouer }}</td>
 															<td>{{ $statistique->but }}</td>
@@ -163,14 +170,14 @@
 						<div class="tab-pane fade" id="tab1-2">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">{{ $detail_club_saison->joueur->nom }}</h4>
-								<form action="" method="get">
+								<form action="{{ route('joueur_domiciliation_guinness') }}" method="get">
 									@csrf
 									<div class="row mb-6">
-										<input type="text" value="{{ $detail_club_saison->joueur->id }}" name="id" id="id" hidden>
+										<input type="text" value="{{ $detail_club_saison->joueur->id }}" name="joueur_id" id="joueur_id" hidden>
 
 										<div class="col-md-4">
 											<div class="form-select-wrapper mb-4">
-												<select class="form-select" aria-label="Default select example">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
 													@foreach ($saisons as $saison)
 														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
 													@endforeach
@@ -180,7 +187,7 @@
 
 										<div class="col-md-4">
 											<div class="form-select-wrapper mb-4">
-												<select class="form-select" aria-label="Default select example">
+												<select class="form-select" name="domiciliation" id="domiciliation" aria-label="Default select example">
 													<option value="Général" selected>Général</option>
 													<option value="Domicil">Domicil</option>
 													<option value="Extérieur">Extérieur </option>
@@ -230,34 +237,44 @@
 													<tbody>
 														@foreach ($stats as $stat)
 														<tr>
-															<td>Matchs Comme Entrant <td>{{ $nbre_entrant }}</td></td>
+															<td>Matchs Comme Entrant</td>
+															<td>{{ $nbre_entrant }}</td>
 														</tr>
 														<tr>
-															<td>Matchs Comme Remplaçant  <td>{{ $nbre_remplacant }}</td></td>
+															<td>Matchs Comme Remplaçant</td>
+															<td>{{ $nbre_remplacant }}</td>
 														</tr>
 														<tr>
-															<td>Passes Décisives <td>{{ $stat->passe_d }}</td></td>
+															<td>Passes Décisives</td>
+															<td>{{ $stat->passe_d }}</td>
 														</tr>
 														<tr>
-															<td>Tirs <td>{{ $stat->tir }}</td></td>
+															<td>Tirs</td>
+															<td>{{ $stat->tir }}</td>
 														</tr>
 														<tr>
-															<td>Tirs Cadrés <td>{{ $stat->tir_cadre }}</td></td>
+															<td>Tirs Cadrés</td>
+															<td>{{ $stat->tir_cadre }}</td>
 														</tr>
 														<tr>
-															<td>Hors-Jeu <td>{{ $stat->hors_jeux }}</td></td>
+															<td>Hors-Jeu</td>
+															<td>{{ $stat->hors_jeux }}</td>
 														</tr>
 														<tr>
-															<td>Centres <td>{{ $stat->centre }}</td></td>
+															<td>Centres</td>
+															<td>{{ $stat->centre }}</td>
 														</tr>
 														<tr>
-															<td>Matchs Gagnés <td>...</td></td>
+															<td>Matchs Gagnés</td>
+															<td>...</td>
 														</tr>
 														<tr>
-															<td>Penaltys Marqués <td>{{ $stat->panalty_marque }}</td></td>
+															<td>Penaltys Marqués</td>
+															<td>{{ $stat->panalty_marque }}</td>
 														</tr>
 														<tr>
-															<td>Coups Francs Marqués <td>{{ $stat->but_contre_camp }}</td></td>
+															<td>Coups Francs Marqués</td>
+															<td>{{ $stat->but_contre_camp }}</td>
 														</tr>
 														@endforeach
 													</tbody>
@@ -275,37 +292,48 @@
 													<tbody>
 														@foreach ($stats as $stat)
 														<tr>
-															<td>Fautes Commises <td>{{ $stat->faute_comise }}</td></td>
+															<td>Fautes Commises</td>
+															<td>{{ $stat->faute_comise }}</td>
 														</tr>
 														<tr>
-															<td>Ballons Récupérés <td>{{ $stat->ballon_recup }}</td></td>
+															<td>Ballons Récupérés</td>
+															<td>{{ $stat->ballon_recup }}</td>
 														</tr>
 														<tr>
-															<td>Ballons Interceptés <td>{{ $stat->ballon_inter }}</td></td>
+															<td>Ballons Interceptés</td>
+															<td>{{ $stat->ballon_inter }}</td>
 														</tr>
 														<tr>
-															<td>Passes <td>{{ $stat->passe_r }}</td></td>
+															<td>Passes</td>
+															<td>{{ $stat->passe_r }}</td>
 														</tr>
 														<tr>
-															<td>Matchs Sans Encaisser <td>...</td></td>
+															<td>Matchs Sans Encaisser</td>
+															<td>...</td>
 														</tr>
 														<tr>
-															<td>Buts Encaissés <td>{{ $stat->but_encaisse }}</td></td>
+															<td>Buts Encaissés</td>
+															<td>{{ $stat->but_encaisse }}</td>
 														</tr>
 														<tr>
-															<td>Buts Contre Son Camp <td>{{ $stat->but_contre_camp }}</td></td>
+															<td>Buts Contre Son Camp</td>
+															<td>{{ $stat->but_contre_camp }}</td>
 														</tr>
 														<tr>
-															<td>Matchs Perdus <td>...</td></td>
+															<td>Matchs Perdus</td>
+															<td>...</td>
 														</tr>
 														<tr>
-															<td>Penaltys Concédés <td>{{ $stat->panalty_marque }}</td></td>
+															<td>Penaltys Concédés</td>
+															<td>{{ $stat->panalty_marque }}</td>
 														</tr>
 														<tr>
-															<td>Penaltys Arrêtés <td>{{ $stat->penalty_arrete }}</td></td>
+															<td>Penaltys Arrêtés</td>
+															<td>{{ $stat->penalty_arrete }}</td>
 														</tr>
 														<tr>
-															<td> <td></td></td>
+															<td> </td>
+															<td> </td>
 														</tr>
 														@endforeach
 													</tbody>

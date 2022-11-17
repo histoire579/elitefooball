@@ -29,7 +29,7 @@
 									<div class="row mb-6">
 										<div class="col-md-4">
 											<div class="form-select-wrapper mb-4">
-												<select class="form-select" name="saison" id="saison" aria-label="Default select example">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
 													@foreach ($saisons as $saison)
 														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
 													@endforeach
@@ -39,7 +39,7 @@
 	
 										<div class="col-md-4">
 											<div class="form-select-wrapper mb-4">
-												<select class="form-select" name="club" id="club" aria-label="Default select example">
+												<select class="form-select" name="club_id" id="club_id" aria-label="Default select example">
 													<option selected>Selectionner un club</option>
 													@foreach ($detail_competition_saisons as $detail_competition_saison)
 														<option value="{{ $detail_competition_saison->club->id }}">{{ $detail_competition_saison->club->nom }}</option>
