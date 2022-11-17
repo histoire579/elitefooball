@@ -67,7 +67,7 @@
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_elite_one') }}">
                             
                             <span>Arbitres</span>
                           </a>
@@ -115,7 +115,7 @@
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_elite_two') }}">
                             
                             <span>Arbitres</span>
                           </a>
@@ -163,7 +163,7 @@
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_elite_guinness') }}">
                             
                             <span>Arbitres</span>
                           </a>

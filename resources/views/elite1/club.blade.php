@@ -20,31 +20,34 @@
 			<div class="row gx-lg-8 gx-xl-12 gy-10 mb-md-17 align-items-center mb-14">
 				<div class="col-md-12 position-relative">
 					<h4 class="display-6 mb-8 mt-6 text-center">CLUBS</h4>
-					<div class="row">
-						<div class="col-md-4">
-							<div class="form-select-wrapper mb-4">
-								<select class="form-select" aria-label="Default select example">
-									@foreach ($saisons as $saison)
-										<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
-									@endforeach
-								</select>
+					<form action="{{ route('club_journee_elite_one') }}" method="get">
+						@csrf
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-select-wrapper mb-4">
+									<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
+										@foreach ($saisons as $saison)
+											<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+										@endforeach
+									</select>
+								</div>
+							</div>
+	
+							<div class="col-md-4">
+								<div class="form-select-wrapper mb-4">
+									<select class="form-select" name="journee_id" id="journee_id" aria-label="Default select example">
+										<option selected>Selectionner une journée</option>
+										@foreach ($journees as $journee)
+											<option value="{{ $journee->id }}">{{ $journee->libelle }}</option>
+										@endforeach
+									</select>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<button type="submit" class="btn btn-primary">Rechercher</button>
 							</div>
 						</div>
-
-						<div class="col-md-4">
-							<div class="form-select-wrapper mb-4">
-								<select class="form-select" aria-label="Default select example">
-									<option selected>Selectionner une journée</option>
-									@foreach ($journees as $journee)
-										<option value="{{ $journee->id }}">{{ $journee->libelle }}</option>
-									@endforeach
-								</select>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<button class="btn btn-primary">Rechercher</button>
-						</div>
-					</div>
+					</form>
 				</div>
 
 				@foreach ($clubs as $club)
@@ -54,10 +57,9 @@
 						<div class="item-inner">
 							<div class="card">
 								<div class="card-body">
-									<img class="rounded-circle w-15 mb-4" src="./assets/img/avatars/te2.jpg"
-										srcset="{{ asset('dist/assets/img/avatars/te2@2x.jpg') }}" alt="" />
-									<h4 class="mb-1">{{ $club->nom }}</h4>
-									<div class="meta mb-2">{{ $club->stade->nom }}</div>
+									<img class="rounded-circle w-15 mb-4" src="{{ asset($club->logo) }}" alt="" />
+									<h4 class="mb-1"><a href="{{ route('detail_club_elite_one', $club->id) }}">{{ $club->club }}</a></h4>
+									<div class="meta mb-2">{{ $club->stade }}</div>
 									<p class="mb-2"></p>
 									<nav class="nav social mb-0">
 										<a href="{{ $club->twitter }}"><i class="uil uil-twitter"></i></a>
