@@ -16,10 +16,6 @@ class Competition extends Model
         return $this->hasMany('App\Models\Match');
     }
 
-    public function resultat(){
-        return $this->hasMany('App\Models\Resultat');
-    }
-
     public function detail_competition_saison(){
         return $this->hasMany('App\Models\DetailCompetitionSaison');
     }

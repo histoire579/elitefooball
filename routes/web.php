@@ -23,7 +23,7 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-Route::get('/', [App\Http\Controllers\Web\JoueurController::class, 'index_joueur_one'])->name('joueur_elite_one');
+Route::get('/', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_one'])->name('arbitre_elite_one');
 
 //*************Elite 1
 

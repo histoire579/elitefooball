@@ -15,7 +15,7 @@ class DetailMatchFactory extends Factory
     {
         return [
             'saison_id' => rand(1,3),
-            'resultat_id' => rand(1,15),
+            'match_id' => rand(1,15),
             'detail' => $this->faker->paragraph(1)
         ];
     }

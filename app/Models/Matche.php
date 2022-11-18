@@ -15,13 +15,16 @@ class Matche extends Model
         'phase_id',
         'stade_id',
         'club1_id',
+        'nbre_but_club1',
         'club2_id',
+        'nbre_but_club2',
         'arbitre1_id',
         'arbitre2_id',
         'arbitre3_id',
         'arbitre4_id',
         'date',
-        'heure'
+        'heure',
+        'type'
     ];
 
     public function saison(){

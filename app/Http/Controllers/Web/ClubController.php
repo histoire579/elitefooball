@@ -141,7 +141,7 @@ class ClubController extends Controller
      */
     public function club_by_journee_one(Request $request)
     {
-        if($request->journee_id == null)
+        if($request->journee_id == "Selectionner une journée")
         {
             $saisons = Saison::orderBy('libelle','desc')->get();
             $journees = Journee::orderBy('libelle','desc')->get();
@@ -173,7 +173,7 @@ class ClubController extends Controller
      */
     public function club_by_journee_two(Request $request)
     {
-        if($request->journee_id == null)
+        if($request->journee_id == "Selectionner une journée")
         {
             $saisons = Saison::orderBy('libelle','desc')->get();
             $journees = Journee::orderBy('libelle','desc')->get();
@@ -204,7 +204,7 @@ class ClubController extends Controller
      */
     public function club_by_journee_guinness(Request $request)
     {
-        if($request->journee_id == null)
+        if($request->journee_id == "Selectionner une journée")
         {
             $saisons = Saison::orderBy('libelle','desc')->get();
             $journees = Journee::orderBy('libelle','desc')->get();

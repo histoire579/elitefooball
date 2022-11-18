@@ -10,7 +10,7 @@ class DetailMatch extends Model
     use HasFactory;    
     protected $fillable = [
         'saison_id',
-        'resultat_id',
+        'match_id',
         'detail'
     ];
 
@@ -18,7 +18,7 @@ class DetailMatch extends Model
         return $this->belongsTo('App\Models\Saison','saison_id');
     }
 
-    public function resultat(){
-        return $this->belongsTo('App\Models\Resultat','resultat_id');
+    public function match(){
+        return $this->belongsTo('App\Models\Match','match_id');
     }
 }

@@ -29,15 +29,14 @@ class DatabaseSeeder extends Seeder
         \App\Models\Partenaire::factory(3)->create();
         \App\Models\Club::factory(6)->create();
         \App\Models\Matche::factory(15)->create();
-        \App\Models\Resultat::factory(15)->create();
-        \App\Models\DetailCompetitionSaison::factory(10)->create();
-        \App\Models\Classement::factory(3)->create();
+        \App\Models\DetailCompetitionSaison::factory(15)->create();
+        \App\Models\Classement::factory(6)->create();
         \App\Models\PalmaresClub::factory(6)->create();
         \App\Models\PalmaresJoueur::factory(66)->create();
-        \App\Models\DetailClubSaison::factory(15)->create();
-        \App\Models\DetailMatch::factory(66)->create();
-        \App\Models\StatistiqueJoueur::factory(66)->create();
+        \App\Models\DetailClubSaison::factory(20)->create();
+        \App\Models\DetailMatch::factory(15)->create();
+        \App\Models\StatistiqueJoueur::factory(60)->create();
         \App\Models\StatistiqueClub::factory(3)->create();
-        \App\Models\FeuilleMatch::factory(66)->create();
+        \App\Models\FeuilleMatch::factory(60)->create();
     }
 }

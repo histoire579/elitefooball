@@ -27,8 +27,10 @@ class CreateMatchesTable extends Migration
             $table->foreign('stade_id')->references('id')->on('stades')->onDelete('restrict');
             $table->unsignedInteger('club1_id');
             $table->foreign('club1_id')->references('id')->on('clubs')->onDelete('restrict');
+            $table->integer('nbre_but_club1')->nullable();
             $table->unsignedInteger('club2_id');
             $table->foreign('club2_id')->references('id')->on('clubs')->onDelete('restrict');
+            $table->integer('nbre_but_club2')->nullable();
             $table->unsignedInteger('arbitre1_id');
             $table->foreign('arbitre1_id')->references('id')->on('arbitres')->onDelete('restrict');
             $table->unsignedInteger('arbitre2_id');
@@ -39,6 +41,7 @@ class CreateMatchesTable extends Migration
             $table->foreign('arbitre4_id')->references('id')->on('arbitres')->onDelete('restrict');
             $table->date('date');
             $table->string('heure', 100);
+            $table->string('type', 100);
             $table->timestamps();
         });
     }
