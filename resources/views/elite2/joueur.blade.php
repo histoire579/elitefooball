@@ -58,6 +58,7 @@
 											<thead>
 												<tr>
 													<th scope="col">Joueurs</th>
+													<th scope="col">Club</th>
 													<th scope="col">Nationalité</th>
 													<th scope="col">Postes</th>
 													<th scope="col">Dorssad</th>
@@ -65,14 +66,15 @@
 												</tr>
 											</thead>
 											<tbody>
-												@foreach ($detail_club_saisons as $detail_club_saison)
+												@foreach ($joueurs as $joueur)
 													<tr>
-														<td><img src="{{ asset($detail_club_saison->joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  {{ $detail_club_saison->joueur->nom }}</td>
-														<td><img src="{{ asset($detail_club_saison->joueur->drapeau) }}" style="height: 50px; width: 50px;" alt="">  {{ $detail_club_saison->joueur->nationalite }}</td>
-														<td>{{ $detail_club_saison->poste->libelle }}</th>
-														<td>{{ $detail_club_saison->dorssad }}</td>
-														<td>{{ $detail_club_saison->joueur->pied_fort }}</td>
-														<td><a href="{{ route('detail_joueur_elite_two', [$detail_club_saison->saison_id, $detail_club_saison->joueur_id]) }}" class="btn btn-primary" style="height: 5px;">Detail</a></td>
+														<td><img src="{{ asset($joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->nom }}</td>
+														<td><img src="{{ asset($joueur->logo) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->club }}</td>
+														<td><img src="{{ asset($joueur->drapeau) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->nationalite }}</td>
+														<td>{{ $joueur->poste }}</th>
+														<td>{{ $joueur->dorssad }}</td>
+														<td>{{ $joueur->pied_fort }}</td>
+														<td><a href="{{ route('detail_joueur_elite_two', [$joueur->saison_id, $joueur->joueur_id]) }}" class="btn btn-primary" style="height: 5px;">Detail</a></td>
 													</tr>
 												@endforeach
 											</tbody>

@@ -12,6 +12,7 @@ class Arbitre extends Model
         'photo',
         'nom',
         'date_nais',
+        'drapeau',
         'nationalite',
         'lieu_nais',
         'status',
@@ -20,5 +21,9 @@ class Arbitre extends Model
 
     public function match(){
         return $this->hasMany('App\Models\Match');
+    }
+
+    public function resultat(){
+        return $this->hasMany('App\Models\Resultat');
     }
 }

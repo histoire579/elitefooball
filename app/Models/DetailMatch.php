@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetailMatch extends Model
 {
-    use HasFactory;
+    use HasFactory;    
     protected $fillable = [
         'saison_id',
-        'match_id',
+        'resultat_id',
         'detail'
     ];
 
@@ -18,7 +18,7 @@ class DetailMatch extends Model
         return $this->belongsTo('App\Models\Saison','saison_id');
     }
 
-    public function match(){
-        return $this->belongsTo('App\Models\Match','match_id');
+    public function resultat(){
+        return $this->belongsTo('App\Models\Resultat','resultat_id');
     }
 }

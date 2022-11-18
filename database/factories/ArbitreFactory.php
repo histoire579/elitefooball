@@ -17,6 +17,7 @@ class ArbitreFactory extends Factory
             'photo' => $this->faker->imageUrl(),
             'nom' => $this->faker->name(),
             'date_nais' => $this->faker->date(),
+            'drapeau' => $this->faker->imageUrl(),
             'nationalite' => $this->faker->name(),
             'lieu_nais' => $this->faker->Address(),
             'status' => $this->faker->sentence(1),

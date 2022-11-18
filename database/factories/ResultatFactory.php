@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class MatcheFactory extends Factory
+class ResultatFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,10 +17,13 @@ class MatcheFactory extends Factory
             'saison_id' => rand(1,3),
             'competition_id' => rand(1,3),
             'journee_id' => rand(1,3),
+            'match_id' => rand(1,15),
             'phase_id' => rand(1,3),
             'stade_id' => rand(1,3),
             'club1_id' => rand(1,6),
+            'nbre_but_club1' => rand(0,3),
             'club2_id' => rand(1,6),
+            'nbre_but_club2' => rand(0,3),
             'arbitre1_id' => rand(1,3),
             'arbitre2_id' => rand(1,3),
             'arbitre3_id' => rand(1,3),

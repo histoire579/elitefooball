@@ -24,6 +24,10 @@ class Saison extends Model
         return $this->hasMany('App\Models\Match');
     }
 
+    public function resultat(){
+        return $this->hasMany('App\Models\Resultat');
+    }
+
     public function feuille_match(){
         return $this->hasMany('App\Models\FeuilleMatch');
     }

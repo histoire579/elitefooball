@@ -124,7 +124,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>Facebook : {{ $club->facebook }}</td>
-                                                            <td>Vente tickets : {{ $club->boutique->ticket_v }}</td>
+                                                            <td>Vente tickets : {{ $club->boutique->tikect_v }}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -194,198 +194,165 @@
 
 						<div class="tab-pane fade" id="tab1-2">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">CLASSEMENT BUTEURS</h4>
-								<div class="row mb-6">
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<h4 class="display-6 mb-8 mt-6 text-center">{{ $club->nom }}</h4>
+								<form action="" method="get">
+									@csrf
+									<div class="row mb-6">
+										<div class="col-md-6">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
+													@foreach ($saisons as $saison)
+														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<button class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
+								</form>
 
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
-											</select>
+								<label for="">Gardiens -- {{ $nbre_gard }}</label>
+								<hr class="mb-1">
+								@foreach ($gardiens as $gardien)
+								<div class="col-md-3">
+									<!--/.swiper-slide -->
+									<div class="swiper-slide">
+										<div class="item-inner">
+											<div class="card">
+												<div class="card-body">
+													<img class="rounded-circle w-15 mb-4" src="{{ asset($gardien->joueur->photo) }}" alt="" />
+													<h4 class="mb-1">{{ $gardien->joueur->nom }}</h4>
+													<div class="meta mb-2">Dorssad : {{ $gardien->dorssad }}</div>
+												</div>
+												<!--/.card-body -->
+											</div>
+											<!-- /.card -->
 										</div>
-									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
+										<!-- /.item-inner -->
 									</div>
 								</div>
-								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
-													<tr>
-														<th scope="col">Rang</th>
-														<th scope="col">Jouer</th>
-														<th scope="col">Clubs</th>
-														<th scope="col">Buts Marqués</th>
-														<th scope="col">Penaltys</th>
-														<th scope="col">Matchs Afférents</th>
-														<th scope="col">Minutes Jouées</th>
-														<th scope="col">Points Rapportés</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-										<!--/.card-body -->
+								<!--/column -->
+								@endforeach
 
+								<label for="">Défenseurs -- {{ $nbre_def }}</label>
+								<hr class="mb-1">
+								@foreach ($defenseurs as $defenseur)
+								<div class="col-md-3">
+									<!--/.swiper-slide -->
+									<div class="swiper-slide">
+										<div class="item-inner">
+											<div class="card">
+												<div class="card-body">
+													<img class="rounded-circle w-15 mb-4" src="{{ asset($defenseur->joueur->photo) }}" alt="" />
+													<h4 class="mb-1">{{ $defenseur->joueur->nom }}</h4>
+													<div class="meta mb-2">Dorssad : {{ $defenseur->dorssad }}</div>
+												</div>
+												<!--/.card-body -->
+											</div>
+											<!-- /.card -->
+										</div>
+										<!-- /.item-inner -->
 									</div>
 								</div>
-								<!--/.row -->
+								<!--/column -->
+								@endforeach
+
+								<label for="">Milieux -- {{ $nbre_mil }}</label>
+								<hr class="mb-1">
+								@foreach ($milieux as $milieu)
+								<div class="col-md-3">
+									<!--/.swiper-slide -->
+									<div class="swiper-slide">
+										<div class="item-inner">
+											<div class="card">
+												<div class="card-body">
+													<img class="rounded-circle w-15 mb-4" src="{{ asset($milieu->joueur->photo) }}" alt="" />
+													<h4 class="mb-1">{{ $milieu->joueur->nom }}</h4>
+													<div class="meta mb-2">Dorssad : {{ $milieu->dorssad }}</div>
+												</div>
+												<!--/.card-body -->
+											</div>
+											<!-- /.card -->
+										</div>
+										<!-- /.item-inner -->
+									</div>
+								</div>
+								<!--/column -->
+								@endforeach
+
+								<label for="">Attaquants -- {{ $nbre_attaq }}</label>
+								<hr class="mb-1">
+								@foreach ($attaquants as $attaquant)
+								<div class="col-md-3">
+									<!--/.swiper-slide -->
+									<div class="swiper-slide">
+										<div class="item-inner">
+											<div class="card">
+												<div class="card-body">
+													<img class="rounded-circle w-15 mb-4" src="{{ asset($attaquant->joueur->photo) }}" alt="" />
+													<h4 class="mb-1">{{ $attaquant->joueur->nom }}</h4>
+													<div class="meta mb-2">Dorssad : {{ $attaquant->dorssad }}</div>
+												</div>
+												<!--/.card-body -->
+											</div>
+											<!-- /.card -->
+										</div>
+										<!-- /.item-inner -->
+									</div>
+								</div>
+								<!--/column -->
+								@endforeach
 							</div>
 						</div>
 
 						<div class="tab-pane fade" id="tab1-3">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">CLASSEMENT PASSEURS DECISIFS</h4>
-								<div class="row mb-6">
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<h4 class="display-6 mb-8 mt-6 text-center">{{ $club->nom }}</h4>
+								<form action="" method="get">
+									@csrf
+									<div class="row mb-6">
+										<div class="col-md-6">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
+													@foreach ($saisons as $saison)
+														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<button class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
-
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
-									</div>
-								</div>
+								</form>
 								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
-													<tr>
-														<th scope="col">Rang</th>
-														<th scope="col">Jouer</th>
-														<th scope="col">Clubs</th>
-														<th scope="col">Passes Décisives</th>
-														<th scope="col">Matchs Afférents</th>
-														<th scope="col">Minutes Jouées</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+									<div class="card table-responsive">
+										<table class="table-hover table">
+											<thead>
+												<tr>
+													<th scope="col">Compétitions</th>
+													<th scope="col">Dates</th>
+													<th scope="col">Journées/Phases</th>
+													<th scope="col">Matchs</th>
+													<th scope="col">Heures</th>
+													<th scope="col">Lieux</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($calendiers as $calendier)
+												<tr>
+													<td>{{ $calendier->competition->libelle }}</td>
+													<td>{{ $calendier->date }}</td>
+													<td>{{ $calendier->journee->libelle }}</td>
+													<td><img src="{{ asset($calendier->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $calendier->club1->nom }} <strong>VS</strong> {{ $calendier->club2->nom }} <img src="{{ asset($calendier->club2->logo) }}" style="height: 50px; width: 50px;" alt=""></td>
+													<td>{{ $calendier->heure }}</td>
+													<td>{{ $calendier->stade->nom }}</td>
+												</tr>
+												@endforeach
+											</tbody>
+										</table>
 									</div>
 								</div>
 								<!--/.row -->
@@ -394,149 +361,50 @@
 
 						<div class="tab-pane fade" id="tab1-4">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">CLASSEMENT GENERAL</h4>
-								<div class="row mb-6">
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<h4 class="display-6 mb-8 mt-6 text-center">{{ $club->nom }}</h4>
+								<form action="" method="get">
+									@csrf
+									<div class="row mb-6">
+										<div class="col-md-6">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
+													@foreach ($saisons as $saison)
+														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<button class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
-
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une phase</option>
-												<option value="1">Poule A</option>
-												<option value="2">Poule B</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Général</option>
-												<option value="1">Dom</option>
-												<option value="2">Ext</option>
-												<option value="3">1ere Mt</option>
-												<option value="3">2e Mt</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
-									</div>
-								</div>
+								</form>
 								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
-													<tr>
-														<th scope="col">Rang</th>
-														<th scope="col">Ev</th>
-														<th scope="col">Clubs</th>
-														<th scope="col">Points</th>
-														<th scope="col">MJ</th>
-														<th scope="col">MG</th>
-														<th scope="col">MN</th>
-														<th scope="col">MP</th>
-														<th scope="col">BM</th>
-														<th scope="col">BE</th>
-														<th scope="col">Dif</th>
-														<th scope="col">Forme</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-										<!--/.card-body -->
-
+									<div class="card table-responsive">
+										<table class="table-hover table">
+											<thead>
+												<tr>
+													<th scope="col">Compétitions</th>
+													<th scope="col">Dates</th>
+													<th scope="col">Journées/Phases</th>
+													<th scope="col">Heures</th>
+													<th scope="col">Matchs</th>
+													<th scope="col">Lieux</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($resultats as $resultat)
+												<tr>
+													<td>{{ $resultat->competition->libelle }}</td>
+													<td>{{ $resultat->date }}</td>
+													<td>{{ $resultat->journee->libelle }}</td>
+													<td>{{ $resultat->heure }}</td>
+													<td><img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club1->nom }}<strong> {{ $resultat->nbre_but_club1 }} Score {{ $resultat->nbre_but_club2 }} </strong>{{ $resultat->club2->nom }} <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""></td>
+													<td>{{ $resultat->stade->nom }}</td>
+												</tr>
+												@endforeach
+											</tbody>
+										</table>
 									</div>
 								</div>
 								<!--/.row -->
@@ -745,91 +613,45 @@
 
 						<div class="tab-pane fade" id="tab1-7">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">CLASSEMENT PASSEURS DECISIFS</h4>
-								<div class="row mb-6">
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<h4 class="display-6 mb-8 mt-6 text-center">{{ $club->nom }}</h4>
+								<form action="" method="get">
+									@csrf
+									<div class="row mb-6">
+										<div class="col-md-6">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
+													<option selected>Toutes les saisons</option>
+													@foreach ($saisons as $saison)
+														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<button class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
-
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
-									</div>
-								</div>
+								</form>
 								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
-													<tr>
-														<th scope="col">Rang</th>
-														<th scope="col">Jouer</th>
-														<th scope="col">Clubs</th>
-														<th scope="col">Passes Décisives</th>
-														<th scope="col">Matchs Afférents</th>
-														<th scope="col">Minutes Jouées</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+									<div class="card table-responsive">
+										<table class="table-hover table">
+											<thead>
+												<tr>
+													<th scope="col">Rang</th>
+													<th scope="col">Compétition</th>
+													<th scope="col">Saison</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($palmares_clubs as $palmares_club)
+												<tr>
+													<td>{{ $palmares_club->rang }}</td>
+													<td>{{ $palmares_club->competition->libelle }}</td>
+													<td>{{ $palmares_club->saison->libelle }}</td>
+												</tr>
+												@endforeach
+											</tbody>
+										</table>
 									</div>
 								</div>
 								<!--/.row -->

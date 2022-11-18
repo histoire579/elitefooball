@@ -8,6 +8,7 @@ use App\Models\Saison;
 use App\Models\Competition;
 use App\Models\DetailCompetitionSaison;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class JoueurController extends Controller
 {
@@ -20,11 +21,11 @@ class JoueurController extends Controller
     {
         $saisons = Saison::orderBy('libelle','desc')->get();
         $saison_id = $saisons->max('id');
-        $detail_club_saisons = DetailClubSaison::with('saison','joueur','poste')->where('saison_id', $saison_id)->orderBy('created_at','desc')->paginate(10);
         $competition = Competition::where('libelle', "Elite 1")->first();
         $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $saison_id]])->get();
+        $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.drapeau,j.nom,j.nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$saison_id.')');
         return view('elite1.joueur')
-        ->with('detail_club_saisons', $detail_club_saisons)
+        ->with('joueurs', $joueurs)
         ->with('saisons', $saisons)
         ->with('detail_competition_saisons', $detail_competition_saisons);
     }
@@ -38,11 +39,11 @@ class JoueurController extends Controller
     {
         $saisons = Saison::orderBy('libelle','desc')->get();
         $saison_id = $saisons->max('id');
-        $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where('saison_id', $saison_id)->orderBy('created_at','desc')->paginate(10);
         $competition = Competition::where('libelle', "Elite 2")->first();
         $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $saison_id]])->get();
+        $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.drapeau,j.nom,j.nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$saison_id.')');
         return view('elite2.joueur')
-        ->with('detail_club_saisons', $detail_club_saisons)
+        ->with('joueurs', $joueurs)
         ->with('saisons', $saisons)
         ->with('detail_competition_saisons', $detail_competition_saisons);
     }
@@ -56,11 +57,11 @@ class JoueurController extends Controller
     {
         $saisons = Saison::orderBy('libelle','desc')->get();
         $saison_id = $saisons->max('id');
-        $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where('saison_id', $saison_id)->orderBy('created_at','desc')->paginate(10);
         $competition = Competition::where('libelle', "Guinness super league")->first();
         $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $saison_id]])->get();
+        $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.drapeau,j.nom,j.nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$saison_id.')');
         return view('guinness.joueur')
-        ->with('detail_club_saisons', $detail_club_saisons)
+        ->with('joueurs', $joueurs)
         ->with('saisons', $saisons)
         ->with('detail_competition_saisons', $detail_competition_saisons);
     }
@@ -142,22 +143,23 @@ class JoueurController extends Controller
         if($request->club_id == null)
         {
             $saisons = Saison::orderBy('libelle','desc')->get();
-            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where(['saison_id', $request->saison_id])->orderBy('created_at','desc')->paginate(10);
+            $saison_id = $saisons->max('id');
             $competition = Competition::where('libelle', "Elite 1")->first();
-            $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $saison_id]])->get();
+            $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.drapeau,j.nom,j.nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.')');
             return view('elite1.joueur')
-            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('joueurs', $joueurs)
             ->with('saisons', $saisons)
             ->with('detail_competition_saisons', $detail_competition_saisons);
         }
         else
         {
             $saisons = Saison::orderBy('libelle','desc')->get();
-            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
             $competition = Competition::where('libelle', "Elite 1")->first();
             $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            $joueurs =  DB::select('SELECT c.id,s.id AS saison_id,j.id AS joueur_id,j.photo,j.drapeau,j.nom,j.nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.' AND club_id='.$request->club_id.')');
             return view('elite1.joueur')
-            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('joueurs', $joueurs)
             ->with('saisons', $saisons)
             ->with('detail_competition_saisons', $detail_competition_saisons);
         }
@@ -174,22 +176,22 @@ class JoueurController extends Controller
         if($request->club_id == null)
         {
             $saisons = Saison::orderBy('libelle','desc')->get();
-            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where(['saison_id', $request->saison_id])->orderBy('created_at','desc')->paginate(10);
             $competition = Competition::where('libelle', "Elite 2")->first();
             $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.drapeau,j.nom,j.nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.')');
             return view('elite2.joueur')
-            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('joueurs', $joueurs)
             ->with('saisons', $saisons)
             ->with('detail_competition_saisons', $detail_competition_saisons);
         }
         else
         {
             $saisons = Saison::orderBy('libelle','desc')->get();
-            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
             $competition = Competition::where('libelle', "Elite 2")->first();
             $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            $joueurs =  DB::select('SELECT c.id,s.id AS saison_id,j.id AS joueur_id,j.photo,j.drapeau,j.nom,j.nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.' AND club_id='.$request->club_id.')');
             return view('elite2.joueur')
-            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('joueurs', $joueurs)
             ->with('saisons', $saisons)
             ->with('detail_competition_saisons', $detail_competition_saisons);
         }
@@ -206,22 +208,22 @@ class JoueurController extends Controller
         if($request->club_id == null)
         {
             $saisons = Saison::orderBy('libelle','desc')->get();
-            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where(['saison_id', $request->saison_id])->orderBy('created_at','desc')->paginate(10);
             $competition = Competition::where('libelle', "Guinness super league")->first();
             $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.drapeau,j.nom,j.nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.')');
             return view('guinness.joueur')
-            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('joueurs', $joueurs)
             ->with('saisons', $saisons)
             ->with('detail_competition_saisons', $detail_competition_saisons);
         }
         else
         {
             $saisons = Saison::orderBy('libelle','desc')->get();
-            $detail_club_saisons = DetailClubSaison::with('joueur','poste')->where([['saison_id', $request->saison_id], ['club_id', $request->club_id]])->orderBy('created_at','desc')->paginate(10);
             $competition = Competition::where('libelle', "Guinness super league")->first();
             $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            $joueurs =  DB::select('SELECT c.id,s.id AS saison_id,j.id AS joueur_id,j.photo,j.drapeau,j.nom,j.nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.' AND club_id='.$request->club_id.')');
             return view('guinness.joueur')
-            ->with('detail_club_saisons', $detail_club_saisons)
+            ->with('joueurs', $joueurs)
             ->with('saisons', $saisons)
             ->with('detail_competition_saisons', $detail_competition_saisons);
         }

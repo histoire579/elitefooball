@@ -5,17 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Matche extends Model
+class Resultat extends Model
 {
     use HasFactory;
     protected $fillable = [
         'saison_id',
         'competition_id',
         'journee_id',
+        'match_id',
         'phase_id',
         'stade_id',
         'club1_id',
+        'nbre_but_club1',
         'club2_id',
+        'nbre_but_club2',
         'arbitre1_id',
         'arbitre2_id',
         'arbitre3_id',
@@ -34,6 +37,10 @@ class Matche extends Model
 
     public function journee(){
         return $this->belongsTo('App\Models\Journee','journee_id');
+    }
+
+    public function match(){
+        return $this->belongsTo('App\Models\Match','match_id');
     }
 
     public function phase(){
@@ -66,21 +73,5 @@ class Matche extends Model
 
     public function arbitre4(){
         return $this->belongsTo('App\Models\Arbitre','arbitre4_id');
-    }
-
-    public function detail_match(){
-        return $this->hasMany('App\Models\DetailMatch');
-    }
-
-    public function statistique_joueur(){
-        return $this->hasMany('App\Models\StatistiqueJoueur');
-    }
-
-    public function statistique_club(){
-        return $this->hasMany('App\Models\StatistiqueClub');
-    }
-
-    public function resultat(){
-        return $this->hasMany('App\Models\Resultat');
     }
 }
