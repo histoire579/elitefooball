@@ -18,12 +18,13 @@ class CreateJoueursTable extends Migration
             $table->string('photo', 255)->nullable();
             $table->string('nom', 100);
             $table->date('date_nais');
-            $table->string('nationalite', 60);
+            $table->string('nationalite', 100);
             $table->string('nationalite_en', 60);
-            $table->string('lieu_nais', 60);
+            $table->string('drapeau', 255);
+            $table->string('lieu_nais', 100);
             $table->integer('taille');
             $table->integer('poids');
-            $table->string('pied_fort', 60);
+            $table->string('pied_fort', 100);
             $table->timestamps();
         });
     }

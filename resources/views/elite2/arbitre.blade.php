@@ -24,63 +24,45 @@
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">ARBITRES</h4>
-								<div class="row mb-6">
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<form action="" method="get">
+									@csrf
+									<div class="row mb-6">
+										<div class="col-md-9">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" aria-label="Default select example">
+													@foreach ($saisons as $saison)
+														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<button class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
-									</div>
-								</div>
+								</form>
 								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
-													<tr>
-														<th scope="col">Arbitres</th>
-														<th scope="col">Nombre de matchs</th>
-														<th scope="col">Carton jaunes</th>
-														<th scope="col">Carton rouges</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<th>...</th>
-													</tr>
-													<tr>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<th>...</th>
-													</tr>
-													<tr>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<th>...</th>
-													</tr>
-													<tr>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<th>...</th>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+									<div class="card table-responsive">
+										<table class="table-hover table">
+											<thead>
+												<tr>
+													<th scope="col">Arbitres</th>
+													<th scope="col">Nombre de matchs</th>
+													<th scope="col">Carton jaunes</th>
+													<th scope="col">Carton rouges</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><img src="" style="height: 50px; width: 50px;" alt="">...</td>
+													<td>...</td>
+													<td>...</td>
+													<td>...</td>
+													<td><a href="" class="btn btn-primary" style="height: 5px;">Detail</a></td>
+												</tr>
+											</tbody>
+										</table>
 										<!--/.card-body -->
-
 									</div>
 								</div>
 								<!--/.row -->
@@ -90,10 +72,7 @@
 					<!-- /.tab-content -->
 				</div>
 				<!--/column -->
-
-
 			</div>
-
 		</div>
 		<!-- /.container -->
 	</section>

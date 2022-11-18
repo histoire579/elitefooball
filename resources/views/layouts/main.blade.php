@@ -10,7 +10,7 @@
 		content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
 	<meta name="author" content="elemis">
 	@yield('extra-meta')
-	<title>Elitefootball </title>
+	<title>EliteFootball </title>
 	<link href="{{ asset('dist/assets/img/favicon.png') }}" rel="shortcut icon">
 	<link href="{{ asset('dist/assets/css/plugins.css') }}" rel="stylesheet">
 	<link href="{{ asset('dist/assets/css/style.css') }}" rel="stylesheet">
@@ -26,7 +26,7 @@
       <nav class="navbar navbar-expand-lg center-nav navbar-light navbar-bg-light">
         <div class="container flex-lg-row flex-nowrap align-items-center">
           <div class="navbar-brand w-100">
-            <a href="./index.html">
+            <a href="/menu">
               <img src="dist//assets/img/logo.png" srcset="dist//assets/img/logo@2x.png 2x" alt="" />
             </a>
           </div>
@@ -57,17 +57,17 @@
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('club_elite_two') }}">
                             
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_elite_two') }}">
                             
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_elite_two') }}">
                             
                             <span>Arbitres</span>
                           </a>
@@ -86,7 +86,7 @@
                   <!--/.dropdown-menu -->
                 </li>
                 <li class="nav-item dropdown dropdown-mega">
-                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Elite 2</a>
+                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Guinness super league</a>
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
@@ -105,17 +105,17 @@
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('club_elite_guinness') }}">
                             
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_elite_guinness') }}">
                             
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
+                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_elite_guinness') }}">
                             
                             <span>Arbitres</span>
                           </a>
@@ -181,7 +181,6 @@
                   </ul>
                   <!--/.dropdown-menu -->
                 </li>
-                
                 <li class="nav-item dropdown dropdown-mega">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Autres compétitions</a>
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
@@ -255,11 +254,10 @@
           <div class="navbar-other w-100 d-flex ms-auto">
             <ul class="navbar-nav flex-row align-items-center ms-auto">
               <li class="nav-item dropdown language-select text-uppercase">
-                <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En</a>
+                <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fr</a>
                 <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="dropdown-item" href="#">Fr</a></li>
                   <li class="nav-item"><a class="dropdown-item" href="#">En</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="#">De</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="#">Es</a></li>
                 </ul>
               </li>
               <li class="nav-item d-none d-md-block">

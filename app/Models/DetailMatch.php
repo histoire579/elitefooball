@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetailMatch extends Model
 {
-    use HasFactory;
+    use HasFactory;    
     protected $fillable = [
         'saison_id',
         'match_id',

@@ -18,10 +18,11 @@ class CreateArbitresTable extends Migration
             $table->string('photo', 255)->nullable();
             $table->string('nom', 100);
             $table->date('date_nais');
-            $table->string('nationalite', 60);
+            $table->string('drapeau', 255);
+            $table->string('nationalite', 100);
             $table->string('nationalite_en', 60);
-            $table->string('lieu_nais', 60);
-            $table->string('status');
+            $table->string('lieu_nais', 100);
+            $table->string('status', 100);
             $table->date('annee_debut_elite');
             $table->timestamps();
         });

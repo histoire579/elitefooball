@@ -15,13 +15,16 @@ class Matche extends Model
         'phase_id',
         'stade_id',
         'club1_id',
+        'nbre_but_club1',
         'club2_id',
+        'nbre_but_club2',
         'arbitre1_id',
         'arbitre2_id',
         'arbitre3_id',
         'arbitre4_id',
         'date',
-        'heure'
+        'heure',
+        'type'
     ];
 
     public function saison(){
@@ -68,10 +71,6 @@ class Matche extends Model
         return $this->belongsTo('App\Models\Arbitre','arbitre4_id');
     }
 
-    public function feuille_match(){
-        return $this->hasMany('App\Models\FeuilleMatch');
-    }
-
     public function detail_match(){
         return $this->hasMany('App\Models\DetailMatch');
     }
@@ -82,5 +81,9 @@ class Matche extends Model
 
     public function statistique_club(){
         return $this->hasMany('App\Models\StatistiqueClub');
+    }
+
+    public function resultat(){
+        return $this->hasMany('App\Models\Resultat');
     }
 }

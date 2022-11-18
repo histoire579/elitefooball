@@ -12,6 +12,7 @@ class Arbitre extends Model
         'photo',
         'nom',
         'date_nais',
+        'drapeau',
         'nationalite',
         'nationalite_en',
         'lieu_nais',

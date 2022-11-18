@@ -22,4 +22,8 @@ class FeuilleMatch extends Model
     public function club(){
         return $this->belongsTo('App\Models\Club','club_id');
     }
+
+    public function joueur(){
+        return $this->belongsTo('App\Models\Joueur','joueur_id');
+    }
 }

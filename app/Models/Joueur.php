@@ -14,6 +14,7 @@ class Joueur extends Model
         'date_nais',
         'nationalite',
         'nationalite_en',
+        'drapeau',
         'lieu_nais',
         'taille',
         'poids',

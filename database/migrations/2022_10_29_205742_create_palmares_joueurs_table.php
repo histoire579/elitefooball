@@ -21,7 +21,7 @@ class CreatePalmaresJoueursTable extends Migration
             $table->foreign('competition_id')->references('id')->on('competitions')->onDelete('restrict');
             $table->unsignedInteger('joueur_id');
             $table->foreign('joueur_id')->references('id')->on('joueurs')->onDelete('restrict');
-            $table->string('recompence');
+            $table->string('recompence', 100);
             $table->string('recompence_en');
             $table->timestamps();
         });

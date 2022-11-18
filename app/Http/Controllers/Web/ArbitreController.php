@@ -1,20 +1,45 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
+use App\Models\Arbitre;
+use App\Models\Saison;
 use Illuminate\Http\Request;
 
-
-class AccueilController extends Controller
+class ArbitreController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index_arbitre_one()
     {
-        return view('menu');
+        $saisons = Saison::orderBy('libelle','desc')->get();
+        $saison_id = $saisons->max('id');
+        return view('elite1.arbitre')
+        ->with('saisons', $saisons);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index_arbitre_two()
+    {
+        
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index_arbitre_guinness()
+    {
+        
     }
 
     /**
@@ -41,10 +66,10 @@ class AccueilController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Arbitre  $arbitre
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Arbitre $arbitre)
     {
         //
     }
@@ -52,10 +77,10 @@ class AccueilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Arbitre  $arbitre
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Arbitre $arbitre)
     {
         //
     }
@@ -64,10 +89,10 @@ class AccueilController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Arbitre  $arbitre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Arbitre $arbitre)
     {
         //
     }
@@ -75,10 +100,10 @@ class AccueilController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Arbitre  $arbitre
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Arbitre $arbitre)
     {
         //
     }

@@ -24,64 +24,61 @@
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">JOUEURS</h4>
-								<div class="row mb-6">
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<form action="{{ route('joueur_by_club_two') }}" method="get">
+									@csrf
+									<div class="row mb-6">
+										<div class="col-md-4">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
+													@foreach ($saisons as $saison)
+														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+	
+										<div class="col-md-4">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="club_id" id="club_id" aria-label="Default select example">
+													<option selected>Selectionner un club</option>
+													@foreach ($detail_competition_saisons as $detail_competition_saison)
+														<option value="{{ $detail_competition_saison->club->id }}">{{ $detail_competition_saison->club->nom }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<button type="submit" class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
-
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner un club</option>
-												<option value="1">club 1</option>
-												<option value="2">club 2</option>
-												<option value="3">club 3</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
-									</div>
-								</div>
+								</form>
 								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
+									<div class="card table-responsive">
+										<table class="table-hover table">
+											<thead>
+												<tr>
+													<th scope="col">Joueurs</th>
+													<th scope="col">Club</th>
+													<th scope="col">Nationalité</th>
+													<th scope="col">Postes</th>
+													<th scope="col">Dorssad</th>
+													<th scope="col">Pieds fort</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($joueurs as $joueur)
 													<tr>
-														<th scope="col">Joueurs</th>
-														<th scope="col">Postes</th>
-														<th scope="col">Nationnalié</th>
+														<td><img src="{{ asset($joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->nom }}</td>
+														<td><img src="{{ asset($joueur->logo) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->club }}</td>
+														<td><img src="{{ asset($joueur->drapeau) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->nationalite }}</td>
+														<td>{{ $joueur->poste }}</th>
+														<td>{{ $joueur->dorssad }}</td>
+														<td>{{ $joueur->pied_fort }}</td>
+														<td><a href="{{ route('detail_joueur_elite_two', [$joueur->saison_id, $joueur->joueur_id]) }}" class="btn btn-primary" style="height: 5px;">Detail</a></td>
 													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>...</td>
-														<th>...</th>
-														<td>Drapeau ---- Nom</td>
-													</tr>
-													<tr>
-														<td>...</td>
-														<th>...</th>
-														<td>Drapeau ---- Nom</td>
-													</tr>
-													<tr>
-														<td>...</td>
-														<th>...</th>
-														<td>Drapeau ---- Nom</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-										<!--/.card-body -->
-
+												@endforeach
+											</tbody>
+										</table>
 									</div>
 								</div>
 								<!--/.row -->
@@ -91,10 +88,7 @@
 					<!-- /.tab-content -->
 				</div>
 				<!--/column -->
-
-
 			</div>
-
 		</div>
 		<!-- /.container -->
 	</section>

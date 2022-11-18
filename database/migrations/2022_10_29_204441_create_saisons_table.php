@@ -15,7 +15,7 @@ class CreateSaisonsTable extends Migration
     {
         Schema::create('saisons', function (Blueprint $table) {
             $table->integerIncrements('id');
-            $table->string('libelle', 60)->unique();
+            $table->string('libelle', 100)->unique();
             $table->string('libelle_en', 60)->unique();
             $table->timestamps();
         });
