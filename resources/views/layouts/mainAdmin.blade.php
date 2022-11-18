@@ -171,6 +171,20 @@
                             </li>
 
                             <li>
+                                <a href="/administration/poule" class=" waves-effect">
+                                    <i class="mdi mdi-file-powerpoint-box-outline"></i>
+                                    <span>Phase</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/administration/journee" class=" waves-effect">
+                                    <i class="mdi mdi-file-powerpoint-box-outline"></i>
+                                    <span>Journées</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="/administration/arbitre" class=" waves-effect">
                                     <i class="mdi mdi-format-underline"></i>
                                     <span>Arbitres</span>
@@ -191,7 +205,12 @@
                                 </a>
                             </li>
 
-
+                            <li>
+                                <a href="/administration/boutique" class=" waves-effect">
+                                    <i class="mdi mdi-file-code-outline"></i>
+                                    <span>Boutiques</span>
+                                </a>
+                            </li>
                             
 
                             <li>

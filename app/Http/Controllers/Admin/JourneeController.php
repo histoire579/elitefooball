@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Boutique;
+use App\Models\Journee;
+use App\Models\Saison;
 use Illuminate\Http\Request;
 
-class BoutiqueController extends Controller
+class JourneeController extends Controller
 {
       /**
      * Create a new controller instance.
@@ -18,7 +19,6 @@ class BoutiqueController extends Controller
         $this->middleware('auth:admin');
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -26,13 +26,14 @@ class BoutiqueController extends Controller
      */
     public function index()
     {
-        $boutique=Boutique::all();
-        return view('admin.page.boutique.index')->with('boutiques',$boutique);
+        $journee=Journee::all();
+        return view('admin.page.journee.index')->with('journees',$journee);
     }
 
     public function Add()
     {
-        return view('admin.page.boutique.add');
+        $saison=Saison::orderBy('created_at','desc')->get();
+        return view('admin.page.journee.add')->with('saisons',$saison);
     }
 
     /**
@@ -53,18 +54,14 @@ class BoutiqueController extends Controller
      */
     public function store(Request $request)
     {
-        $boutique=new Boutique();
-        $boutique->lieu=$request->lieu;
-        $boutique->telephone=$request->telephone;
-        $boutique->horaire=$request->horaire;
-        $boutique->horaire_en=$request->horaire_en;
-        $boutique->maillot_v=$request->maillot_v;
-        $boutique->gajet_v=$request->gajet_v;
-        $boutique->tikect_v=$request->tikect_v;
+        $journee=new Journee();
+        $journee->libelle=$request->libelle;
+        $journee->libelle_en=$request->libelle_en;
+        $journee->saison_id=$request->saison_id;
         
-        $boutique->save();
+        $journee->save();
 
-        if ($boutique) {
+        if ($journee) {
             return redirect()->back()->with('success','Enregistrer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');
@@ -74,10 +71,10 @@ class BoutiqueController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Boutique  $boutique
+     * @param  \App\Models\Journee  $journee
      * @return \Illuminate\Http\Response
      */
-    public function show(Boutique $boutique)
+    public function show(Journee $journee)
     {
         //
     }
@@ -85,37 +82,34 @@ class BoutiqueController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Boutique  $boutique
+     * @param  \App\Models\Journee  $journee
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $boutique=Boutique::find($id);
-        return view('admin.page.boutique.update')->with('boutique',$boutique);
+        $journee=Journee::find($id);
+        $saison=Saison::orderBy('created_at','desc')->get();
+        return view('admin.page.journee.update')->with('journee',$journee)->with('saisons',$saison);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Boutique  $boutique
+     * @param  \App\Models\Journee  $journee
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $boutique=Boutique::find($id);
-        $boutique->lieu=$request->lieu;
-        $boutique->telephone=$request->telephone;
-        $boutique->horaire=$request->horaire;
-        $boutique->horaire_en=$request->horaire_en;
-        $boutique->maillot_v=$request->maillot_v;
-        $boutique->gajet_v=$request->gajet_v;
-        $boutique->tikect_v=$request->tikect_v;
+        $journee=Journee::find($id);
+        $journee->libelle=$request->libelle;
+        $journee->libelle_en=$request->libelle_en;
+        $journee->saison_id=$request->saison_id;
         
-        $boutique->save();
+        $journee->save();
 
-        if ($boutique) {
-            return redirect()->route('administration.boutique')->with('success','Enregistrer avec succès!');
+        if ($journee) {
+            return redirect()->route('administration.journee')->with('success','Enregistrer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');
         }
@@ -124,15 +118,15 @@ class BoutiqueController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Boutique  $boutique
+     * @param  \App\Models\Journee  $journee
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $boutique=Boutique::find($id);
+        $journee=Journee::find($id);
        
-        $boutique->delete();
-        if ($boutique){
+        $journee->delete();
+        if ($journee){
             return redirect()->back()->with('success','Supprimer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');

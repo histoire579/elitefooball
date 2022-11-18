@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Boutique;
+use App\Models\Phase;
+use App\Models\Saison;
 use Illuminate\Http\Request;
 
-class BoutiqueController extends Controller
+class PouleController extends Controller
 {
       /**
      * Create a new controller instance.
@@ -18,7 +19,6 @@ class BoutiqueController extends Controller
         $this->middleware('auth:admin');
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -26,13 +26,14 @@ class BoutiqueController extends Controller
      */
     public function index()
     {
-        $boutique=Boutique::all();
-        return view('admin.page.boutique.index')->with('boutiques',$boutique);
+        $phase=Phase::all();
+        return view('admin.page.poule.index')->with('poules',$phase);
     }
 
     public function Add()
     {
-        return view('admin.page.boutique.add');
+        $saison=Saison::orderBy('created_at','desc')->get();
+        return view('admin.page.poule.add')->with('saisons',$saison);
     }
 
     /**
@@ -53,18 +54,13 @@ class BoutiqueController extends Controller
      */
     public function store(Request $request)
     {
-        $boutique=new Boutique();
-        $boutique->lieu=$request->lieu;
-        $boutique->telephone=$request->telephone;
-        $boutique->horaire=$request->horaire;
-        $boutique->horaire_en=$request->horaire_en;
-        $boutique->maillot_v=$request->maillot_v;
-        $boutique->gajet_v=$request->gajet_v;
-        $boutique->tikect_v=$request->tikect_v;
+        $phase=new Phase();
+        $phase->libelle=$request->libelle;
+        $phase->saison_id=$request->saison_id;
         
-        $boutique->save();
+        $phase->save();
 
-        if ($boutique) {
+        if ($phase) {
             return redirect()->back()->with('success','Enregistrer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');
@@ -74,10 +70,10 @@ class BoutiqueController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Boutique  $boutique
+     * @param  \App\Models\Phase  $phase
      * @return \Illuminate\Http\Response
      */
-    public function show(Boutique $boutique)
+    public function show(Phase $phase)
     {
         //
     }
@@ -85,37 +81,33 @@ class BoutiqueController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Boutique  $boutique
+     * @param  \App\Models\Phase  $phase
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $boutique=Boutique::find($id);
-        return view('admin.page.boutique.update')->with('boutique',$boutique);
+        $phase=Phase::find($id);
+        $saison=Saison::orderBy('created_at','desc')->get();
+        return view('admin.page.poule.update')->with('poule',$phase)->with('saisons',$saison);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Boutique  $boutique
+     * @param  \App\Models\Phase  $phase
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $boutique=Boutique::find($id);
-        $boutique->lieu=$request->lieu;
-        $boutique->telephone=$request->telephone;
-        $boutique->horaire=$request->horaire;
-        $boutique->horaire_en=$request->horaire_en;
-        $boutique->maillot_v=$request->maillot_v;
-        $boutique->gajet_v=$request->gajet_v;
-        $boutique->tikect_v=$request->tikect_v;
+        $phase=Phase::find($id);
+        $phase->libelle=$request->libelle;
+        $phase->saison_id=$request->saison_id;
         
-        $boutique->save();
+        $phase->save();
 
-        if ($boutique) {
-            return redirect()->route('administration.boutique')->with('success','Enregistrer avec succès!');
+        if ($phase) {
+            return redirect()->route('administration.poule')->with('success','Enregistrer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');
         }
@@ -124,15 +116,15 @@ class BoutiqueController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Boutique  $boutique
+     * @param  \App\Models\Phase  $phase
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $boutique=Boutique::find($id);
+        $phase=Phase::find($id);
        
-        $boutique->delete();
-        if ($boutique){
+        $phase->delete();
+        if ($phase){
             return redirect()->back()->with('success','Supprimer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');

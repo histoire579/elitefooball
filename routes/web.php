@@ -150,4 +150,20 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/administration/joueur/edit/{id}','JoueurController@edit')->name('administration.joueur.edit');
     Route::post('/administration/joueur/edit/{id}','JoueurController@update');
     Route::get('/administration/joueur/destroy/{id}','JoueurController@destroy')->name('administration.joueur.delete');
+
+    //poule
+    Route::get('/administration/poule','PouleController@index')->name('administration.poule');
+    Route::post('/administration/poule','PouleController@store');
+    Route::get('/administration/poule/add','PouleController@Add')->name('administration.poule-add');
+    Route::get('/administration/poule/edit/{id}','PouleController@edit')->name('administration.poule.edit');
+    Route::post('/administration/poule/edit/{id}','PouleController@update');
+    Route::get('/administration/poule/destroy/{id}','PouleController@destroy')->name('administration.poule.delete');
+
+    //journee
+    Route::get('/administration/journee','JourneeController@index')->name('administration.journee');
+    Route::post('/administration/journee','JourneeController@store');
+    Route::get('/administration/journee/add','JourneeController@Add')->name('administration.journee-add');
+    Route::get('/administration/journee/edit/{id}','JourneeController@edit')->name('administration.journee.edit');
+    Route::post('/administration/journee/edit/{id}','JourneeController@update');
+    Route::get('/administration/journee/destroy/{id}','JourneeController@destroy')->name('administration.journee.delete');
 });

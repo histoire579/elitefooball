@@ -19,7 +19,7 @@
                     <div class="form-group row">
                         <label for="telephone" class="col-md-2 col-form-label">Téléphone</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="text" name="telephone"  id="telephone" value="{{$boutique->telephone}}" required>
+                            <input class="form-control" type="tel" name="telephone"  id="telephone" value="{{$boutique->telephone}}" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -37,25 +37,25 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="maillot_v" class="col-md-2 col-form-label">maillot_v</label>
+                        <label for="maillot_v" class="col-md-2 col-form-label">maillot vendu</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="text" name="maillot_v"  id="maillot_v" value="{{$boutique->maillot_v}}" required>
+                            <input class="form-control" type="number" name="maillot_v"  id="maillot_v" value="{{$boutique->maillot_v}}" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="gajet_v" class="col-md-2 col-form-label">Gajet_v</label>
+                        <label for="gajet_v" class="col-md-2 col-form-label">Gajet vendu</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="text" name="gajet_v"  id="gajet_v" value="{{$boutique->gajet_v}}" required>
+                            <input class="form-control" type="number" name="gajet_v"  id="gajet_v" value="{{$boutique->gajet_v}}" required>
                         </div>
                     </div>
 
                     
 
                     <div class="form-group row">
-                        <label for="tikect_v" class="col-md-2 col-form-label">Date de début en élite</label>
+                        <label for="tikect_v" class="col-md-2 col-form-label">Tikects vendu</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="text" name="tikect_v"  id="tikect_v" value="{{$boutique->tikect_v}}" required>
+                            <input class="form-control" type="number" name="tikect_v"  id="tikect_v" value="{{$boutique->tikect_v}}" required>
                         </div>
                     </div>
 

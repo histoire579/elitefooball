@@ -29,9 +29,9 @@
                         <th>Lieu</th>
                         <th>Téléphone</th>
                         <th>Horaire</th>
-                        <th>maillot</th>
-                        <th>Gajet</th>
-                        <th>Tikect</th>
+                        <th>maillot vendu</th>
+                        <th>Gajet vendu</th>
+                        <th>Tikect vendu</th>
                         <th></th>
                         <th></th>
                     </tr>
