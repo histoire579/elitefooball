@@ -24,7 +24,9 @@ class Club extends Model
         'coach_p',
         'coach_ad',
         'stade_id',
-        'boutique_id'
+        'boutique_id',
+        'annee_creation',
+        'slug'
     ];
 
     public function stade(){

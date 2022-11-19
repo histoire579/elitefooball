@@ -26,6 +26,7 @@
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                     <tr>
+                        <th>Nom</th>
                         <th>Lieu</th>
                         <th>Téléphone</th>
                         <th>Horaire</th>
@@ -41,6 +42,7 @@
                     <tbody>
                      @foreach ($boutiques as $boutique)
                         <tr>
+                            <td>{{$boutique->libelle}}</td>
                             <td>{{$boutique->lieu}}</td>
                             <td>{{$boutique->telephone}}</td>
                             <td>{{$boutique->horaire}}</td>

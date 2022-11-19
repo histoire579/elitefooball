@@ -9,6 +9,7 @@ class Boutique extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'libelle',
         'lieu',
         'telephone',
         'horaire',

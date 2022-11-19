@@ -199,4 +199,12 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/administration/pays/edit/{id}','PaysController@edit')->name('administration.pays.edit');
     Route::post('/administration/pays/edit/{id}','PaysController@update');
     Route::get('/administration/pays/destroy/{id}','PaysController@destroy')->name('administration.pays.delete');
+
+    //club
+    Route::get('/administration/club','ClubController@index')->name('administration.club');
+    Route::post('/administration/club','ClubController@store');
+    Route::get('/administration/club/add','ClubController@Add')->name('administration.club-add');
+    Route::get('/administration/club/edit/{id}','ClubController@edit')->name('administration.club.edit');
+    Route::post('/administration/club/edit/{id}','ClubController@update');
+    Route::get('/administration/club/destroy/{id}','ClubController@destroy')->name('administration.club.delete');
 });

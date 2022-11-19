@@ -11,6 +11,13 @@
                 <form method="POST"  action="{{route('administration.boutique')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
+                        <label for="libelle" class="col-md-2 col-form-label">Nom</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="libelle"  id="libelle" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label for="lieu" class="col-md-2 col-form-label">Lieu</label>
                         <div class="col-md-10">
                             <input class="form-control" type="text" name="lieu"  id="lieu" required>

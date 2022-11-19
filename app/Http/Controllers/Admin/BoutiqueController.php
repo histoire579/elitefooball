@@ -54,6 +54,7 @@ class BoutiqueController extends Controller
     public function store(Request $request)
     {
         $boutique=new Boutique();
+        $boutique->libelle=$request->libelle;
         $boutique->lieu=$request->lieu;
         $boutique->telephone=$request->telephone;
         $boutique->horaire=$request->horaire;
@@ -104,6 +105,7 @@ class BoutiqueController extends Controller
     public function update(Request $request, $id)
     {
         $boutique=Boutique::find($id);
+        $boutique->libelle=$request->libelle;
         $boutique->lieu=$request->lieu;
         $boutique->telephone=$request->telephone;
         $boutique->horaire=$request->horaire;
