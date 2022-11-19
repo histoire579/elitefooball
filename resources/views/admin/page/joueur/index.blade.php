@@ -45,7 +45,7 @@
                             <td>{{$joueur->nom}}</td>
                             <td>{{$joueur->date_nais}}</td>
                             <td>{{$joueur->lieu_nais}}</td>
-                            <td>{{$joueur->nationalite}}</td>
+                            <td><img src="{{asset('/storage/imgs/'.$joueur->pays->drapeau)}}" alt="" ></td>
                             <td>{{$joueur->taille}}</td>
                             <td>{{$joueur->poids}}</td>
                             <td>{{$joueur->pied_fort}}</td>

@@ -23,7 +23,8 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-Route::get('/', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_one'])->name('arbitre_elite_one');
+// Route::get('/', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_one'])->name('arbitre_elite_one');
+Route::get('/', [App\Http\Controllers\AcceuilController::class, 'index'])->name('accueil');
 
 //*************Elite 1
 
@@ -190,4 +191,12 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/administration/journee/edit/{id}','JourneeController@edit')->name('administration.journee.edit');
     Route::post('/administration/journee/edit/{id}','JourneeController@update');
     Route::get('/administration/journee/destroy/{id}','JourneeController@destroy')->name('administration.journee.delete');
+
+    //pays
+    Route::get('/administration/pays','PaysController@index')->name('administration.pays');
+    Route::post('/administration/pays','PaysController@store');
+    Route::get('/administration/pays/add','PaysController@Add')->name('administration.pays-add');
+    Route::get('/administration/pays/edit/{id}','PaysController@edit')->name('administration.pays.edit');
+    Route::post('/administration/pays/edit/{id}','PaysController@update');
+    Route::get('/administration/pays/destroy/{id}','PaysController@destroy')->name('administration.pays.delete');
 });

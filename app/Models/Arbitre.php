@@ -12,15 +12,20 @@ class Arbitre extends Model
         'photo',
         'nom',
         'date_nais',
-        'drapeau',
+        'pays_id',
         'nationalite',
         'nationalite_en',
         'lieu_nais',
         'status',
-        'annee_debut_elite'
+        'annee_debut_elite',
+        'slug'
     ];
 
     public function match(){
         return $this->hasMany('App\Models\Match');
+    }
+
+    public function pays(){
+        return $this->belongsTo('App\Models\Pays','pays_id');
     }
 }

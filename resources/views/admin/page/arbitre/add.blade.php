@@ -36,6 +36,18 @@
                             <input class="form-control" type="text" name="nationalite_en"  id="nationalite_en" required>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="pays_id" class="col-md-2 col-form-label">Pays</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="pays_id" id="pays_id">
+                                @foreach ($pays as $item)
+                                    <option value="{{$item->id}}">{{$item->libelle}}</option>
+                                @endforeach
+                                
+                            </select>
+                            
+                        </div>
+                    </div>
 
                     <div class="form-group row">
                         <label for="lieu_nais" class="col-md-2 col-form-label">Lieu de naissance</label>

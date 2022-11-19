@@ -19,7 +19,6 @@ class CreateBoutiquesTable extends Migration
             $table->string('telephone', 60)->unique();
             $table->string('horaire', 60);
             $table->string('horaire_en', 60);
-            $table->string('horaire_en', 60);
             $table->integer('maillot_v');
             $table->integer('gajet_v');
             $table->integer('tikect_v');

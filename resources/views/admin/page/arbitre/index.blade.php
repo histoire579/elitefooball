@@ -43,7 +43,7 @@
                             <td>{{$arbitre->nom}}</td>
                             <td>{{$arbitre->date_nais}}</td>
                             <td>{{$arbitre->lieu_nais}}</td>
-                            <td>{{$arbitre->nationalite}}</td>
+                            <td><img src="{{asset('/storage/imgs/'.$arbitre->pays->drapeau)}}" alt="" ></td>
                             <td>{{$arbitre->status}}</td>
                             <td><a href="/administration/arbitre/edit/{{$arbitre->id}}" title="Modifier"> <i class="fas fa-edit" style="color: #08367A" aria-hidden="true"></i></a></td>
                             <td>

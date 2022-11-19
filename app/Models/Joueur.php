@@ -14,11 +14,13 @@ class Joueur extends Model
         'date_nais',
         'nationalite',
         'nationalite_en',
-        'drapeau',
+        'pays_id',
         'lieu_nais',
         'taille',
         'poids',
-        'pied_fort'
+        'pied_fort',
+        'pied_fort_en',
+        'slug'
     ];
 
     public function feuille_match(){
@@ -35,5 +37,13 @@ class Joueur extends Model
 
     public function palmares_joueur(){
         return $this->hasMany('App\Models\PalmaresJoueur');
+    }
+
+    public function match(){
+        return $this->belongsTo('App\Models\Match','match_id');
+    }
+
+    public function pays(){
+        return $this->belongsTo('App\Models\Pays','pays_id');
     }
 }

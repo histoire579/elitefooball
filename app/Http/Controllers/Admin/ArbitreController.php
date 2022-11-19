@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Arbitre;
+use App\Models\Pays;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -26,13 +28,14 @@ class ArbitreController extends Controller
      */
     public function index()
     {
-        $arbitre=Arbitre::all();
+        $arbitre=Arbitre::with('pays')->get();
         return view('admin.page.arbitre.index')->with('arbitres',$arbitre);
     }
 
     public function Add()
     {
-        return view('admin.page.arbitre.add');
+        $pays=Pays::orderBy('libelle','asc')->get();
+        return view('admin.page.arbitre.add')->with('pays',$pays);
     }
 
     /**
@@ -53,6 +56,7 @@ class ArbitreController extends Controller
      */
     public function store(Request $request)
     {
+        $slug=Str::slug($request->nom);
         $arbitre=new Arbitre();
         $arbitre->nom=$request->nom;
         $arbitre->date_nais=$request->date_nais;
@@ -61,6 +65,8 @@ class ArbitreController extends Controller
         $arbitre->lieu_nais=$request->lieu_nais;
         $arbitre->status=$request->status;
         $arbitre->annee_debut_elite=$request->annee_debut_elite;
+        $arbitre->pays_id=$request->pays_id;
+        $arbitre->slug=$slug;
         if (request()->file('photo')!=null) {
             $photo=request()->file('photo');
             $imageName=$photo->getClientOriginalName();
@@ -99,8 +105,9 @@ class ArbitreController extends Controller
      */
     public function edit($id)
     {
+        $pays=Pays::orderBy('libelle','asc')->get();
         $arbitre=Arbitre::find($id);
-        return view('admin.page.arbitre.update')->with('arbitre',$arbitre);
+        return view('admin.page.arbitre.update')->with('arbitre',$arbitre)->with('pays',$pays);
     }
 
     /**
@@ -112,6 +119,7 @@ class ArbitreController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $slug=Str::slug($request->nom);
         $arbitre=Arbitre::find($id);
         $arbitre->nom=$request->nom;
         $arbitre->date_nais=$request->date_nais;
@@ -120,6 +128,8 @@ class ArbitreController extends Controller
         $arbitre->lieu_nais=$request->lieu_nais;
         $arbitre->status=$request->status;
         $arbitre->annee_debut_elite=$request->annee_debut_elite;
+        $arbitre->pays_id=$request->pays_id;
+        $arbitre->slug=$slug;
         if (request()->file('photo')!=null) {
             if ($arbitre->photo != null) {
                 Storage::delete('public/imgs/' .$arbitre->photo);

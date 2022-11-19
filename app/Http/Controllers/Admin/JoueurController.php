@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Joueur;
+use App\Models\Pays;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -26,13 +28,14 @@ class JoueurController extends Controller
      */
     public function index()
     {
-        $joueur=Joueur::all();
+        $joueur=Joueur::with('pays')->get();
         return view('admin.page.joueur.index')->with('joueurs',$joueur);
     }
 
     public function Add()
     {
-        return view('admin.page.joueur.add');
+        $pays=Pays::orderBy('libelle','asc')->get();
+        return view('admin.page.joueur.add')->with('pays',$pays);
     }
 
     /**
@@ -53,6 +56,7 @@ class JoueurController extends Controller
      */
     public function store(Request $request)
     {
+        $slug=Str::slug($request->nom);
         $joueur=new Joueur();
         $joueur->nom=$request->nom;
         $joueur->date_nais=$request->date_nais;
@@ -61,7 +65,10 @@ class JoueurController extends Controller
         $joueur->lieu_nais=$request->lieu_nais;
         $joueur->taille=$request->taille;
         $joueur->poids=$request->poids;
+        $joueur->pays_id=$request->pays_id;
+        $joueur->pied_fort_en=$request->pied_fort_en;
         $joueur->pied_fort=$request->pied_fort;
+        $joueur->slug=$slug;
         if (request()->file('photo')!=null) {
             $photo=request()->file('photo');
             $imageName=$photo->getClientOriginalName();
@@ -100,8 +107,9 @@ class JoueurController extends Controller
      */
     public function edit($id)
     {
+        $pays=Pays::orderBy('libelle','asc')->get();
         $joueur=Joueur::find($id);
-        return view('admin.page.joueur.update')->with('joueur',$joueur);
+        return view('admin.page.joueur.update')->with('joueur',$joueur)->with('pays',$pays);
     }
 
     /**
@@ -113,6 +121,7 @@ class JoueurController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $slug=Str::slug($request->nom);
         $joueur=Joueur::find($id);
         $joueur->nom=$request->nom;
         $joueur->date_nais=$request->date_nais;
@@ -121,7 +130,10 @@ class JoueurController extends Controller
         $joueur->lieu_nais=$request->lieu_nais;
         $joueur->taille=$request->taille;
         $joueur->poids=$request->poids;
+        $joueur->pays_id=$request->pays_id;
+        $joueur->pied_fort_en=$request->pied_fort_en;
         $joueur->pied_fort=$request->pied_fort;
+        $joueur->slug=$slug;
         if (request()->file('photo')!=null) {
             if ($joueur->photo != null) {
                 Storage::delete('public/imgs/' .$joueur->photo);

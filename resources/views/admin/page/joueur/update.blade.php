@@ -36,6 +36,24 @@
                     </div>
 
                     <div class="form-group row">
+                        <label for="pays_id" class="col-md-2 col-form-label">Pays</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="pays_id" id="pays_id">
+                                @foreach ($pays as $item)
+                                    @if ($item->id ==$joueur->pays_id)
+                                    <option value="{{$item->id}}" selected>{{$item->libelle}}</option>
+                                    @else
+                                    <option value="{{$item->id}}">{{$item->libelle}}</option>
+                                    @endif
+                                    
+                                @endforeach
+                                
+                            </select>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label for="lieu_nais" class="col-md-2 col-form-label">Lieu de naissance</label>
                         <div class="col-md-10">
                             <input class="form-control" type="text" name="lieu_nais"  id="lieu_nais" value="{{$joueur->lieu_nais}}" required>
@@ -60,6 +78,13 @@
                         <label for="pied_fort" class="col-md-2 col-form-label">Pied fort</label>
                         <div class="col-md-10">
                             <input class="form-control" type="text" name="pied_fort"  id="pied_fort" value="{{$joueur->pied_fort}}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="pied_fort_en" class="col-md-2 col-form-label">Pied fort_en</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="pied_fort_en"  id="pied_fort_en" value="{{$joueur->pied_fort_en}}" required>
                         </div>
                     </div>
 

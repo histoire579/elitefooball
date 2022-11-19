@@ -227,6 +227,12 @@
                                 </a>
                             </li>
 
+                            <li>
+                                <a href="/administration/pays" class=" waves-effect">
+                                    <i class="mdi mdi-black-mesa"></i>
+                                    <span>Pays</span>
+                                </a>
+                            </li>
                             
 
                             <li>

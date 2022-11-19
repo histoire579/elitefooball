@@ -44,7 +44,18 @@
                         </div>
                     </div>
 
-                    
+                    <div class="form-group row">
+                        <label for="pays_id" class="col-md-2 col-form-label">Pays</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="pays_id" id="pays_id">
+                                @foreach ($pays as $item)
+                                    <option value="{{$item->id}}">{{$item->libelle}}</option>
+                                @endforeach
+                                
+                            </select>
+                            
+                        </div>
+                    </div>
 
                     <div class="form-group row">
                         <label for="taille" class="col-md-2 col-form-label">Taille</label>
@@ -64,6 +75,13 @@
                         <label for="pied_fort" class="col-md-2 col-form-label">Pied fort</label>
                         <div class="col-md-10">
                             <input class="form-control" type="text" name="pied_fort"  id="pied_fort" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="pied_fort_en" class="col-md-2 col-form-label">Pied fort_en</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="pied_fort_en"  id="pied_fort_en" required>
                         </div>
                     </div>
 
