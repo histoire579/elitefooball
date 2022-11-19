@@ -16,10 +16,6 @@ class Saison extends Model
         return $this->hasMany('App\Models\Journee');
     }
 
-    public function phase(){
-        return $this->hasMany('App\Models\Phase');
-    }
-
     public function match(){
         return $this->hasMany('App\Models\Match');
     }

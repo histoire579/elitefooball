@@ -21,8 +21,8 @@ class CreateDetailCompetitionSaisonsTable extends Migration
             $table->foreign('competition_id')->references('id')->on('competitions')->onDelete('restrict');
             $table->unsignedInteger('club_id');
             $table->foreign('club_id')->references('id')->on('clubs')->onDelete('restrict');
-            $table->unsignedInteger('journee_id');
-            $table->foreign('journee_id')->references('id')->on('journees')->onDelete('restrict');
+            $table->unsignedInteger('phase_id');
+            $table->foreign('phase_id')->references('id')->on('phases')->onDelete('restrict');
             $table->timestamps();
         });
     }

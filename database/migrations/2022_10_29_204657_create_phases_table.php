@@ -16,8 +16,6 @@ class CreatePhasesTable extends Migration
         Schema::create('phases', function (Blueprint $table) {
             $table->integerIncrements('id');
             $table->string('libelle', 100);
-            $table->unsignedInteger('saison_id');
-            $table->foreign('saison_id')->references('id')->on('saisons')->onDelete('restrict');
             $table->timestamps();
         });
     }

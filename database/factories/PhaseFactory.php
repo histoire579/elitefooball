@@ -14,8 +14,7 @@ class PhaseFactory extends Factory
     public function definition()
     {
         return [
-            'libelle' => $this->faker->sentence(1),
-            'saison_id' => rand(1,3)
+            'libelle' => $this->faker->sentence(1)
         ];
     }
 }
