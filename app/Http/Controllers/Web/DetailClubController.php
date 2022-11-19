@@ -37,10 +37,9 @@ class DetailClubController extends Controller
         $attaquants = DetailClubSaison::with('joueur')->where([['saison_id', $saison_id],['poste_id', $attaq->id]])->get();
         $nbre_attaq = $attaquants->count('id');
         $club = Club::with('stade','boutique')->where('id', $club_id)->first();
-        $calendiers = Matche::with('competition','journee','club1','club2','stade')->where([['saison_id', $saison_id],['type', 'Calendier'],['club1_id', $club_id]])->paginate(10);
-        $resultats = Matche::with('competition','journee','club1','club2','stade')->where([['saison_id', $saison_id],['type', 'Resultat'],['club1_id', $club_id]])->paginate(10);
+        $calendiers = Matche::with('competition','journee','club1','club2','stade')->where([['saison_id', $saison_id],['type', 'Calendier'],['club1_id', $club_id]])->orWhere([['saison_id', $saison_id],['type', 'Calendier'],['club2_id', $club_id]])->paginate(10);
+        $resultats = Matche::with('competition','journee','club1','club2','stade')->where([['saison_id', $saison_id],['type', 'Resultat'],['club1_id', $club_id]])->orWhere([['saison_id', $saison_id],['type', 'Calendier'],['club2_id', $club_id]])->paginate(10);
         $palmares_clubs = PalmaresClub::with('saison','competition')->where('club_id', $club_id)->get();
-        //dd($club);
         return view('elite1.detail_club')
         ->with('saisons', $saisons)
         ->with('club', $club)

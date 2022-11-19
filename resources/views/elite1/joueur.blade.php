@@ -40,7 +40,7 @@
 										<div class="col-md-4">
 											<div class="form-select-wrapper mb-4">
 												<select class="form-select" name="club_id" id="club_id" aria-label="Default select example">
-													<option selected>Selectionner un club</option>
+													<option  value="">Selectionner un club</option>
 													@foreach ($detail_competition_saisons as $detail_competition_saison)
 														<option value="{{ $detail_competition_saison->club->id }}">{{ $detail_competition_saison->club->nom }}</option>
 													@endforeach
@@ -59,7 +59,7 @@
 												<tr>
 													<th scope="col">Joueurs</th>
 													<th scope="col">Club</th>
-													<th scope="col">Nationalité</th>
+													<th scope="col">Pays d'origine</th>
 													<th scope="col">Postes</th>
 													<th scope="col">Dorssad</th>
 													<th scope="col">Pieds fort</th>
@@ -68,13 +68,12 @@
 											<tbody>
 												@foreach ($joueurs as $joueur)
 													<tr>
-														<td><img src="{{ asset($joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->nom }}</td>
+														<td><img src="{{ asset($joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  <a href="{{ route('detail_joueur_elite_one', [$joueur->saison_id, $joueur->joueur_id]) }}" style="color: dimgray;">{{ $joueur->nom }}</a></td>
 														<td><img src="{{ asset($joueur->logo) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->club }}</td>
 														<td><img src="{{ asset($joueur->drapeau) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->nationalite }}</td>
 														<td>{{ $joueur->poste }}</th>
 														<td>{{ $joueur->dorssad }}</td>
 														<td>{{ $joueur->pied_fort }}</td>
-														<td><a href="{{ route('detail_joueur_elite_one', [$joueur->saison_id, $joueur->joueur_id]) }}" class="btn btn-primary" style="height: 5px;">Detail</a></td>
 													</tr>
 												@endforeach
 											</tbody>

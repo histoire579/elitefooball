@@ -36,7 +36,7 @@
 							<div class="col-md-4">
 								<div class="form-select-wrapper mb-4">
 									<select class="form-select" name="journee_id" id="journee_id" aria-label="Default select example">
-										<option selected>Selectionner une journée</option>
+										<option value="">Selectionner une journée</option>
 										@foreach ($journees as $journee)
 											<option value="{{ $journee->id }}">{{ $journee->libelle }}</option>
 										@endforeach

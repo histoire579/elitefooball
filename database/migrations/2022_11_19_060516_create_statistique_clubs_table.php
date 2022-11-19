@@ -21,6 +21,7 @@ class CreateStatistiqueClubsTable extends Migration
             $table->foreign('match_id')->references('id')->on('matches')->onDelete('restrict');
             $table->unsignedInteger('club_id');
             $table->foreign('club_id')->references('id')->on('clubs')->onDelete('restrict');
+            $table->integer('tir');
             $table->integer('tir_cadre');
             $table->integer('but_marque');
             $table->integer('but_encaisse');

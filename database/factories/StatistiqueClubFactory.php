@@ -17,6 +17,7 @@ class StatistiqueClubFactory extends Factory
             'saison_id' => rand(1,3),
             'match_id' => rand(1,3),
             'club_id' => rand(1,6),
+            'tir' => rand(1,30),
             'tir_cadre' => rand(1,30),
             'but_marque' => rand(1,20),
             'but_encaisse' => rand(1,15),

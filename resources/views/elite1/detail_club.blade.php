@@ -413,33 +413,24 @@
 
 						<div class="tab-pane fade" id="tab1-5">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">CLASSEMENT BUTEURS</h4>
-								<div class="row mb-6">
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<h4 class="display-6 mb-8 mt-6 text-center">{{ $club->nom }}</h4>
+								<form action="" method="get">
+									@csrf
+									<div class="row mb-6">
+										<div class="col-md-6">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
+													@foreach ($saisons as $saison)
+														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<button class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
-
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
-									</div>
-								</div>
+								</form>
 								<div class="row gy-12 gx-xl-12">
 									<div class="card">
 										<div class="card-body table-responsive">
@@ -525,7 +516,7 @@
 									<div class="col-md-6">
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
+												<option value="">Selectionner une saison</option>
 												<option value="1">2022/2023</option>
 												<option value="2">2021/2022</option>
 												<option value="3">2020/2021</option>
@@ -536,7 +527,7 @@
 									<div class="col-md-6">
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
+												<option value="">Selectionner une journée</option>
 												<option value="1">Journée 1</option>
 												<option value="2">Journée 2</option>
 												<option value="3">Journée 3</option>
@@ -620,7 +611,7 @@
 										<div class="col-md-6">
 											<div class="form-select-wrapper mb-4">
 												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
-													<option selected>Toutes les saisons</option>
+													<option value="">Toutes les saisons</option>
 													@foreach ($saisons as $saison)
 														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
 													@endforeach

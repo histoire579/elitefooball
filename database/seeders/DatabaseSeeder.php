@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Competition::factory(3)->create();
         \App\Models\Stade::factory(3)->create();
         \App\Models\Boutique::factory(3)->create();
+        \App\Models\Pays::factory(3)->create();
         \App\Models\Joueur::factory(20)->create();
         \App\Models\Journee::factory(3)->create();
         \App\Models\Phase::factory(3)->create();

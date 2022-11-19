@@ -12,13 +12,16 @@ class Joueur extends Model
         'photo',
         'nom',
         'date_nais',
-        'nationalite',
-        'drapeau',
+        'pays_id',
         'lieu_nais',
         'taille',
         'poids',
         'pied_fort'
     ];
+
+    public function pays(){
+        return $this->belongsTo('App\Models\Pays','pays_id');
+    }
 
     public function feuille_match(){
         return $this->hasMany('App\Models\FeuilleMatch');
