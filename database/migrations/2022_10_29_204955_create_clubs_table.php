@@ -33,7 +33,7 @@ class CreateClubsTable extends Migration
             $table->string('slug', 255);
             $table->unsignedInteger('stade_id');
             $table->foreign('stade_id')->references('id')->on('stades')->onDelete('restrict');
-            $table->unsignedInteger('boutique_id')->nullable();
+            $table->unsignedInteger('boutique_id');
             $table->foreign('boutique_id')->references('id')->on('boutiques')->onDelete('restrict');
             $table->timestamps();
         });

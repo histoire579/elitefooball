@@ -207,4 +207,30 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/administration/club/edit/{id}','ClubController@edit')->name('administration.club.edit');
     Route::post('/administration/club/edit/{id}','ClubController@update');
     Route::get('/administration/club/destroy/{id}','ClubController@destroy')->name('administration.club.delete');
+
+    Route::get('/administration/detail-competion-saison','DetailSompetionSaisonController@index')->name('administration.detail-competion-saison');
+    Route::post('/administration/detail-competion-saison','DetailSompetionSaisonController@store');
+    Route::get('/administration/detail-competion-saison/add','DetailSompetionSaisonController@Add')->name('administration.detail-competion-saison-add');
+    Route::get('/administration/detail-competion-saison/edit/{id}','DetailSompetionSaisonController@edit')->name('administration.detail-competion-saison.edit');
+    Route::post('/administration/detail-competion-saison/edit/{id}','DetailSompetionSaisonController@update');
+    Route::get('/administration/detail-competion-saison/destroy/{id}','DetailSompetionSaisonController@destroy')->name('administration.detail-competion-saison.delete');
+
+    //effectif
+    Route::get('/administration/effectif','EffectifController@index')->name('administration.effectif');
+    Route::post('/administration/effectif','EffectifController@store');
+    Route::get('/administration/effectif/add','EffectifController@Add')->name('administration.effectif-add');
+    Route::get('/administration/effectif/edit/{id}','EffectifController@edit')->name('administration.effectif.edit');
+    Route::post('/administration/effectif/edit/{id}','EffectifController@update');
+    Route::get('/administration/effectif/destroy/{id}','EffectifController@destroy')->name('administration.effectif.delete');
+
+     //match
+     Route::get('/administration/match','MatchController@index')->name('administration.match');
+     Route::get('/administration/getClub','MatchController@getClub')->name('administration.getClub');
+     Route::get('/administration/getJournee','MatchController@getJournee')->name('administration.getJournee');
+     Route::post('/administration/match','MatchController@store');
+     Route::get('/administration/match/add','MatchController@Add')->name('administration.match-add');
+     Route::get('/administration/match/edit/{id}','MatchController@edit')->name('administration.match.edit');
+     Route::post('/administration/match/edit/{id}','MatchController@update');
+     Route::get('/administration/match/destroy/{id}','MatchController@destroy')->name('administration.match.delete');
 });
+

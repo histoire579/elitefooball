@@ -206,6 +206,27 @@
                             </li>
 
                             <li>
+                                <a href="/administration/effectif" class=" waves-effect">
+                                    <i class="mdi mdi-format-underline"></i>
+                                    <span>Effactifs</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/administration/detail-competion-saison" class=" waves-effect">
+                                    <i class="mdi mdi-format-underline"></i>
+                                    <span>Club d'une compétition par saison et par phase</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/administration/match" class=" waves-effect">
+                                    <i class="mdi mdi-format-underline"></i>
+                                    <span>Matchs</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="/administration/actualite" class=" waves-effect">
                                     <i class="mdi mdi-format-underline"></i>
                                     <span>Actualités</span>
@@ -412,6 +433,7 @@
         <script src="{{asset('dash/assets/js/pages/form-editor.init.js')}}"></script>
 
         <script src="/dash/assets/js/app.js"></script>
+        @yield('extra-js')
 
     </body>
 </html>

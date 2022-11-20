@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="taille" class="col-md-2 col-form-label">Taille</label>
+                        <label for="taille" class="col-md-2 col-form-label">Taille (cm)</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" name="taille"  id="taille" value="{{$joueur->taille}}" required>
                         </div>

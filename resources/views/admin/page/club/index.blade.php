@@ -44,7 +44,7 @@
                     <tbody>
                      @foreach ($club as $item)
                         <tr>
-                            <td><img src="{{asset('/storage/imgs/'.$item->logo)}}" alt="" style="height: 45px" ></td>
+                            <td><img src="{{asset('/storage/imgs/'.$item->logo)}}" alt="" style="height: 25px" ></td>
                             <td>{{$item->nom}}</td>
                             <td>{{$item->siege}}</td>
                             <td>{{$item->bp}}</td>
