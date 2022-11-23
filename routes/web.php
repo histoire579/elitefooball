@@ -23,7 +23,7 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-Route::get('/', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_one'])->name('arbitre_elite_one');
+Route::get('/', [App\Http\Controllers\AcceuilController::class, 'index'])->name('welcome');
 
 //*************Elite 1
 
@@ -41,6 +41,9 @@ Route::get('/elite1/detail_club_one/{club_id}', [App\Http\Controllers\Web\Detail
 //Arbitre
 Route::get('/elite1/arbitre_one', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_one'])->name('arbitre_elite_one');
 
+//Calendrier et Resultat
+Route::get('/elite1/calend_result', [App\Http\Controllers\Web\CalendResultController::class, 'index_calend_result_one'])->name('calend_result_one');
+
 //*************Elite 2
 
 //Joueur
@@ -57,6 +60,9 @@ Route::get('/elite2/detail_club_two/{club_id}', [App\Http\Controllers\Web\Detail
 //Arbitre
 Route::get('/elite2/arbitre_two', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_two'])->name('arbitre_elite_two');
 
+//Calendrier et Resultat
+Route::get('/elite2/calend_result_two', [App\Http\Controllers\Web\CalendResultController::class, 'index_calend_result_two'])->name('calend_result_two');
+
 //************Guinness
 
 //Joueur
@@ -72,6 +78,9 @@ Route::get('/guinness/detail_club_guinness/{club_id}', [App\Http\Controllers\Web
 
 //Arbitre
 Route::get('/guinness/arbitre_guinness', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_guinness'])->name('arbitre_elite_guinness');
+
+//Calendrier et Resultat
+Route::get('/elite1/calend_result_guinness', [App\Http\Controllers\Web\CalendResultController::class, 'index_calend_result_guinness'])->name('calend_result_guinness');
 
 Auth::routes();
 

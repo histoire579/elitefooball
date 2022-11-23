@@ -66,7 +66,6 @@
 					<!-- /.nav-tabs -->
 
 					<div class="tab-content">
-						
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">{{ $club->nom }}</h4>
@@ -399,7 +398,7 @@
 													<td>{{ $resultat->date }}</td>
 													<td>{{ $resultat->journee->libelle }}</td>
 													<td>{{ $resultat->heure }}</td>
-													<td><img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club1->nom }}<strong> {{ $resultat->nbre_but_club1 }} Score {{ $resultat->nbre_but_club2 }} </strong>{{ $resultat->club2->nom }} <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""></td>
+													<td><img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club1->nom }}<strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong>{{ $resultat->club2->nom }} <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""></td>
 													<td>{{ $resultat->stade->nom }}</td>
 												</tr>
 												@endforeach

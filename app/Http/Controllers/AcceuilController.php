@@ -14,7 +14,7 @@ class AcceuilController extends Controller
      */
     public function index()
     {
-        return view('elite1.club');
+        return view('menu');
     }
 
     /**
