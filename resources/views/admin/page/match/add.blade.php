@@ -88,10 +88,10 @@
                                 <label for="libelle_en" class="col-md-2 col-form-label">Phase</label>
                                 <div class="col-md-10">
                                     <select class="form-control" name="phase_id" id="phase_id">
-                                        
-                                        @foreach ($phases as $item)
+                                        <option value="0" disabled="true" selected>Choisir une phase</option>
+                                        {{-- @foreach ($phases as $item)
                                             <option value="{{$item->id}}">{{$item->libelle}}</option>
-                                        @endforeach
+                                        @endforeach --}}
                                         
                                     </select>
                                     
@@ -152,7 +152,7 @@
                             <div class="form-group row">
                                 <label for="nbre_but_club1" class="col-md-2 col-form-label">Nb but club1</label>
                                 <div class="col-md-10">
-                                    <input class="form-control" type="number" name="nbre_but_club1"  id="nbre_but_club1" >
+                                    <input class="form-control" disabled type="number" name="nbre_but_club1"  id="nbre_but_club1" >
                                 </div>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                             <div class="form-group row">
                                 <label for="nbre_but_club2" class="col-md-2 col-form-label">Nb but club2</label>
                                 <div class="col-md-10">
-                                    <input class="form-control" type="number" name="nbre_but_club2"  id="nbre_but_club2" >
+                                    <input class="form-control" disabled type="number" name="nbre_but_club2"  id="nbre_but_club2" >
                                 </div>
                             </div>
                         </div>
@@ -320,6 +320,7 @@
             });
 
             journee(saison_id,div);
+            phase(saison_id,div);
 
             // $.ajax({
             //     type:'get',
@@ -357,6 +358,29 @@
                     }
                     div.find('#journee_id').html("");
                     div.find('#journee_id').append(op);
+
+                },
+                error:function(){
+
+                }
+            });
+        }
+
+        function phase(id,div) {
+            var op="";
+            $.ajax({
+                type:'get',
+                url:"{{ route('administration.getPhase') }}",
+                data:{'saison_id':id,},
+                success:function(data){
+                    console.log('success');
+                    console.log(data);
+                    op+='<option value="0" disabled="true" selected>Choisissez une phase</option>';
+                    for (var i = 0; i < data.length; i++) {
+                        op+='<option value="'+data[i].id+'">'+data[i].libelle+'</option> ';  
+                    }
+                    div.find('#phase_id').html("");
+                    div.find('#phase_id').append(op);
 
                 },
                 error:function(){

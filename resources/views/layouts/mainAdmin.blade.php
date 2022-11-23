@@ -227,6 +227,13 @@
                             </li>
 
                             <li>
+                                <a href="/administration/feuille" class=" waves-effect">
+                                    <i class="mdi mdi-format-underline"></i>
+                                    <span>Feuille match</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="/administration/actualite" class=" waves-effect">
                                     <i class="mdi mdi-format-underline"></i>
                                     <span>Actualités</span>
@@ -433,6 +440,7 @@
         <script src="{{asset('dash/assets/js/pages/form-editor.init.js')}}"></script>
 
         <script src="/dash/assets/js/app.js"></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>
         @yield('extra-js')
 
     </body>

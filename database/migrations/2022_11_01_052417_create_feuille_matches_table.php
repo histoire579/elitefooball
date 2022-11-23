@@ -17,11 +17,12 @@ class CreateFeuilleMatchesTable extends Migration
             $table->integerIncrements('id');
             $table->unsignedInteger('match_id');
             $table->foreign('match_id')->references('id')->on('matches')->onDelete('restrict');
-            $table->unsignedInteger('club_id');
-            $table->foreign('club_id')->references('id')->on('clubs')->onDelete('restrict');
-            $table->unsignedInteger('joueur_id');
-            $table->foreign('joueur_id')->references('id')->on('joueurs')->onDelete('restrict');
-            $table->string('titularisation', 100);
+            $table->unsignedInteger('club1_id');
+            $table->unsignedInteger('club2_id');
+            $table->foreign('club1_id')->references('id')->on('clubs')->onDelete('restrict');
+            $table->foreign('club2_id')->references('id')->on('clubs')->onDelete('restrict');
+            $table->text('equipe_club1');
+            $table->text('equipe_club2');
             $table->timestamps();
         });
     }

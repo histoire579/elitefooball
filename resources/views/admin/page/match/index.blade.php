@@ -31,13 +31,14 @@
                         <th>Phase</th>
                         <th>Journée</th>
                         <th>Club1</th>
+ 
                         <th>Nb but</th>
-                        <th>Club1</th>
+                        <th>Club2</th>
+
                         <th>Nb but</th>
                         <th>Date</th>
                         <th>Heure</th>
-                        <th>Arbitre N1</th>
-                        <th>Arbitre N2</th>
+                        <th>Composition</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -47,19 +48,20 @@
                     <tbody>
                      @foreach ($matchs as $item)
                         <tr>
-                            <td><img src="{{asset('/storage/imgs/'.$item->logo)}}" alt="" style="height: 25px" ></td>
+                            
                             <td>{{$item->competition->libelle}}</td>
                             <td>{{$item->saison->libelle}}</td>
                             <td>{{$item->phase->libelle}}</td>
                             <td>{{$item->journee->libelle}}</td>
-                            <td>{{$item->club->nom}}</td>
+
+                            <td>{{$item->club1->nom}}</td>
                             <td>{{$item->nbre_but_club1}}</td>
-                            <td>{{$item->club->nom}}</td>
+
+                            <td>{{$item->club2->nom}}</td>
                             <td>{{$item->nbre_but_club2}}</td>
                             <td>{{$item->date}}</td>
                             <td>{{$item->heure}}</td>
-                            <td>{{$item->arbitre->nom}}</td>
-                            <td>{{$item->arbitre->nom}}</td>
+                            <td><a href="{{route('administration.getFeuille',[$item->id,$item->club1_id,$item->club2_id])}}" title="Feuille" class="btn btn-primary"> Voir la feuille de match</a></td>
                             <td><a href="/administration/match/edit/{{$item->id}}" title="Modifier"> <i class="fas fa-edit" style="color: #08367A" aria-hidden="true"></i></a></td>
                             <td>
                                 <form action="/administration/match/destroy/{{$item->id}}" method="DELETE">

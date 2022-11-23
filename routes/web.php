@@ -227,10 +227,24 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
      Route::get('/administration/match','MatchController@index')->name('administration.match');
      Route::get('/administration/getClub','MatchController@getClub')->name('administration.getClub');
      Route::get('/administration/getJournee','MatchController@getJournee')->name('administration.getJournee');
+     Route::get('/administration/getPhase','MatchController@getPhase')->name('administration.getPhase');
      Route::post('/administration/match','MatchController@store');
      Route::get('/administration/match/add','MatchController@Add')->name('administration.match-add');
      Route::get('/administration/match/edit/{id}','MatchController@edit')->name('administration.match.edit');
      Route::post('/administration/match/edit/{id}','MatchController@update');
      Route::get('/administration/match/destroy/{id}','MatchController@destroy')->name('administration.match.delete');
+
+     //effectif
+    Route::get('/administration/feuille','FeuilleMatchController@index')->name('administration.feuille');
+    Route::get('/administration/getEffectif','FeuilleMatchController@getEffectif')->name('administration.getEffectif');
+
+    Route::get('/administration/getFeuille/{match_id}/{club1_id}/{club2_id}','FeuilleMatchController@getFeuille')->name('administration.getFeuille');
+
+    Route::post('/administration/feuille','FeuilleMatchController@store');
+    Route::get('/administration/feuille/add','FeuilleMatchController@Add')->name('administration.feuille-add');
+    Route::get('/administration/feuille/AddFeuille','FeuilleMatchController@AddFeuille')->name('administration.feuille-AddFeuille');
+    Route::get('/administration/feuille/edit/{id}','FeuilleMatchController@edit')->name('administration.feuille.edit');
+    Route::post('/administration/feuille/edit/{id}','FeuilleMatchController@update');
+    Route::get('/administration/feuille/destroy/{id}','FeuilleMatchController@destroy')->name('administration.feuille.delete');
 });
 

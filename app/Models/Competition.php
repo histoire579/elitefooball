@@ -32,4 +32,8 @@ class Competition extends Model
     public function palmares_joueur(){
         return $this->hasMany('App\Models\PalmaresJoueur');
     }
+
+    public function feuille_match(){
+        return $this->hasMany('App\Models\FeuilleMatch');
+    }
 }
