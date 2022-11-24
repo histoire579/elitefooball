@@ -10,7 +10,7 @@ class FeuilleMatch extends Model
     use HasFactory;
     protected $fillable = [
         'competition_id',
-        'saisan_id',
+        'saison_id',
         'club1_id',
         'club2_id',
         'match_id',

@@ -22,9 +22,12 @@ class Matche extends Model
         'arbitre2_id',
         'arbitre3_id',
         'arbitre4_id',
+        'club_domicile',
+        'club_exterieur',
         'date',
         'heure',
-        'type'
+        'type',
+        'slug'
     ];
 
     public function saison(){
@@ -53,6 +56,14 @@ class Matche extends Model
 
     public function club2(){
         return $this->belongsTo('App\Models\Club','club2_id');
+    }
+
+    public function domicile(){
+        return $this->belongsTo('App\Models\Club','club_domicile');
+    }
+
+    public function exterieur(){
+        return $this->belongsTo('App\Models\Club','club_exterieur');
     }
 
     public function arbitre1(){

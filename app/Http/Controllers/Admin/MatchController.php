@@ -91,7 +91,7 @@ class MatchController extends Controller
     {
         $nom1=Club::find($request->club1_id);
         $nom2=Club::find($request->club2_id);
-        $slug=Str::slug($nom1->nom. 'V' .$nom2->nom);
+        $slug=Str::slug($nom1->nom. 'Vs' .$nom2->nom);
         $matche=new Matche();
         $matche->competition_id=$request->competition_id;
         $matche->saison_id=$request->saison_id;
@@ -100,8 +100,11 @@ class MatchController extends Controller
         $matche->stade_id=$request->stade_id;
         $matche->club1_id=$request->club1_id;
         $matche->nbre_but_club1=$request->nbre_but_club1;
+        $matche->club_domicile=$request->club1_id;
+
         $matche->club2_id=$request->club2_id;
         $matche->nbre_but_club2=$request->nbre_but_club2;
+        $matche->club_exterieur=$request->club2_id;
 
         $matche->arbitre1_id=$request->arbitre1_id;
         $matche->arbitre2_id=$request->arbitre2_id;
@@ -174,8 +177,11 @@ class MatchController extends Controller
         $matche->stade_id=$request->stade_id;
         $matche->club1_id=$request->club1_id;
         $matche->nbre_but_club1=$request->nbre_but_club1;
+        $matche->club_domicile=$request->club1_id;
+
         $matche->club2_id=$request->club2_id;
         $matche->nbre_but_club2=$request->nbre_but_club2;
+        $matche->club_exterieur=$request->club2_id;
 
         $matche->arbitre1_id=$request->arbitre1_id;
         $matche->arbitre2_id=$request->arbitre2_id;
@@ -190,7 +196,7 @@ class MatchController extends Controller
         $matche->save();
 
         if ($matche) {
-            return redirect()->oute('administration.match')->with('success','Enregistrer avec succès!');
+            return redirect()->route('administration.match')->with('success','Enregistrer avec succès!');
         }else{
             return redirect()->back()->with('error','Une erreur s\'est produite!');
         }
