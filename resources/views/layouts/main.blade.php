@@ -42,7 +42,7 @@
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
-                        <li class="col"><a class="dropdown-item" href="{{ route('welcome') }}">
+                        <li class="col"><a class="dropdown-item" href="{{ route('acceuil_one') }}">
                             
                             <span>Accueil</span>
                           </a>
@@ -90,7 +90,7 @@
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
-                        <li class="col"><a class="dropdown-item" href="{{ route('welcome') }}">
+                        <li class="col"><a class="dropdown-item" href="{{ route('acceuil_two') }}">
                             
                             <span>Accueil</span>
                           </a>
@@ -138,7 +138,7 @@
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
-                        <li class="col"><a class="dropdown-item" href="{{ route('welcome') }}">
+                        <li class="col"><a class="dropdown-item" href="{{ route('acceuil_guinness') }}">
                             
                             <span>Accueil</span>
                           </a>
@@ -186,7 +186,7 @@
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
-                        <li class="col"><a class="dropdown-item" href="{{ route('welcome') }}">
+                        <li class="col"><a class="dropdown-item" href="">
                             
                             <span>Accueil</span>
                           </a>
@@ -234,7 +234,7 @@
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
-                        <li class="col"><a class="dropdown-item" href="{{ route('welcome') }}">
+                        <li class="col"><a class="dropdown-item" href="">
                             
                             <span>Accueil</span>
                           </a>

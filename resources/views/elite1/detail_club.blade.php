@@ -332,8 +332,8 @@
 											<thead>
 												<tr>
 													<th scope="col">Compétitions</th>
-													<th scope="col">Dates</th>
 													<th scope="col">Journées/Phases</th>
+													<th scope="col">Dates</th>
 													<th scope="col">Matchs</th>
 													<th scope="col">Heures</th>
 													<th scope="col">Lieux</th>
@@ -343,9 +343,9 @@
 												@foreach ($calendiers as $calendier)
 												<tr>
 													<td>{{ $calendier->competition->libelle }}</td>
-													<td>{{ $calendier->date }}</td>
 													<td>{{ $calendier->journee->libelle }}</td>
-													<td><img src="{{ asset($calendier->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $calendier->club1->nom }} <strong>VS</strong> {{ $calendier->club2->nom }} <img src="{{ asset($calendier->club2->logo) }}" style="height: 50px; width: 50px;" alt=""></td>
+													<td>{{ $calendier->date }}</td>
+													<td>{{ $calendier->club1->nom }} <img src="{{ asset($calendier->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong>VS</strong> <img src="{{ asset($calendier->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $calendier->club2->nom }}</td>
 													<td>{{ $calendier->heure }}</td>
 													<td>{{ $calendier->stade->nom }}</td>
 												</tr>
@@ -384,10 +384,10 @@
 											<thead>
 												<tr>
 													<th scope="col">Compétitions</th>
-													<th scope="col">Dates</th>
 													<th scope="col">Journées/Phases</th>
-													<th scope="col">Heures</th>
+													<th scope="col">Dates</th>
 													<th scope="col">Matchs</th>
+													<th scope="col">Heures</th>
 													<th scope="col">Lieux</th>
 												</tr>
 											</thead>
@@ -395,10 +395,10 @@
 												@foreach ($resultats as $resultat)
 												<tr>
 													<td>{{ $resultat->competition->libelle }}</td>
-													<td>{{ $resultat->date }}</td>
 													<td>{{ $resultat->journee->libelle }}</td>
+													<td>{{ $resultat->date }}</td>
+													<td>{{ $resultat->club1->nom }} <img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong> <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club2->nom }}</td>
 													<td>{{ $resultat->heure }}</td>
-													<td><img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club1->nom }}<strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong>{{ $resultat->club2->nom }} <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""></td>
 													<td>{{ $resultat->stade->nom }}</td>
 												</tr>
 												@endforeach

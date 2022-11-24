@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Matche;
 use Illuminate\Http\Request;
 
 
@@ -12,9 +13,29 @@ class AcceuilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index_acceuil_one()
     {
-        return view('menu');
+        return view('elite1.acceuil');
+    }
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index_acceuil_two()
+    {
+        return view('elite2.acceuil');
+    }
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index_acceuil_guinness()
+    {
+        return view('guinness.acceuil');
     }
 
     /**
