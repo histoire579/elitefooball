@@ -26,8 +26,10 @@ class CreateMatchesTable extends Migration
             $table->unsignedInteger('stade_id');
             $table->foreign('stade_id')->references('id')->on('stades')->onDelete('restrict');
             $table->unsignedInteger('club1_id');
+            $table->string('club1_statut')->default('Dom')->comment('Dom, Ext');
             $table->foreign('club1_id')->references('id')->on('clubs')->onDelete('restrict');
             $table->unsignedInteger('club2_id');
+            $table->string('club2_statut')->default('Dom')->comment('Dom, Ext');
             $table->foreign('club2_id')->references('id')->on('clubs')->onDelete('restrict');
             $table->unsignedInteger('arbitre1_id');
             $table->foreign('arbitre1_id')->references('id')->on('arbitres')->onDelete('restrict');

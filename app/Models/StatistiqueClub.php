@@ -16,6 +16,7 @@ class StatistiqueClub extends Model
         'but_marque',
         'but_encaisse',
         'faute_comise',
+        'statut_match',
         'hors_jeux',
         'carton_jaune',
         'carton_rouge',
@@ -24,15 +25,18 @@ class StatistiqueClub extends Model
         'penalty_concede'
     ];
 
-    public function saison(){
-        return $this->belongsTo('App\Models\Saison','saison_id');
+    public function saison()
+    {
+        return $this->belongsTo('App\Models\Saison', 'saison_id');
     }
 
-    public function match(){
-        return $this->belongsTo('App\Models\Match','match_id');
+    public function match()
+    {
+        return $this->belongsTo('App\Models\Match', 'match_id');
     }
 
-    public function club(){
-        return $this->belongsTo('App\Models\Club','club_id');
+    public function club()
+    {
+        return $this->belongsTo('App\Models\Club', 'club_id');
     }
 }

@@ -21,6 +21,10 @@ class CreateStatistiqueJoueursTable extends Migration
             $table->foreign('match_id')->references('id')->on('matches')->onDelete('restrict');
             $table->unsignedInteger('joueur_id');
             $table->foreign('joueur_id')->references('id')->on('joueurs')->onDelete('restrict');
+            $table->unsignedInteger('club_id');
+            $table->foreign('club_id')->references('id')->on('clubs')->onDelete('restrict');
+            $table->unsignedInteger('competition_id');
+            $table->foreign('competition_id')->references('id')->on('competitions')->onDelete('restrict');
             $table->integer('tir_cadre');
             $table->integer('but_marque');
             $table->integer('passe_decisive');

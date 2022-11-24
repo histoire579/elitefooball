@@ -12,6 +12,7 @@ class StatistiqueJoueur extends Model
         'saison_id',
         'match_id',
         'joueur_id',
+        'club_id',
         'tir_cadre',
         'but_marque',
         'passe_decisive',
@@ -35,15 +36,23 @@ class StatistiqueJoueur extends Model
         'homme_match'
     ];
 
-    public function saison(){
-        return $this->belongsTo('App\Models\Saison','saison_id');
+    public function saison()
+    {
+        return $this->belongsTo('App\Models\Saison', 'saison_id');
     }
 
-    public function match(){
-        return $this->belongsTo('App\Models\Match','match_id');
+    public function match()
+    {
+        return $this->belongsTo('App\Models\Match', 'match_id');
     }
 
-    public function joueur(){
-        return $this->belongsTo('App\Models\Joueur','joueur_id');
+    public function joueur()
+    {
+        return $this->belongsTo('App\Models\Joueur', 'joueur_id');
+    }
+
+    public function club()
+    {
+        return $this->belongsTo('App\Models\Club', 'club_id');
     }
 }

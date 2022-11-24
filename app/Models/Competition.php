@@ -9,26 +9,32 @@ class Competition extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'id',
         'libelle'
     ];
 
-    public function match(){
+    public function match()
+    {
         return $this->hasMany('App\Models\Match');
     }
 
-    public function detail_competition_saison(){
+    public function detail_competition_saison()
+    {
         return $this->hasMany('App\Models\DetailCompetitionSaison');
     }
 
-    public function classement(){
+    public function classement()
+    {
         return $this->hasMany('App\Models\Classement');
     }
 
-    public function palmares_club(){
+    public function palmares_club()
+    {
         return $this->hasMany('App\Models\PalmaresClub');
     }
 
-    public function palmares_joueur(){
+    public function palmares_joueur()
+    {
         return $this->hasMany('App\Models\PalmaresJoueur');
     }
 }

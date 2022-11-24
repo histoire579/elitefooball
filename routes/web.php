@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TchatController;
+use App\Http\Controllers\Elite1\ClassementController;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,9 +32,8 @@ Route::get('/', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_
 //Elite 1
 Route::get('/elite1/joueur_one', [App\Http\Controllers\Web\JoueurController::class, 'index_elite_one'])->name('joueur_elite_one');
 Route::get('/elite1/joueur_by_club_one', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_one'])->name('joueur_by_club_one');
-Route::get('/elite1/classement', function () {
-    return view('elite1.classement');
-});
+Route::get('/elite1/classement', [ClassementController::class, 'index'])->name('index_classement');
+Route::get('/elite1/get_journee_et_phase_by_saison_ajax', [ClassementController::class, 'get_journee_et_phase_by_saison_ajax'])->name('get_journee_et_phase_by_saison_ajax');
 Route::get('/elite1/club', function () {
     return view('elite1.club');
 });
