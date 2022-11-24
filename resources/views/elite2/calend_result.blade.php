@@ -108,13 +108,13 @@
                                                     <table>
                                                         <tbody>
                                                             <tr>
-                                                                <td><img src="{{ asset('dist\assets\img\avatars\t1.jpg') }}" alt=""></td>
+                                                                <td><img src="{{ asset($photo) }}" alt=""></td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Nombre de but(s) : </td>
+                                                                <td>Nombre de but(s) : {{ $nbre_but }}</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Nom du joueur : </td>
+                                                                <td>Nom du joueur : {{ $meilleur_buteur }}</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -230,17 +230,17 @@
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
 												<div class="card-body">
-													<h4 class="display-8 mb-3">Meilleur buteur</h4>
+													<h4 class="display-8 mb-3">Meilleur Passeur</h4>
                                                     <table>
                                                         <tbody>
                                                             <tr>
-                                                                <td><img src="{{ asset('dist\assets\img\avatars\t1.jpg') }}" alt=""></td>
+                                                                <td><img src="{{ asset($photo2) }}" alt=""></td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Nombre de but(s) : </td>
+                                                                <td>Nombre de passe décisive(s) : {{ $nbre_passe }}</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Nom du joueur : </td>
+                                                                <td>Nom du joueur : {{ $meilleur_passeur }}</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>

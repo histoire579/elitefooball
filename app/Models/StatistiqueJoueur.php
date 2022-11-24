@@ -10,6 +10,7 @@ class StatistiqueJoueur extends Model
     use HasFactory;
     protected $fillable = [
         'saison_id',
+        'competition_id',
         'match_id',
         'joueur_id',
         'tir',
@@ -39,6 +40,10 @@ class StatistiqueJoueur extends Model
 
     public function saison(){
         return $this->belongsTo('App\Models\Saison','saison_id');
+    }
+
+    public function competition(){
+        return $this->belongsTo('App\Models\Competition','competition_id');
     }
 
     public function match(){
