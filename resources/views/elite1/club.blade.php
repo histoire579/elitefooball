@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.client')
 
 @section('content')
 	<section class="wrapper bg-soft-primary">
@@ -20,7 +20,7 @@
 			<div class="row gx-lg-8 gx-xl-12 gy-10 mb-md-17 align-items-center mb-14">
 				<div class="col-md-12 position-relative">
 					<h4 class="display-6 mb-8 mt-6 text-center">CLUBS</h4>
-					<form action="{{ route('club_journee_elite_one') }}" method="get">
+					<form action="{{ route('club_by_phase_one') }}" method="get">
 						@csrf
 						<div class="row">
 							<div class="col-md-4">
@@ -58,7 +58,7 @@
 							<div class="card">
 								<div class="card-body">
 									<img class="rounded-circle w-15 mb-4" src="{{ asset($club->logo) }}" alt="" />
-									<h4 class="mb-1"><a href="{{ route('detail_club_elite_one', $club->id) }}">{{ $club->club }}</a></h4>
+									<h4 class="mb-1"><a href="{{ route('detail_club_one', $club->id) }}">{{ $club->club }}</a></h4>
 									<div class="meta mb-2">{{ $club->stade }}</div>
 									<p class="mb-2"></p>
 									<nav class="nav social mb-0">

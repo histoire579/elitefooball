@@ -10,7 +10,7 @@
 		content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
 	<meta name="author" content="elemis">
 	@yield('extra-meta')
-	<title>EliteFootball </title>
+	<title>EliteFootball</title>
 	<link href="{{ asset('dist/assets/img/favicon.png') }}" rel="shortcut icon">
 	<link href="{{ asset('dist/assets/css/plugins.css') }}" rel="stylesheet">
 	<link href="{{ asset('dist/assets/css/style.css') }}" rel="stylesheet">
@@ -43,41 +43,33 @@
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
                         <li class="col"><a class="dropdown-item" href="{{ route('acceuil_one') }}">
-                            
                             <span>Accueil</span>
                           </a>
                         </li>
                         <li class="col"><a class="dropdown-item" href="{{ route('calend_result_one') }}">
-                            
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="/elite1/classement">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="{{ route('club_elite_one') }}">
-                            
+                        <li class="col"><a class="dropdown-item" href="{{ route('club_one') }}">
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_elite_one') }}">
-                            
+                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_one') }}">
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_elite_one') }}">
-                            
+                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_one') }}">
                             <span>Arbitres</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Statistiques</span>
                           </a>
                         </li>
-            
                       </ul>
                       <!--/.row -->
                     </li>
@@ -91,41 +83,33 @@
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
                         <li class="col"><a class="dropdown-item" href="{{ route('acceuil_two') }}">
-                            
                             <span>Accueil</span>
                           </a>
                         </li>
                         <li class="col"><a class="dropdown-item" href="{{ route('calend_result_two') }}">
-                            
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="{{ route('club_elite_two') }}">
-                            
+                        <li class="col"><a class="dropdown-item" href="{{ route('club_two') }}">
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_elite_two') }}">
-                            
+                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_two') }}">
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_elite_two') }}">
-                            
+                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_two') }}">
                             <span>Arbitres</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Statistiques</span>
                           </a>
                         </li>
-            
                       </ul>
                       <!--/.row -->
                     </li>
@@ -139,41 +123,33 @@
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
                         <li class="col"><a class="dropdown-item" href="{{ route('acceuil_guinness') }}">
-                            
                             <span>Accueil</span>
                           </a>
                         </li>
                         <li class="col"><a class="dropdown-item" href="{{ route('calend_result_guinness') }}">
-                            
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="{{ route('club_elite_guinness') }}">
-                            
+                        <li class="col"><a class="dropdown-item" href="{{ route('club_guinness') }}">
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_elite_guinness') }}">
-                            
+                        <li class="col"><a class="dropdown-item" href="{{ route('joueur_guinness') }}">
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_elite_guinness') }}">
-                            
+                        <li class="col"><a class="dropdown-item" href="{{ route('arbitre_guinness') }}">
                             <span>Arbitres</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Statistiques</span>
                           </a>
                         </li>
-            
                       </ul>
                       <!--/.row -->
                     </li>
@@ -186,42 +162,34 @@
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
-                        <li class="col"><a class="dropdown-item" href="">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Accueil</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/blog.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Arbitres</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Statistiques</span>
                           </a>
                         </li>
-            
                       </ul>
                       <!--/.row -->
                     </li>
@@ -234,42 +202,34 @@
                   <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
                     <li class="mega-menu-content">
                       <ul class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-6 gy-lg-4 list-unstyled">
-                        <li class="col"><a class="dropdown-item" href="">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Accueil</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/blog.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/call-to-action.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Classement</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/clients.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Clubs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/contact.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Joueurs</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/facts.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Arbitres</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href="./docs/blocks/faq.html">
-                            
+                        <li class="col"><a class="dropdown-item" href=" ">
                             <span>Statistiques</span>
                           </a>
                         </li>
-            
                       </ul>
                       <!--/.row -->
                     </li>

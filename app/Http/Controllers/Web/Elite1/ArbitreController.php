@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace App\Http\Controllers\Web\Elite1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Arbitre;
-use App\Models\Saison;
 use Illuminate\Http\Request;
 
 class ArbitreController extends Controller
@@ -14,32 +13,9 @@ class ArbitreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index_arbitre_one()
+    public function index()
     {
-        $saisons = Saison::orderBy('libelle','desc')->get();
-        $saison_id = $saisons->max('id');
-        return view('elite1.arbitre')
-        ->with('saisons', $saisons);
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index_arbitre_two()
-    {
-        
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index_arbitre_guinness()
-    {
-        
+        return view('elite1.arbitre');
     }
 
     /**

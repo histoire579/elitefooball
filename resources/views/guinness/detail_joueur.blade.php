@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.client')
 
 @section('content')
 	<section class="wrapper bg-soft-primary">
@@ -170,7 +170,7 @@
 						<div class="tab-pane fade" id="tab1-2">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">{{ $detail_club_saison->joueur->nom }}</h4>
-								<form action="{{ route('joueur_domiciliation_guinness') }}" method="get">
+								<form action="{{ route('joueur_by_domiciliation_guinness') }}" method="get">
 									@csrf
 									<div class="row mb-6">
 										<input type="text" value="{{ $detail_club_saison->joueur->id }}" name="joueur_id" id="joueur_id" hidden>

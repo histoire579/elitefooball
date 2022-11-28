@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TchatController;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +14,6 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
     session()->put('locale', $locale);
@@ -23,76 +21,87 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
+Auth::routes();
+
 //*************Elite 1
 
 //Acceuil
-Route::get('/', [App\Http\Controllers\AcceuilController::class, 'index_acceuil_one'])->name('acceuil_one');
+Route::get('/', [App\Http\Controllers\Web\Elite1\AcceuilController::class, 'index'])->name('acceuil_one');
 
 //Joueur
-Route::get('/elite1/joueur_one', [App\Http\Controllers\Web\JoueurController::class, 'index_joueur_one'])->name('joueur_elite_one');
-Route::get('/elite1/joueur_by_club_one', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_one'])->name('joueur_by_club_one');
-Route::get('/elite1/detail_joueur_one/{saison_id}/{joueur_id}', [App\Http\Controllers\Web\DetailJoueurController::class, 'index_elite_one'])->name('detail_joueur_elite_one');
-Route::get('/elite1/joueur_domiciliation_one', [App\Http\Controllers\Web\DetailJoueurController::class, 'joueur_domiciliation_one'])->name('joueur_domiciliation_one');
+Route::get('/joueur_one', [App\Http\Controllers\Web\Elite1\JoueurController::class, 'index'])->name('joueur_one');
+Route::get('/joueur_by_club_one', [App\Http\Controllers\Web\Elite1\JoueurController::class, 'index'])->name('joueur_by_club_one');
+Route::get('/detail_joueur_one/{saison_id}/{joueur_id}', [App\Http\Controllers\Web\Elite1\DetailJoueurController::class, 'index'])->name('detail_joueur_one');
+Route::get('/joueur_by_domiciliation_one', [App\Http\Controllers\Web\Elite1\DetailJoueurController::class, 'index'])->name('joueur_by_domiciliation_one');
 
 //Club
-Route::get('/elite1/club_one', [App\Http\Controllers\Web\ClubController::class, 'index_club_one'])->name('club_elite_one');
-Route::get('/elite1/club_journee_one', [App\Http\Controllers\Web\ClubController::class, 'club_by_journee_one'])->name('club_journee_elite_one');
-Route::get('/elite1/detail_club_one/{club_id}', [App\Http\Controllers\Web\DetailClubController::class, 'index_elite_one'])->name('detail_club_elite_one');
+Route::get('/club_one', [App\Http\Controllers\Web\Elite1\ClubController::class, 'index'])->name('club_one');
+Route::get('/detail_club_one/{club_id}', [App\Http\Controllers\Web\Elite1\DetailClubController::class, 'index'])->name('detail_club_one');
+Route::get('/club_by_phase_one', [App\Http\Controllers\Web\Elite1\DetailClubController::class, 'index'])->name('club_by_phase_one');
 
 //Arbitre
-Route::get('/elite1/arbitre_one', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_one'])->name('arbitre_elite_one');
+Route::get('/arbitre_one', [App\Http\Controllers\Web\Elite1\ArbitreController::class, 'index'])->name('arbitre_one');
 
 //Calendrier et Resultat
-Route::get('/elite1/calend_result', [App\Http\Controllers\Web\CalendResultController::class, 'index_calend_result_one'])->name('calend_result_one');
+Route::get('/calend_result_one', [App\Http\Controllers\Web\Elite1\CalendResultController::class, 'index'])->name('calend_result_one');
+
+//Classement
+
+
 
 //*************Elite 2
 
 //Acceuil
-Route::get('/elite2', [App\Http\Controllers\AcceuilController::class, 'index_acceuil_two'])->name('acceuil_two');
+Route::get('/acceuil_two', [App\Http\Controllers\Web\Elite2\AcceuilController::class, 'index'])->name('acceuil_two');
 
 //Joueur
-Route::get('/elite2/joueur_two', [App\Http\Controllers\Web\JoueurController::class, 'index_joueur_two'])->name('joueur_elite_two');
-Route::get('/elite2/joueur_by_club_two', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_two'])->name('joueur_by_club_two');
-Route::get('/elite2/detail_joueur_two/{saison_id}/{joueur_id}', [App\Http\Controllers\Web\DetailJoueurController::class, 'index_elite_two'])->name('detail_joueur_elite_two');
-Route::get('/elite2/joueur_domiciliation_two', [App\Http\Controllers\Web\DetailJoueurController::class, 'joueur_domiciliation_two'])->name('joueur_domiciliation_two');
+Route::get('/joueur_two', [App\Http\Controllers\Web\Elite2\JoueurController::class, 'index'])->name('joueur_two');
+Route::get('/joueur_by_club_two', [App\Http\Controllers\Web\Elite2\JoueurController::class, 'index'])->name('joueur_by_club_two');
+Route::get('/detail_joueur_two/{saison_id}/{joueur_id}', [App\Http\Controllers\Web\Elite2\DetailJoueurController::class, 'index'])->name('detail_joueur_two');
+Route::get('/joueur_by_domiciliation_two', [App\Http\Controllers\Web\Elite2\DetailJoueurController::class, 'index'])->name('joueur_by_domiciliation_two');
 
 //Club
-Route::get('/elite2/club_two', [App\Http\Controllers\Web\ClubController::class, 'index_club_two'])->name('club_elite_two');
-Route::get('/elite2/club_journee_two', [App\Http\Controllers\Web\ClubController::class, 'club_by_journee_two'])->name('club_journee_elite_two');
-Route::get('/elite2/detail_club_two/{club_id}', [App\Http\Controllers\Web\DetailClubController::class, 'index_elite_two'])->name('detail_club_elite_two');
+Route::get('/club_two', [App\Http\Controllers\Web\Elite2\ClubController::class, 'index'])->name('club_two');
+Route::get('/detail_joueur_two/{club_id}', [App\Http\Controllers\Web\Elite2\DetailClubController::class, 'index'])->name('detail_club_two');
+Route::get('/club_by_phase_two', [App\Http\Controllers\Web\Elite2\DetailClubController::class, 'index'])->name('club_by_phase_two');
 
 //Arbitre
-Route::get('/elite2/arbitre_two', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_two'])->name('arbitre_elite_two');
+Route::get('/arbitre_two', [App\Http\Controllers\Web\Elite2\ArbitreController::class, 'index'])->name('arbitre_two');
 
 //Calendrier et Resultat
-Route::get('/elite2/calend_result_two', [App\Http\Controllers\Web\CalendResultController::class, 'index_calend_result_two'])->name('calend_result_two');
+Route::get('/calend_result_two', [App\Http\Controllers\Web\Elite2\CalendResultController::class, 'index'])->name('calend_result_two');
 
-//************Guinness
+//Classement
+
+
+
+//*************Guinness
 
 //Acceuil
-Route::get('/guinness', [App\Http\Controllers\AcceuilController::class, 'index_acceuil_guinness'])->name('acceuil_guinness');
+Route::get('/acceuil_guinness', [App\Http\Controllers\Web\Guinness\AcceuilController::class, 'index'])->name('acceuil_guinness');
 
 //Joueur
-Route::get('/guinness/joueur_guinness', [App\Http\Controllers\Web\JoueurController::class, 'index_joueur_guinness'])->name('joueur_elite_guinness');
-Route::get('/guinness/joueur_by_club_guinness', [App\Http\Controllers\Web\JoueurController::class, 'joueur_by_club_guinness'])->name('joueur_by_club_guinness');
-Route::get('/guinness/detail_joueur_guinness/{saison_id}/{joueur_id}', [App\Http\Controllers\Web\DetailJoueurController::class, 'index_elite_guinness'])->name('detail_joueur_elite_guinness');
-Route::get('/guinness/joueur_domiciliation_guinness', [App\Http\Controllers\Web\DetailJoueurController::class, 'joueur_domiciliation_guinness'])->name('joueur_domiciliation_guinness');
+Route::get('/joueur_guinness', [App\Http\Controllers\Web\Guinness\JoueurController::class, 'index'])->name('joueur_guinness');
+Route::get('/joueur_by_club_guinness', [App\Http\Controllers\Web\Guinness\JoueurController::class, 'index'])->name('joueur_by_club_guinness');
+Route::get('/detail_joueur_guinness/{saison_id}/{joueur_id}', [App\Http\Controllers\Web\Guinness\DetailJoueurController::class, 'index'])->name('detail_joueur_guinness');
+Route::get('/joueur_by_domiciliation_guinness', [App\Http\Controllers\Web\Guinness\DetailJoueurController::class, 'index'])->name('joueur_by_domiciliation_guinness');
 
 //Club
-Route::get('/guinness/club_guinness', [App\Http\Controllers\Web\ClubController::class, 'index_club_guinness'])->name('club_elite_guinness');
-Route::get('/guinness/club_journee_guinness', [App\Http\Controllers\Web\ClubController::class, 'club_by_journee_guinness'])->name('club_journee_elite_guinness');
-Route::get('/guinness/detail_club_guinness/{club_id}', [App\Http\Controllers\Web\DetailClubController::class, 'index_elite_guinness'])->name('detail_club_elite_guinness');
+Route::get('/club_guinness', [App\Http\Controllers\Web\Guinness\ClubController::class, 'index'])->name('club_guinness');
+Route::get('/detail_joueur_guinness/{club_id}', [App\Http\Controllers\Web\Guinness\DetailClubController::class, 'index'])->name('detail_club_guinness');
+Route::get('/club_by_phase_guinness', [App\Http\Controllers\Web\Guinness\DetailClubController::class, 'index'])->name('club_by_phase_guinness');
 
 //Arbitre
-Route::get('/guinness/arbitre_guinness', [App\Http\Controllers\Web\ArbitreController::class, 'index_arbitre_guinness'])->name('arbitre_elite_guinness');
+Route::get('/arbitre_guinness', [App\Http\Controllers\Web\Guinness\ArbitreController::class, 'index'])->name('arbitre_guinness');
 
 //Calendrier et Resultat
-Route::get('/elite1/calend_result_guinness', [App\Http\Controllers\Web\CalendResultController::class, 'index_calend_result_guinness'])->name('calend_result_guinness');
+Route::get('/calend_result_guinness', [App\Http\Controllers\Web\Guinness\CalendResultController::class, 'index'])->name('calend_result_guinness');
 
-Auth::routes();
+//Classement
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+//*************Administration
 Route::namespace('App\Http\Controllers\Admin')->group(function () {
     //login
     Route::get('/administration', function () {
