@@ -24,12 +24,12 @@
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">JOUEURS</h4>
-								<form action="{{ route('joueur_by_club_one') }}" method="GET">
+								<form action="{{ route('joueur_by_club_one') }}" method="get">
 									@csrf
 									<div class="row mb-6">
 										<div class="col-md-4">
 											<div class="form-select-wrapper mb-4">
-												<select class="form-select" name="saison" id="saison" aria-label="Default select example">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
 													@foreach ($saisons as $saison)
 														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
 													@endforeach
@@ -39,8 +39,8 @@
 	
 										<div class="col-md-4">
 											<div class="form-select-wrapper mb-4">
-												<select class="form-select" name="club" id="club" aria-label="Default select example">
-													<option selected>Selectionner un club</option>
+												<select class="form-select" name="club_id" id="club_id" aria-label="Default select example">
+													<option  value="">Selectionner un club</option>
 													@foreach ($detail_competition_saisons as $detail_competition_saison)
 														<option value="{{ $detail_competition_saison->club->id }}">{{ $detail_competition_saison->club->nom }}</option>
 													@endforeach
@@ -53,34 +53,31 @@
 									</div>
 								</form>
 								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
+									<div class="card table-responsive">
+										<table class="table-hover table">
+											<thead>
+												<tr>
+													<th scope="col">Joueurs</th>
+													<th scope="col">Club</th>
+													<th scope="col">Pays d'origine</th>
+													<th scope="col">Postes</th>
+													<th scope="col">Dorssad</th>
+													<th scope="col">Pieds fort</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($joueurs as $joueur)
 													<tr>
-														<th scope="col">Joueurs</th>
-														<th scope="col">Nationalité</th>
-														<th scope="col">Postes</th>
-														<th scope="col">Dorssad</th>
-														<th scope="col">Pieds fort</th>
+														<td><img src="{{ asset($joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  <a href="{{ route('detail_joueur_one', [$joueur->saison_id, $joueur->joueur_id]) }}" style="color: dimgray;">{{ $joueur->nom }}</a></td>
+														<td><img src="{{ asset($joueur->logo) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->club }}</td>
+														<td><img src="{{ asset($joueur->drapeau) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->nationalite }}</td>
+														<td>{{ $joueur->poste }}</th>
+														<td>{{ $joueur->dorssad }}</td>
+														<td>{{ $joueur->pied_fort }}</td>
 													</tr>
-												</thead>
-												<tbody>
-													@foreach ($detail_club_saisons as $detail_club_saison)
-														<tr>
-															<td><img src="{{ asset($detail_club_saison->joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  {{ $detail_club_saison->joueur->nom }}</td>
-															<td><img src="{{ asset($detail_club_saison->joueur->drapeau) }}" style="height: 50px; width: 50px;" alt="">  {{ $detail_club_saison->joueur->nationalite }}</td>
-															<td>{{ $detail_club_saison->poste->libelle }}</th>
-															<td>{{ $detail_club_saison->dorssad }}</td>
-															<td>{{ $detail_club_saison->joueur->pied_fort }}</td>
-															<td><a href="/elite1/detail_joueur" class="btn btn-primary" style="height: 5px;">Detail</a></td>
-														</tr>
-													@endforeach
-												</tbody>
-											</table>
-										</div>
-										<!--/.card-body -->
-
+												@endforeach
+											</tbody>
+										</table>
 									</div>
 								</div>
 								<!--/.row -->
@@ -90,10 +87,7 @@
 					<!-- /.tab-content -->
 				</div>
 				<!--/column -->
-
-
 			</div>
-
 		</div>
 		<!-- /.container -->
 	</section>

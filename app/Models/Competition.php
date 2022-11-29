@@ -9,7 +9,6 @@ class Competition extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id',
         'libelle'
     ];
 
@@ -36,5 +35,9 @@ class Competition extends Model
     public function palmares_joueur()
     {
         return $this->hasMany('App\Models\PalmaresJoueur');
+    }
+
+    public function statistique_joueur(){
+        return $this->hasMany('App\Models\StatistiqueJoueur');
     }
 }

@@ -16,7 +16,7 @@ class PalmaresClubFactory extends Factory
         return [
             'saison_id' => rand(1,3),
             'competition_id' => rand(1,3),
-            'club_id' => rand(1,3),
+            'club_id' => rand(1,6),
             'rang' => rand(1,3)
         ];
     }

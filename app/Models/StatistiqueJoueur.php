@@ -10,9 +10,11 @@ class StatistiqueJoueur extends Model
     use HasFactory;
     protected $fillable = [
         'saison_id',
+        'competition_id',
         'match_id',
         'joueur_id',
         'club_id',
+        'tir',
         'tir_cadre',
         'but_marque',
         'passe_decisive',
@@ -33,7 +35,8 @@ class StatistiqueJoueur extends Model
         'penalty_arrete',
         'penalty_concede',
         'but_contre_camp',
-        'homme_match'
+        'homme_match',
+        'domiciliation'
     ];
 
     public function saison()
@@ -44,6 +47,10 @@ class StatistiqueJoueur extends Model
     public function match()
     {
         return $this->belongsTo('App\Models\Match', 'match_id');
+    }
+
+    public function competition(){
+        return $this->belongsTo('App\Models\Competition','competition_id');
     }
 
     public function joueur()

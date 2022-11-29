@@ -6,7 +6,6 @@
 			<div class="row">
 				<div class="col-md-7 col-lg-6 col-xl-5 mx-auto">
 					<h1 class="display-1 mb-3">PUB</h1>
-
 				</div>
 				<!-- /column -->
 			</div>
@@ -38,256 +37,312 @@
 					<div class="tab-content">
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">PROFIL</h4>
-								<div class="row mb-6">
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<h4 class="display-6 mb-8 mt-6 text-center">{{ $detail_club_saison->joueur->nom }}</h4>
+								<div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
+									<div class="col-lg-4">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card">
+												<div class="card-body">
+													<img src="{{ asset($detail_club_saison->joueur->photo) }}" alt="">
+												</div>
+												<!--/.card-body -->
+											</div>
 										</div>
+										<!--/.row -->
 									</div>
+									<!--/column -->
 
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
-											</select>
+									<div class="col-lg-8">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card">
+												<table class="table table-striped">
+													<tbody>
+														<tr>
+															<td>Club</td>
+															<td>{{ $detail_club_saison->club->nom }}</td>
+														</tr>
+														<tr>
+															<td>Poste</td>
+															<td>{{ $detail_club_saison->poste->libelle }}</td>
+														</tr>
+														<tr>
+															<td>Dorssad</td>
+															<td>{{ $detail_club_saison->dorssad }}</td>
+														</tr>
+														<tr>
+															<td>Nationnaltié</td>
+															<td>{{ $detail_club_saison->joueur->nationalite }}</td>
+														</tr>
+														<tr>
+															<td>Date & Lieu de naissance</td>
+															<td>{{ $detail_club_saison->joueur->date_nais }} à {{ $detail_club_saison->joueur->lieu_nais }}</td>
+														</tr>
+														<tr>
+															<td>Taille</td>
+															<td>{{ $detail_club_saison->joueur->taille }}</td>
+														</tr>
+														<tr>
+															<td>Adresse (Pied fort)</td>
+															<td>{{ $detail_club_saison->joueur->pied_fort }}</td>
+														</tr>
+													</tbody>
+												</table>
+												<!--/.card-body -->
+											</div>
 										</div>
+										<!--/.row -->
 									</div>
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une phase</option>
-												<option value="1">Poule A</option>
-												<option value="2">Poule B</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Général</option>
-												<option value="1">Dom</option>
-												<option value="2">Ext</option>
-												<option value="3">1ere Mt</option>
-												<option value="3">2e Mt</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
-									</div>
-								</div>
-								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
-													<tr>
-														<th scope="col">Rang</th>
-														<th scope="col">Ev</th>
-														<th scope="col">Clubs</th>
-														<th scope="col">Points</th>
-														<th scope="col">MJ</th>
-														<th scope="col">MG</th>
-														<th scope="col">MN</th>
-														<th scope="col">MP</th>
-														<th scope="col">BM</th>
-														<th scope="col">BE</th>
-														<th scope="col">Dif</th>
-														<th scope="col">Forme</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-										<!--/.card-body -->
+									<!--/column -->
 
+									<div class="col-lg-12">
+										<h4 class="display-6 mb-3">Performance</h4>
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th scope="col">Saisons</th>
+															<th scope="col">Compétitions</th>
+															<th scope="col">Clubs</th>
+															<th scope="col">MJ</th>
+															<th scope="col">MinJ</th>
+															<th scope="col">BM</th>
+															<th scope="col">PD</th>
+															<th scope="col">CJ</th>
+															<th scope="col">CR</th>
+														</tr>
+													</thead>
+													<tbody>
+														@foreach ($statistiques as $statistique)
+														<tr>
+															<td>{{ $statistique->saison }}</td>
+															<td>...</td>
+															<td><img src="" style="height: 50px; width: 50px;" alt="">...</td>
+															<td>{{ $statistique->nbre_match }}</td>
+															<td>{{ $statistique->minute_jouer }}</td>
+															<td>{{ $statistique->but }}</td>
+															<th>{{ $statistique->passe }}</th>
+															<td>{{ $statistique->jaune }}</td>
+															<td>{{ $statistique->rouge }}</td>
+														</tr>
+															
+														@endforeach
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<!--/.row -->
 									</div>
+									<!--/column -->
+
+									<div class="col-lg-12">
+										<h4 class="display-6 mb-3">Palmares</h4>
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th scope="col">Saisons</th>
+															<th scope="col">Compétitions</th>
+															<th scope="col">Palmarès</th>
+														</tr>
+													</thead>
+													<tbody>
+														@foreach ($palmares as $palmare)
+														<tr>
+															<td>{{ $palmare->saison->libelle }}</td>
+															<td>{{ $palmare->competition->libelle }}</td>
+															<td>{{ $palmare->recompence }}</td>
+														</tr>
+														@endforeach
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<!--/.row -->
+									</div>
+									<!--/column -->
 								</div>
 								<!--/.row -->
 							</div>
 						</div>
+						
 						<div class="tab-pane fade" id="tab1-2">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">STATISTIQUES</h4>
-								<div class="row mb-6">
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
-										</div>
-									</div>
+								<h4 class="display-6 mb-8 mt-6 text-center">{{ $detail_club_saison->joueur->nom }}</h4>
+								<form action="{{ route('joueur_by_domiciliation_one') }}" method="get">
+									@csrf
+									<div class="row mb-6">
+										<input type="text" value="{{ $detail_club_saison->joueur->id }}" name="joueur_id" id="joueur_id" hidden>
 
-									<div class="col-md-6">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
-											</select>
+										<div class="col-md-4">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
+													@foreach ($saisons as $saison)
+														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="domiciliation" id="domiciliation" aria-label="Default select example">
+													<option value="Général" selected>Général</option>
+													<option value="Domicil">Domicil</option>
+													<option value="Extérieur">Extérieur </option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<button type="submit" class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
+								</form>
+								
+								<div class="row gy-12 gx-xl-12">
+									<div class="card table-responsive">
+										<table class="table-hover table">
+											<thead>
+												<tr>
+													<th scope="col">Matchs joués</th>
+													<th scope="col">Minutes jouées</th>
+													<th scope="col">Buts marqués</th>
+													<th scope="col">Fautes subies</th>
+													<th scope="col">Carton jaunes</th>
+													<th scope="col">Caton rouges</th>
+												</tr>
+											</thead>
+											<tbody>
+												@foreach ($stats as $stat)
+												<tr>
+													<td>{{ $stat->nbre_match }}</td>
+													<td>{{ $stat->minute_jouer }}</td>
+													<td>{{ $stat->but }}</td>
+													<td>{{ $stat->faute_subis }}</td>
+													<td>{{ $stat->jaune }}</td>
+													<td>{{ $stat->rouge }}</td>
+												</tr>
+												@endforeach
+											</tbody>
+										</table>
 									</div>
 								</div>
-								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
-													<tr>
-														<th scope="col">Rang</th>
-														<th scope="col">Jouer</th>
-														<th scope="col">Clubs</th>
-														<th scope="col">Buts Marqués</th>
-														<th scope="col">Penaltys</th>
-														<th scope="col">Matchs Afférents</th>
-														<th scope="col">Minutes Jouées</th>
-														<th scope="col">Points Rapportés</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													</tr>
-												</tbody>
-											</table>
+								<br>
+								<div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+												<table class="table table-striped">
+													<tbody>
+														@foreach ($stats as $stat)
+														<tr>
+															<td>Matchs Comme Entrant</td>
+															<td>{{ $nbre_entrant }}</td>
+														</tr>
+														<tr>
+															<td>Matchs Comme Remplaçant</td>
+															<td>{{ $nbre_remplacant }}</td>
+														</tr>
+														<tr>
+															<td>Passes Décisives</td>
+															<td>{{ $stat->passe_d }}</td>
+														</tr>
+														<tr>
+															<td>Tirs</td>
+															<td>{{ $stat->tir }}</td>
+														</tr>
+														<tr>
+															<td>Tirs Cadrés</td>
+															<td>{{ $stat->tir_cadre }}</td>
+														</tr>
+														<tr>
+															<td>Hors-Jeu</td>
+															<td>{{ $stat->hors_jeux }}</td>
+														</tr>
+														<tr>
+															<td>Centres</td>
+															<td>{{ $stat->centre }}</td>
+														</tr>
+														<tr>
+															<td>Matchs Gagnés</td>
+															<td>...</td>
+														</tr>
+														<tr>
+															<td>Penaltys Marqués</td>
+															<td>{{ $stat->panalty_marque }}</td>
+														</tr>
+														<tr>
+															<td>Coups Francs Marqués</td>
+															<td>{{ $stat->but_contre_camp }}</td>
+														</tr>
+														@endforeach
+													</tbody>
+												</table>
+											</div>
 										</div>
-										<!--/.card-body -->
-
+										<!--/.row -->
 									</div>
+									<!--/column -->
+
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+												<table class="table table-striped">
+													<tbody>
+														@foreach ($stats as $stat)
+														<tr>
+															<td>Fautes Commises</td>
+															<td>{{ $stat->faute_comise }}</td>
+														</tr>
+														<tr>
+															<td>Ballons Récupérés</td>
+															<td>{{ $stat->ballon_recup }}</td>
+														</tr>
+														<tr>
+															<td>Ballons Interceptés</td>
+															<td>{{ $stat->ballon_inter }}</td>
+														</tr>
+														<tr>
+															<td>Passes</td>
+															<td>{{ $stat->passe_r }}</td>
+														</tr>
+														<tr>
+															<td>Matchs Sans Encaisser</td>
+															<td>...</td>
+														</tr>
+														<tr>
+															<td>Buts Encaissés</td>
+															<td>{{ $stat->but_encaisse }}</td>
+														</tr>
+														<tr>
+															<td>Buts Contre Son Camp</td>
+															<td>{{ $stat->but_contre_camp }}</td>
+														</tr>
+														<tr>
+															<td>Matchs Perdus</td>
+															<td>...</td>
+														</tr>
+														<tr>
+															<td>Penaltys Concédés</td>
+															<td>{{ $stat->panalty_marque }}</td>
+														</tr>
+														<tr>
+															<td>Penaltys Arrêtés</td>
+															<td>{{ $stat->penalty_arrete }}</td>
+														</tr>
+														<tr>
+															<td> </td>
+															<td> </td>
+														</tr>
+														@endforeach
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<!--/.row -->
+									</div>
+									<!--/column -->
 								</div>
 								<!--/.row -->
 							</div>
@@ -297,10 +352,7 @@
 					<!-- /.tab-content -->
 				</div>
 				<!--/column -->
-
-
 			</div>
-
 		</div>
 		<!-- /.container -->
 	</section>

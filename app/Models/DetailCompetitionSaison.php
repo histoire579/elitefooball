@@ -12,6 +12,7 @@ class DetailCompetitionSaison extends Model
         'saison_id',
         'competition_id',
         'club_id',
+        'phase_id',
     ];
 
     public function saison()
@@ -27,5 +28,9 @@ class DetailCompetitionSaison extends Model
     public function club()
     {
         return $this->belongsTo('App\Models\Club', 'club_id');
+    }
+
+    public function phase(){
+        return $this->belongsTo('App\Models\Phase','phase_id');
     }
 }

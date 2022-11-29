@@ -51,7 +51,6 @@
 										<div class="col-md-3">
 											<div class="form-select-wrapper mb-4">
 												<select class="form-select" aria-label="Default select example" id="form-saison-general">
-													<option selected>Selectionner une saison</option>
 													@foreach ($saisons as $saison)
 														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
 													@endforeach
@@ -141,7 +140,6 @@
 															</td>
 														</tr>
 													@endforeach
-
 												</tbody>
 											</table>
 										</div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePalmaresJoueursTable extends Migration
+class CreateFeuilleMatchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreatePalmaresJoueursTable extends Migration
      */
     public function up()
     {
-        Schema::create('palmares_joueurs', function (Blueprint $table) {
+        Schema::create('feuille_matches', function (Blueprint $table) {
             $table->integerIncrements('id');
-            $table->unsignedInteger('saison_id');
-            $table->foreign('saison_id')->references('id')->on('saisons')->onDelete('restrict');
-            $table->unsignedInteger('competition_id');
-            $table->foreign('competition_id')->references('id')->on('competitions')->onDelete('restrict');
+            $table->unsignedInteger('match_id');
+            $table->foreign('match_id')->references('id')->on('matches')->onDelete('restrict');
+            $table->unsignedInteger('club_id');
+            $table->foreign('club_id')->references('id')->on('clubs')->onDelete('restrict');
             $table->unsignedInteger('joueur_id');
             $table->foreign('joueur_id')->references('id')->on('joueurs')->onDelete('restrict');
-            $table->string('recompence');
+            $table->string('titularisation', 100);
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreatePalmaresJoueursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('palmares_joueurs');
+        Schema::dropIfExists('feuille_matches');
     }
 }

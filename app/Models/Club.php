@@ -9,12 +9,15 @@ class Club extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'logo',
         'nom',
         'siege',
         'bp',
         'telephone',
         'email',
         'site',
+        'twitter',
+        'facebook',
         'president',
         'v_president',
         'secretaire_g',

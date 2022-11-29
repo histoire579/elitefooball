@@ -15,9 +15,9 @@ class DetailClubSaisonFactory extends Factory
     {
         return [
             'saison_id' => rand(1,3),
-            'club_id' => rand(1,3),
-            'joueur_id' => rand(1,3),
-            'poste_id' => rand(1,3),
+            'club_id' => rand(1,6),
+            'joueur_id' => rand(1,20),
+            'poste_id' => rand(1,4),
             'dorssad' => rand(1,100)
         ];
     }

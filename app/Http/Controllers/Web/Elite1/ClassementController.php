@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Elite1;
+namespace App\Http\Controllers\Web\Elite1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Classement;
@@ -28,7 +28,7 @@ class ClassementController extends Controller
     public function index()
     {
         try {
-            $competition = Competition::where('libelle', "Elite One")->first();
+            $competition = Competition::where('libelle', "Elite 1")->first();
             //classement joeur
             $saisons = Saison::select('id', 'libelle')->orderBy('id', 'desc')->get();
             $classements = Classement::with('club')->where('saison_id', $saisons->first()->id)->where('competition_id', $competition->id)->orderBy('point', 'desc')->get();
@@ -69,8 +69,7 @@ class ClassementController extends Controller
                 'saison_id' => ['required', 'numeric'],
             ]);
             if ($validator->fails()) {
-                return response()
-                    ->json(['errors' => $validator->errors()->all()]);
+                return response()->json(['errors' => $validator->errors()->all()]);
             }
             $journees = Journee::select('id', 'libelle')->orderBy('id', 'desc')->where('saison_id', '=', $request->saison_id)->get();
             $phases = Phase::select('id', 'libelle')->orderBy('id', 'desc')->where('saison_id', '=', $request->saison_id)->get();

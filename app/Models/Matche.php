@@ -16,14 +16,17 @@ class Matche extends Model
         'stade_id',
         'club1_id',
         'club1_statut',
+        'nbre_but_club1',
         'club2_id',
         'club2_statut',
+        'nbre_but_club2',
         'arbitre1_id',
         'arbitre2_id',
         'arbitre3_id',
         'arbitre4_id',
         'date',
-        'heure'
+        'heure',
+        'type'
     ];
 
     public function saison()
@@ -99,5 +102,9 @@ class Matche extends Model
     public function statistique_club()
     {
         return $this->hasMany('App\Models\StatistiqueClub');
+    }
+
+    public function resultat(){
+        return $this->hasMany('App\Models\Resultat');
     }
 }

@@ -12,6 +12,7 @@ class StatistiqueClub extends Model
         'saison_id',
         'match_id',
         'club_id',
+        'tir',
         'tir_cadre',
         'but_marque',
         'but_encaisse',

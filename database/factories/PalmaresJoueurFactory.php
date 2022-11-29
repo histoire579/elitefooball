@@ -16,7 +16,7 @@ class PalmaresJoueurFactory extends Factory
         return [
             'saison_id' => rand(1,3),
             'competition_id' => rand(1,3),
-            'joueur_id' => rand(1,3),
+            'joueur_id' => rand(1,20),
             'recompence' => $this->faker->name()
         ];
     }

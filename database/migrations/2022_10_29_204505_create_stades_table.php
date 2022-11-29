@@ -17,7 +17,7 @@ class CreateStadesTable extends Migration
             $table->integerIncrements('id');
             $table->string('photo', 255);
             $table->string('nom', 100)->unique();
-            $table->string('lieu', 60);
+            $table->string('lieu', 100);
             $table->integer('capacite');
             $table->timestamps();
         });
