@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta name="description"
 		content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
 	<meta name="keywords"
@@ -50,7 +51,7 @@
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href=" ">
+                        <li class="col"><a class="dropdown-item" href="{{ route('classement_one') }}">
                             <span>Classement</span>
                           </a>
                         </li>
@@ -90,7 +91,7 @@
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href=" ">
+                        <li class="col"><a class="dropdown-item" href="">
                             <span>Classement</span>
                           </a>
                         </li>
@@ -130,7 +131,7 @@
                             <span>Calendrier & Résultats</span>
                           </a>
                         </li>
-                        <li class="col"><a class="dropdown-item" href=" ">
+                        <li class="col"><a class="dropdown-item" href="">
                             <span>Classement</span>
                           </a>
                         </li>
@@ -369,7 +370,6 @@
 		<!--End of Tawk.to Script-->
 		<!--End of Tawk.to Script-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script type="text/javascript"></script>
 		@yield('extra-js')
 </body>
 

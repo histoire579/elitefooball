@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.main')
 
 @section('content')
 <section class="wrapper bg-soft-primary">
@@ -68,36 +68,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td><img src="" style="height: 50px; width: 50px;" alt=""> club</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td><img src="" style="height: 50px; width: 50px;" alt=""> club</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td><img src="" style="height: 50px; width: 50px;" alt=""> club</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td><img src="" style="height: 50px; width: 50px;" alt=""> club</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td><img src="" style="height: 50px; width: 50px;" alt=""> club</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
+                                @php
+                                    $rang = 0;
+                                @endphp
+                                @foreach ($classement as $item)
+                                    {{-- @dd($item) --}}
+                                    @php
+                                        $rang++;
+                                    @endphp
+                                    <tr>
+                                        <th scope="row">{{ $rang }}</th>
+                                        <td><img class="avatar w-10" src="{{ $item['club']['photo'] ?? '' }}" alt="" />{{ $item['club']['nom'] ?? '' }}</td>
+                                        <td>{{ $item['total_match'] ?? '' }}</td>
+                                        <th>{{ $item['point'] ?? '' }}</th>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                         <!--/.card-body -->

@@ -13,6 +13,7 @@ class StatistiqueJoueur extends Model
         'competition_id',
         'match_id',
         'joueur_id',
+        'club_id',
         'tir',
         'tir_cadre',
         'but_marque',
@@ -38,19 +39,27 @@ class StatistiqueJoueur extends Model
         'domiciliation'
     ];
 
-    public function saison(){
-        return $this->belongsTo('App\Models\Saison','saison_id');
+    public function saison()
+    {
+        return $this->belongsTo('App\Models\Saison', 'saison_id');
+    }
+
+    public function match()
+    {
+        return $this->belongsTo('App\Models\Match', 'match_id');
     }
 
     public function competition(){
         return $this->belongsTo('App\Models\Competition','competition_id');
     }
 
-    public function match(){
-        return $this->belongsTo('App\Models\Match','match_id');
+    public function joueur()
+    {
+        return $this->belongsTo('App\Models\Joueur', 'joueur_id');
     }
 
-    public function joueur(){
-        return $this->belongsTo('App\Models\Joueur','joueur_id');
+    public function club()
+    {
+        return $this->belongsTo('App\Models\Club', 'club_id');
     }
 }

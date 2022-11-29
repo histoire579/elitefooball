@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.main')
 
 @section('content')
 	<section class="wrapper bg-soft-primary">

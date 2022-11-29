@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.main')
 
 @section('content')
 	<section class="wrapper bg-soft-primary">
@@ -24,7 +24,7 @@
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">JOUEURS</h4>
-								<form action="{{ route('joueur_by_club_guinnes') }}" method="get">
+								<form action="{{ route('joueur_by_club_guinness') }}" method="get">
 									@csrf
 									<div class="row mb-6">
 										<div class="col-md-4">

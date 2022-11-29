@@ -28,8 +28,7 @@ class MatcheFactory extends Factory
             'arbitre3_id' => rand(1,3),
             'arbitre4_id' => rand(1,3),
             'date' => $this->faker->date(),
-            'heure' => $this->faker->sentence(1),
-            'type' => $this->faker->sentence(1)
+            'heure' => $this->faker->sentence(1)
         ];
     }
 }

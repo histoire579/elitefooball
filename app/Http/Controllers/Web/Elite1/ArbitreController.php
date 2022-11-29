@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Web\Elite1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Arbitre;
+use App\Models\Saison;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class ArbitreController extends Controller
 {
@@ -15,7 +17,14 @@ class ArbitreController extends Controller
      */
     public function index()
     {
-        return view('elite1.arbitre');
+        try {
+            $saisons = Saison::orderBy('libelle','desc')->get();
+            return view('elite1.arbitre')
+            ->with('saisons', $saisons);
+        } catch (Exception $e) {
+            return $e->getMessage();
+            abort(404, 'Cette page n\est pas disponible.');
+        }
     }
 
     /**

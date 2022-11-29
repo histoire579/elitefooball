@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.main')
 
 @section('content')
 	<section class="wrapper bg-soft-primary">
@@ -59,7 +59,7 @@
 								<div class="card-body">
 									<img class="rounded-circle w-15 mb-4" src="{{ asset($club->logo) }}" alt="" />
 									<h4 class="mb-1"><a href="{{ route('detail_club_two', $club->id) }}">{{ $club->club }}</a></h4>
-									<div class="meta mb-2">{{ $club->stade }}</div>
+									<div class="meta mb-2">Stade : {{ $club->stade }}</div>
 									<p class="mb-2"></p>
 									<nav class="nav social mb-0">
 										<a href="{{ $club->twitter }}"><i class="uil uil-twitter"></i></a>

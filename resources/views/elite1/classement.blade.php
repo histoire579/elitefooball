@@ -45,52 +45,49 @@
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">CLASSEMENT GENERAL</h4>
-								<div class="row mb-6">
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
-											</select>
+								<form action="">
+									@csrf
+									<div class="row mb-6">
+										<div class="col-md-3">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" aria-label="Default select example" id="form-saison-general">
+													@foreach ($saisons as $saison)
+														<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+													@endforeach
+												</select>
+											</div>
 										</div>
-									</div>
 
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une journée</option>
-												<option value="1">Journée 1</option>
-												<option value="2">Journée 2</option>
-												<option value="3">Journée 3</option>
-											</select>
+										<div class="col-md-3">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" aria-label="Default select example" id="form-journee-general">
+													<option selected>Selectionner une journée</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" aria-label="Default select example" id="form-phase-general">
+													<option selected>Selectionner une phase</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" aria-label="Default select example">
+													<option selected value="Général">Général</option>
+													<option value="Dom">Dom</option>
+													<option value="Ext">Ext</option>
+													<option value="1ere Mt">1ere Mt</option>
+													<option value="2e Mt">2e Mt</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<button type="submit" class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Selectionner une phase</option>
-												<option value="1">Poule A</option>
-												<option value="2">Poule B</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-select-wrapper mb-4">
-											<select class="form-select" aria-label="Default select example">
-												<option selected>Général</option>
-												<option value="1">Dom</option>
-												<option value="2">Ext</option>
-												<option value="3">1ere Mt</option>
-												<option value="3">2e Mt</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
-									</div>
-								</div>
+								</form>
 								<div class="row gy-12 gx-xl-12">
 									<div class="card">
 										<div class="card-body table-responsive">
@@ -112,76 +109,37 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td><i class="uil uil-arrow-up"></i></td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>r-b-v-v-v</td>
-													</tr>
-													</tr>
+													@php
+														$rang = 0;
+													@endphp
+													@foreach ($classement as $item)
+														{{-- @dd($item) --}}
+														@php
+															$rang++;
+														@endphp
+														<tr>
+															<th scope="row">{{ $rang }}</th>
+															<td><i class="uil uil-arrow-up"></i></td>
+															<td><img class="avatar w-10" src="{{ $item['club']['photo'] ?? '' }}"
+																	alt="" />{{ $item['club']['nom'] ?? '' }}
+															</td>
+															<th>{{ $item['point'] ?? '' }}</th>
+															<td>{{ $item['total_match'] ?? '' }}</td>
+															<td>{{ $item['match_gagnes'] ?? '' }}</td>
+															<td>{{ $item['match_null'] ?? '' }}</td>
+															<td>{{ $item['match_perdu'] ?? '' }}</td>
+															<th>{{ $item['total_but_marque'] ?? '' }}</th>
+															<td>{{ $item['total_but_encaisse'] ?? '' }}</td>
+															<td>{{ $item['total_but_marque'] - $item['total_but_encaisse'] ?? '' }}</td>
+															<td>
+																@foreach ($item['forme'] as $item)
+																	<span
+																		class="badge {{ $item['statut_match'] == 'G' ? 'bg-success' : ($item['statut_match'] == 'N' ? 'bg-primary' : 'bg-danger') }}">
+																	</span>
+																@endforeach
+															</td>
+														</tr>
+													@endforeach
 												</tbody>
 											</table>
 										</div>
@@ -200,9 +158,9 @@
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
 												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
+												@foreach ($saisons as $saison)
+													<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+												@endforeach
 											</select>
 										</div>
 									</div>
@@ -238,56 +196,24 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													</tr>
+													@php
+														$rang = 0;
+													@endphp
+													@foreach ($classement_buteurs as $item)
+														@php
+															$rang++;
+														@endphp
+														<tr>
+															<th scope="row">{{ $rang }}</th>
+															<td>{{ $item->nom ?? '' }}</td>
+															<td>{{ $item->nomclub ?? '' }}</td>
+															<td>{{ $item->but_marque ?? '' }}</td>
+															<td>{{ $item->penelty_marque ?? '' }}</td>
+															<th>{{ $item->matchs_afferents ?? '' }}</th>
+															<td>{{ $item->minute_jouer ?? '' }}</td>
+															<td>{{ $item->but_marque * 3 ?? '' }}</td>
+														</tr>
+													@endforeach
 												</tbody>
 											</table>
 										</div>
@@ -306,9 +232,9 @@
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
 												<option selected>Selectionner une saison</option>
-												<option value="1">2022/2023</option>
-												<option value="2">2021/2022</option>
-												<option value="3">2020/2021</option>
+												@foreach ($saisons as $saison)
+													<option value="{{ $saison->id }}">{{ $saison->libelle }}</option>
+												@endforeach
 											</select>
 										</div>
 									</div>
@@ -342,46 +268,22 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-													</tr>
-													</tr>
+													@php
+														$rang = 0;
+													@endphp
+													@foreach ($classement_passeurs as $item)
+														@php
+															$rang++;
+														@endphp
+														<tr>
+															<th scope="row">{{ $rang }}</th>
+															<td>{{ $item->nom ?? '' }}</td>
+															<td>{{ $item->nomclub ?? '' }}</td>
+															<td>{{ $item->passe ?? '' }}</td>
+															<th>{{ $item->matchs_afferents ?? '' }}</th>
+															<td>{{ $item->minute_jouer ?? '' }}</td>
+														</tr>
+													@endforeach
 												</tbody>
 											</table>
 										</div>
@@ -403,4 +305,55 @@
 		<!-- /.container -->
 	</section>
 	<!-- /section -->
+@endsection
+
+@section('extra-js')
+	<script type="text/javascript">
+		$('#form-saison-general').change(function(e) {
+			var saison_id = $(this).children("option:selected").val();
+			$.ajax({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+				},
+				type: "GET",
+				url: "{{ route('get_journee_et_phase_by_saison_ajax') }}",
+				data: {
+					'saison_id': saison_id,
+				},
+				dataType: "Json",
+				success: function(data) {
+					if ($.isEmptyObject(data.errors) && $.isEmptyObject(data.error)) {
+						//success
+						$("#form-journee-general").text('');
+						$("#form-phase-general").text('');
+						$("#form-journee-general").append(
+							'<option selected>Selectionner une journée</option>'
+						);
+						$("#form-phase-general").append(
+							'<option selected>Selectionner une phase</option>'
+						);
+						if (data.journees != null && data.journees.length > 0) {
+							data.journees.forEach(element => {
+								$("#form-journee-general").append(
+									'<option value="' + element.id + '">' + element.libelle +
+									'</option>'
+								);
+							});
+						}
+						if (data.phases != null && data.phases.length > 0) {
+							data.phases.forEach(element => {
+								$("#form-phase-general").append(
+									'<option value="' + element.id + '">' + element.libelle +
+									'</option>'
+								);
+							});
+						}
+					}
+				},
+				error: function(data) {
+					//TODO : travailler sur l'affichage des messages d'erreur
+				}
+			});
+		});
+	</script>
 @endsection
