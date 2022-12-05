@@ -16,7 +16,7 @@ class StatistiqueJoueurFactory extends Factory
         return [
             'saison_id' => rand(1, 3),
             'competition_id' => rand(1,3),
-            'match_id' => rand(1, 3),
+            'match_id' => rand(1, 15),
             'joueur_id' => rand(1,20),
             'club_id' => rand(1, 3),
             'tir' => rand(1, 30),

@@ -7,6 +7,7 @@ use App\Models\Arbitre;
 use App\Models\Saison;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
+use Exception;
 
 class ArbitreController extends Controller
 {

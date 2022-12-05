@@ -62,4 +62,8 @@ class Club extends Model
     public function palmares_club(){
         return $this->hasMany('App\Models\PalmaresClub');
     }
+
+    public function detail_match(){
+        return $this->hasMany('App\Models\DetailMatch');
+    }
 }

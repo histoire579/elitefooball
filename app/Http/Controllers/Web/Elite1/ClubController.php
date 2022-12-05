@@ -48,13 +48,13 @@ class ClubController extends Controller
     {
         try {
             $validator = FacadesValidator::make($request->all(), [
-                'saison_id' => ['required', 'numeric'],
+                'saison_id' => ['required', 'numeric']
             ]);
             
             if ($validator->fails()) {
                 return response()->json(['errors' => $validator->errors()->all()]);
             }
-            else if($request->journee_id == null)
+            else if($request->phase_id == null)
             {
                 $saisons = Saison::orderBy('libelle','desc')->get();
                 $competition = Competition::where('libelle', "Elite 1")->first();
@@ -70,7 +70,7 @@ class ClubController extends Controller
                 $saisons = Saison::orderBy('libelle','desc')->get();
                 $competition = Competition::where('libelle', "Elite 1")->first();
                 $phases = DB::select('SELECT distinct(p.libelle),p.id FROM detail_competition_saisons d,phases p WHERE d.phase_id=p.id AND d.competition_id='.$competition->id.' AND d.saison_id='.$request->saison_id);
-                $clubs = DB::select('SELECT c.id,c.logo,c.nom AS club,c.twitter,c.facebook,c.site,st.nom AS stade FROM detail_competition_saisons d,saisons s,clubs c,competitions co,stades st,journees j WHERE d.saison_id=s.id AND d.competition_id=co.id AND d.club_id=c.id AND c.stade_id=st.id AND d.journee_id=j.id AND co.id='.$competition->id.' AND s.id='.$request->saison_id.' AND j.id='.$request->phase_id);
+                $clubs = DB::select('SELECT c.id,c.logo,c.nom AS club,c.twitter,c.facebook,c.site,st.nom AS stade FROM detail_competition_saisons d,saisons s,clubs c,competitions co,stades st,phases p WHERE d.saison_id=s.id AND d.competition_id=co.id AND d.club_id=c.id AND c.stade_id=st.id AND d.phase_id=p.id AND co.id='.$competition->id.' AND s.id='.$request->saison_id.' AND p.id='.$request->phase_id);
                 return view('elite1.club')
                 ->with('saisons', $saisons)
                 ->with('phases', $phases)

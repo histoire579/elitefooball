@@ -15,13 +15,15 @@ class CreateFeuilleMatchesTable extends Migration
     {
         Schema::create('feuille_matches', function (Blueprint $table) {
             $table->integerIncrements('id');
+            $table->unsignedInteger('saison_id');
+            $table->foreign('saison_id')->references('id')->on('saisons')->onDelete('restrict');
             $table->unsignedInteger('match_id');
             $table->foreign('match_id')->references('id')->on('matches')->onDelete('restrict');
             $table->unsignedInteger('club_id');
             $table->foreign('club_id')->references('id')->on('clubs')->onDelete('restrict');
             $table->unsignedInteger('joueur_id');
             $table->foreign('joueur_id')->references('id')->on('joueurs')->onDelete('restrict');
-            $table->string('titularisation', 100);
+            $table->string('titularisation', 100)->default('Entrant')->comment('Entrant, Remplaçant');
             $table->timestamps();
         });
     }
