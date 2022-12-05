@@ -39,6 +39,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\DetailMatch::factory(15)->create();
         \App\Models\StatistiqueJoueur::factory(60)->create();
         \App\Models\StatistiqueClub::factory(3)->create();
-        \App\Models\FeuilleMatch::factory(60)->create();
+        \App\Models\FeuilleMatch::factory(165)->create();
     }
 }

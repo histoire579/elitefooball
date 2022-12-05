@@ -10,6 +10,7 @@ use App\Models\StatistiqueClub;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection as SupportCollection;
 use Illuminate\Http\Request;
+use Exception;
 
 class AcceuilController extends Controller
 {

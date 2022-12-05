@@ -510,7 +510,7 @@
 
 						<div class="tab-pane fade" id="tab1-6">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">CLASSEMENT PASSEURS DECISIFS</h4>
+								<h4 class="display-6 mb-8 mt-6 text-center">{{ $club->nom }}</h4>
 								<div class="row mb-6">
 									<div class="col-md-6">
 										<div class="form-select-wrapper mb-4">

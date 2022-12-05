@@ -25,7 +25,7 @@ class JoueurController extends Controller
             $saisons = Saison::orderBy('libelle','desc')->get();
             $competition = Competition::where('libelle', "Guinness super league")->first();
             $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $saisons->max('id')]])->get();
-            $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.nom,pa.drapeau,pa.nom AS nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c,pays pa WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND j.pays_id=pa.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$saisons->max('id').')');
+            $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.nom,pa.drapeau,pa.nom AS nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c,pays pa WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND j.pays_id=pa.id AND d.saison_id='.$saisons->max('id').' AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$saisons->max('id').')');
             return view('guinness.joueur')
             ->with('joueurs', $joueurs)
             ->with('saisons', $saisons)
@@ -46,7 +46,7 @@ class JoueurController extends Controller
     {
         try {
             $validator = FacadesValidator::make($request->all(), [
-                'saison_id' => ['required', 'numeric'],
+                'saison_id' => ['required', 'numeric']
             ]);
 
             if ($validator->fails()) {
@@ -57,7 +57,7 @@ class JoueurController extends Controller
                 $saisons = Saison::orderBy('libelle','desc')->get();
                 $competition = Competition::where('libelle', "Guinness super league")->first();
                 $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
-                $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.nom,pa.drapeau,pa.nom AS nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c,pays pa WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND j.pays_id=pa.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.')');
+                $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.nom,pa.drapeau,pa.nom AS nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c,pays pa WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND j.pays_id=pa.id AND d.saison_id='.$request->saison_id.' AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.')');
                 return view('guinness.joueur')
                 ->with('joueurs', $joueurs)
                 ->with('saisons', $saisons)
@@ -68,7 +68,7 @@ class JoueurController extends Controller
                 $saisons = Saison::orderBy('libelle','desc')->get();
                 $competition = Competition::where('libelle', "Guinness super league")->first();
                 $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
-                $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.nom,pa.drapeau,pa.nom AS nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c,pays pa WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND j.pays_id=pa.id AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.' AND club_id='.$request->club_id.')');
+                $joueurs =  DB::select('SELECT s.id AS saison_id,j.id AS joueur_id,j.photo,j.nom,pa.drapeau,pa.nom AS nationalite,j.pied_fort,p.libelle AS poste,d.dorssad,c.logo,c.nom AS club FROM detail_club_saisons d,joueurs j,postes p,saisons s,clubs c,pays pa WHERE d.club_id=c.id AND d.joueur_id=j.id AND d.poste_id=p.id AND d.saison_id=s.id AND j.pays_id=pa.id AND d.saison_id='.$request->saison_id.' AND d.club_id IN (SELECT club_id FROM detail_competition_saisons WHERE competition_id='.$competition->id.' AND saison_id='.$request->saison_id.' AND club_id='.$request->club_id.')');
                 return view('guinness.joueur')
                 ->with('joueurs', $joueurs)
                 ->with('saisons', $saisons)

@@ -56,7 +56,7 @@ class DetailJoueurController extends Controller
     {
         try {
             $validator = FacadesValidator::make($request->all(), [
-                'saison_id' => ['required', 'numeric'],
+                'saison_id' => ['required', 'numeric']
             ]);
 
             if ($validator->fails()) {

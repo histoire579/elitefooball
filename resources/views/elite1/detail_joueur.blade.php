@@ -71,7 +71,7 @@
 														</tr>
 														<tr>
 															<td>Nationnaltié</td>
-															<td>{{ $detail_club_saison->joueur->nationalite }}</td>
+															<td>{{ $detail_club_saison->joueur->pays->nom }}</td>
 														</tr>
 														<tr>
 															<td>Date & Lieu de naissance</td>
@@ -125,7 +125,6 @@
 															<td>{{ $statistique->jaune }}</td>
 															<td>{{ $statistique->rouge }}</td>
 														</tr>
-															
 														@endforeach
 													</tbody>
 												</table>

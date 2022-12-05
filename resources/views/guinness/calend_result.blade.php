@@ -39,7 +39,7 @@
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">CALENDRIER</h4>
-								<form action="" method="get">
+								<form action="{{ route('calend_result_by_journee_and_phase_guinness') }}" method="get">
 									@csrf
 									<div class="row mb-6">
                                         <div class="col-md-3">
@@ -54,11 +54,11 @@
     
                                         <div class="col-md-3">
                                             <div class="form-select-wrapper mb-4">
-                                                <select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selectionner une journée</option>
-                                                    <option value="1">Journée 1</option>
-                                                    <option value="2">Journée 2</option>
-                                                    <option value="3">Journée 3</option>
+                                                <select class="form-select" name="journee_id" id="journee_id" aria-label="Default select example">
+                                                    <option value="">Selectionner une journée</option>
+                                                    @foreach ($journees as $journee)
+														<option value="{{ $journee->id }}">{{ $journee->libelle }}</option>
+													@endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
-                                            <button class="btn btn-primary">Rechercher</button>
+                                            <button type="submit" class="btn btn-primary">Rechercher</button>
                                         </div>
                                     </div>
 								</form>
@@ -87,7 +87,7 @@
 												<table class="table table-striped">
 													<tbody>
 														<tr>
-															<td>{{ $calendier->club1->nom }} <img src="{{ asset($calendier->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong>{{ $calendier->heure }}</strong> <img src="{{ asset($calendier->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $calendier->club2->nom }}</td>
+															<td><a href="{{ route('detail_calend_result_guinness', $calendier->id) }}">{{ $calendier->club1->nom }} <img src="{{ asset($calendier->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong>{{ $calendier->heure }}</strong> <img src="{{ asset($calendier->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $calendier->club2->nom }}</a></td>
 															<td>{{ $calendier->stade->nom }}</td>
 														</tr>
 													</tbody>
@@ -124,30 +124,24 @@
 														<thead>
 															<tr>
 																<th scope="col">Rang</th>
-																<th scope="col">Forme</th>
+																<th scope="col">Jouers</th>
+																<th scope="col">Clubs</th>
 															</tr>
 														</thead>
 														<tbody>
-															<tr>
-																<td>1</td>
-																<td>...</td>
-															</tr>
-															<tr>
-																<td>2</td>
-																<td>...</td>
-															</tr>
-															<tr>
-																<td>3</td>
-																<td>...</td>
-															</tr>
-															<tr>
-																<td>4</td>
-																<td>...</td>
-															</tr>
-															<tr>
-																<td>5</td>
-																<td>...</td>
-															</tr>
+															@php
+																$rang = 0;
+															@endphp
+															@foreach ($classement_buteurs as $item)
+																@php
+																	$rang++;
+																@endphp
+																<tr>
+																	<th scope="row">{{ $rang }}</th>
+																	<td>{{ $item->nom ?? '' }}</td>
+																	<td>{{ $item->nomclub ?? '' }}</td>
+																</tr>
+															@endforeach
 														</tbody>
 													</table>
 													<!--/.card-body -->
@@ -165,7 +159,7 @@
 						<div class="tab-pane fade" id="tab1-2">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">RESULTATS</h4>
-								<form action="" method="get">
+								<form action="{{ route('calend_result_by_journee_and_phase_guinness') }}" method="get">
 									@csrf
 									<div class="row mb-6">
                                         <div class="col-md-3">
@@ -180,11 +174,11 @@
     
                                         <div class="col-md-3">
                                             <div class="form-select-wrapper mb-4">
-                                                <select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selectionner une journée</option>
-                                                    <option value="1">Journée 1</option>
-                                                    <option value="2">Journée 2</option>
-                                                    <option value="3">Journée 3</option>
+                                                <select class="form-select" name="journee_id" id="journee_id" aria-label="Default select example">
+                                                    <option value="">Selectionner une journée</option>
+                                                    @foreach ($journees as $journee)
+														<option value="{{ $journee->id }}">{{ $journee->libelle }}</option>
+													@endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -200,7 +194,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
-                                            <button class="btn btn-primary">Rechercher</button>
+                                            <button type="submit" class="btn btn-primary">Rechercher</button>
                                         </div>
                                     </div>
 								</form>
@@ -213,7 +207,7 @@
 												<table class="table table-striped">
 													<tbody>
 														<tr>
-															<td>{{ $resultat->club1->nom }} <img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong> <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club2->nom }}</td>
+															<td><a href="{{ route('detail_calend_result_guinness', $resultat->id) }}">{{ $resultat->club1->nom }} <img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong> <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club2->nom }}</a></td>
 															<td>{{ $resultat->stade->nom }}</td>
 														</tr>
 													</tbody>
@@ -250,30 +244,24 @@
 														<thead>
 															<tr>
 																<th scope="col">Rang</th>
-																<th scope="col">Forme</th>
+																<th scope="col">Jouers</th>
+																<th scope="col">Clubs</th>
 															</tr>
 														</thead>
 														<tbody>
-															<tr>
-																<td>1</td>
-																<td>...</td>
-															</tr>
-															<tr>
-																<td>2</td>
-																<td>...</td>
-															</tr>
-															<tr>
-																<td>3</td>
-																<td>...</td>
-															</tr>
-															<tr>
-																<td>4</td>
-																<td>...</td>
-															</tr>
-															<tr>
-																<td>5</td>
-																<td>...</td>
-															</tr>
+															@php
+																$rang = 0;
+															@endphp
+															@foreach ($classement_buteurs as $item)
+																@php
+																	$rang++;
+																@endphp
+																<tr>
+																	<th scope="row">{{ $rang }}</th>
+																	<td>{{ $item->nom ?? '' }}</td>
+																	<td>{{ $item->nomclub ?? '' }}</td>
+																</tr>
+															@endforeach
 														</tbody>
 													</table>
 													<!--/.card-body -->
