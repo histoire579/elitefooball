@@ -17,13 +17,15 @@ class StatistiqueClub extends Model
         'but_marque',
         'but_encaisse',
         'faute_comise',
+        'faute_subies',
         'statut_match',
         'hors_jeux',
         'carton_jaune',
         'carton_rouge',
         'penelty_marque',
         'Coup_franc_marque',
-        'penalty_concede'
+        'penalty_concede',
+        'corner'
     ];
 
     public function saison()

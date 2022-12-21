@@ -66,7 +66,7 @@ Route::get('/elite2/joueur_by_domiciliation', [App\Http\Controllers\Web\Elite2\D
 
 //Club
 Route::get('/elite2/club', [App\Http\Controllers\Web\Elite2\ClubController::class, 'index'])->name('club_two');
-Route::get('/elite2/detail_joueur/{club_id}', [App\Http\Controllers\Web\Elite2\DetailClubController::class, 'index'])->name('detail_club_two');
+Route::get('/elite2/detail_club/{club_id}', [App\Http\Controllers\Web\Elite2\DetailClubController::class, 'index'])->name('detail_club_two');
 Route::get('/elite2/club_by_phase', [App\Http\Controllers\Web\Elite2\ClubController::class, 'club_by_phase'])->name('club_by_phase_two');
 
 //Arbitre
@@ -95,7 +95,7 @@ Route::get('/guinness/joueur_by_domiciliation', [App\Http\Controllers\Web\Guinne
 
 //Club
 Route::get('/guinness/club', [App\Http\Controllers\Web\Guinness\ClubController::class, 'index'])->name('club_guinness');
-Route::get('/guinness/detail_joueur/{club_id}', [App\Http\Controllers\Web\Guinness\DetailClubController::class, 'index'])->name('detail_club_guinness');
+Route::get('/guinness/detail_club/{club_id}', [App\Http\Controllers\Web\Guinness\DetailClubController::class, 'index'])->name('detail_club_guinness');
 Route::get('/guinness/club_by_phase', [App\Http\Controllers\Web\Guinness\ClubController::class, 'club_by_phase'])->name('club_by_phase_guinness');
 
 //Arbitre

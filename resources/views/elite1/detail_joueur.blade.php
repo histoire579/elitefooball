@@ -118,12 +118,12 @@
 															<td>{{ $statistique->saison }}</td>
 															<td>...</td>
 															<td><img src="" style="height: 50px; width: 50px;" alt="">...</td>
-															<td>{{ $statistique->nbre_match }}</td>
-															<td>{{ $statistique->minute_jouer }}</td>
-															<td>{{ $statistique->but }}</td>
-															<th>{{ $statistique->passe }}</th>
-															<td>{{ $statistique->jaune }}</td>
-															<td>{{ $statistique->rouge }}</td>
+															<td>{{ $statistique->nbre_match ?? '0' }}</td>
+															<td>{{ $statistique->minute_jouer ?? '0' }}</td>
+															<td>{{ $statistique->but ?? '0' }}</td>
+															<th>{{ $statistique->passe ?? '0' }}</th>
+															<td>{{ $statistique->jaune ?? '0' }}</td>
+															<td>{{ $statistique->rouge ?? '0' }}</td>
 														</tr>
 														@endforeach
 													</tbody>
@@ -215,12 +215,12 @@
 											<tbody>
 												@foreach ($stats as $stat)
 												<tr>
-													<td>{{ $stat->nbre_match }}</td>
-													<td>{{ $stat->minute_jouer }}</td>
-													<td>{{ $stat->but }}</td>
-													<td>{{ $stat->faute_subis }}</td>
-													<td>{{ $stat->jaune }}</td>
-													<td>{{ $stat->rouge }}</td>
+													<td>{{ $stat->nbre_match ?? '0' }}</td>
+													<td>{{ $stat->minute_jouer ?? '0' }}</td>
+													<td>{{ $stat->but ?? '0' }}</td>
+													<td>{{ $stat->faute_subis ?? '0' }}</td>
+													<td>{{ $stat->jaune ?? '0' }}</td>
+													<td>{{ $stat->rouge ?? '0' }}</td>
 												</tr>
 												@endforeach
 											</tbody>
@@ -237,31 +237,31 @@
 														@foreach ($stats as $stat)
 														<tr>
 															<td>Matchs Comme Entrant</td>
-															<td>{{ $nbre_entrant }}</td>
+															<td>{{ $nbre_entrant ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Matchs Comme Remplaçant</td>
-															<td>{{ $nbre_remplacant }}</td>
+															<td>{{ $nbre_remplacant ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Passes Décisives</td>
-															<td>{{ $stat->passe_d }}</td>
+															<td>{{ $stat->passe_d ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Tirs</td>
-															<td>{{ $stat->tir }}</td>
+															<td>{{ $stat->tir ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Tirs Cadrés</td>
-															<td>{{ $stat->tir_cadre }}</td>
+															<td>{{ $stat->tir_cadre ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Hors-Jeu</td>
-															<td>{{ $stat->hors_jeux }}</td>
+															<td>{{ $stat->hors_jeux ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Centres</td>
-															<td>{{ $stat->centre }}</td>
+															<td>{{ $stat->centre ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Matchs Gagnés</td>
@@ -269,11 +269,11 @@
 														</tr>
 														<tr>
 															<td>Penaltys Marqués</td>
-															<td>{{ $stat->panalty_marque }}</td>
+															<td>{{ $stat->panalty_marque ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Coups Francs Marqués</td>
-															<td>{{ $stat->but_contre_camp }}</td>
+															<td>{{ $stat->but_contre_camp ?? '0' }}</td>
 														</tr>
 														@endforeach
 													</tbody>
@@ -292,19 +292,19 @@
 														@foreach ($stats as $stat)
 														<tr>
 															<td>Fautes Commises</td>
-															<td>{{ $stat->faute_comise }}</td>
+															<td>{{ $stat->faute_comise ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Ballons Récupérés</td>
-															<td>{{ $stat->ballon_recup }}</td>
+															<td>{{ $stat->ballon_recup ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Ballons Interceptés</td>
-															<td>{{ $stat->ballon_inter }}</td>
+															<td>{{ $stat->ballon_inter ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Passes</td>
-															<td>{{ $stat->passe_r }}</td>
+															<td>{{ $stat->passe_r ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Matchs Sans Encaisser</td>
@@ -312,11 +312,11 @@
 														</tr>
 														<tr>
 															<td>Buts Encaissés</td>
-															<td>{{ $stat->but_encaisse }}</td>
+															<td>{{ $stat->but_encaisse ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Buts Contre Son Camp</td>
-															<td>{{ $stat->but_contre_camp }}</td>
+															<td>{{ $stat->but_contre_camp ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Matchs Perdus</td>
@@ -324,11 +324,11 @@
 														</tr>
 														<tr>
 															<td>Penaltys Concédés</td>
-															<td>{{ $stat->panalty_marque }}</td>
+															<td>{{ $stat->panalty_marque ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td>Penaltys Arrêtés</td>
-															<td>{{ $stat->penalty_arrete }}</td>
+															<td>{{ $stat->penalty_arrete ?? '0' }}</td>
 														</tr>
 														<tr>
 															<td> </td>

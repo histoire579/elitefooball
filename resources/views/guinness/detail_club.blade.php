@@ -207,7 +207,7 @@
 											</div>
 										</div>
 										<div class="col-md-3">
-											<button class="btn btn-primary">Rechercher</button>
+											<button type="submit" class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
 								</form>
@@ -322,7 +322,7 @@
 											</div>
 										</div>
 										<div class="col-md-3">
-											<button class="btn btn-primary">Rechercher</button>
+											<button type="submit" class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
 								</form>
@@ -343,7 +343,7 @@
 												@foreach ($calendiers as $calendier)
 												<tr>
 													<td>{{ $calendier->competition->libelle }}</td>
-													<td>{{ $calendier->journee->libelle }}</td>
+													<td>{{ $calendier->journee->libelle }} / {{ $calendier->phase->libelle }}</td>
 													<td>{{ $calendier->date }}</td>
 													<td>{{ $calendier->club1->nom }} <img src="{{ asset($calendier->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong>VS</strong> <img src="{{ asset($calendier->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $calendier->club2->nom }}</td>
 													<td>{{ $calendier->heure }}</td>
@@ -374,7 +374,7 @@
 											</div>
 										</div>
 										<div class="col-md-3">
-											<button class="btn btn-primary">Rechercher</button>
+											<button type="submit" class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
 								</form>
@@ -395,7 +395,7 @@
 												@foreach ($resultats as $resultat)
 												<tr>
 													<td>{{ $resultat->competition->libelle }}</td>
-													<td>{{ $resultat->journee->libelle }}</td>
+													<td>{{ $resultat->journee->libelle }} / {{ $resultat->phase->libelle }}</td>
 													<td>{{ $resultat->date }}</td>
 													<td>{{ $resultat->club1->nom }} <img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong> <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club2->nom }}</td>
 													<td>{{ $resultat->heure }}</td>
@@ -416,7 +416,7 @@
 								<form action="" method="get">
 									@csrf
 									<div class="row mb-6">
-										<div class="col-md-6">
+										<div class="col-md-4">
 											<div class="form-select-wrapper mb-4">
 												<select class="form-select" name="saison_id" id="saison_id" aria-label="Default select example">
 													@foreach ($saisons as $saison)
@@ -425,94 +425,279 @@
 												</select>
 											</div>
 										</div>
+										<div class="col-md-4">
+											<div class="form-select-wrapper mb-4">
+												<select class="form-select" name="domiciliation" id="domiciliation" aria-label="Default select example">
+													<option value="Domicil">Domicil</option>
+													<option value="Domicil">Extérieur</option>
+												</select>
+											</div>
+										</div>
 										<div class="col-md-3">
-											<button class="btn btn-primary">Rechercher</button>
+											<button type="submit" class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
 								</form>
-								<div class="row gy-12 gx-xl-12">
-									<div class="card">
-										<div class="card-body table-responsive">
-											<table class="table-hover table">
-												<thead>
-													<tr>
-														<th scope="col">Rang</th>
-														<th scope="col">Jouer</th>
-														<th scope="col">Clubs</th>
-														<th scope="col">Buts Marqués</th>
-														<th scope="col">Penaltys</th>
-														<th scope="col">Matchs Afférents</th>
-														<th scope="col">Minutes Jouées</th>
-														<th scope="col">Points Rapportés</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													<tr>
-														<th scope="row">1</th>
-														<td>...</td>
-														<td>Logo----Nom</td>
-														<td>...</td>
-														<th>...</th>
-														<td>...</td>
-														<td>...</td>
-														<td>...</td>
-													</tr>
-													</tr>
-												</tbody>
-											</table>
+								<div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th scope="col">Matchs Joués</th>
+															<th scope="col">Matchs Gagnés</th>
+															<th scope="col">Matchs Nuls</th>
+															<th scope="col">Matchs Perdus</th>
+															<th scope="col">Buts Marqués</th>
+															<th scope="col">Buts Encaissés</th>
+														</tr>
+													</thead>
+													<tbody>
+														@foreach($details as $detail)
+														<tr>
+															<td>{{ $detail->total_match ?? '0' }}</td>
+															<td>{{ $match_gagnes ?? '0' }}</td>
+															<td>{{ $match_null ?? '0' }}</td>
+															<td>{{ $match_perdu ?? '0' }}</td>
+															<td>{{ $detail->total_but_marque ?? '0' }}</td>
+															<td>{{ $detail->total_but_encaisse ?? '0' }}</td>
+														</tr>
+														@endforeach
+													</tbody>
+												</table>
+											</div>
 										</div>
-										<!--/.card-body -->
-
+										<!--/.row -->
 									</div>
+									<!--/column -->
+
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th scope="col"></th>
+															<th scope="col">Cartons Jaunes</th>
+															<th scope="col">Cartons Rouges</th>
+															<th scope="col">Fautes Commises</th>
+															<th scope="col">Fautes Subies</th>
+															<th scope="col">Hors-Jeu</th>
+														</tr>
+													</thead>
+													<tbody>
+														@foreach($statistique as $item)
+														@foreach($details as $detail)
+														<tr>
+															<td>Nombre</td>
+															<td>{{ $item->carton_jaune ?? '0' }}</td>
+															<td>{{ $item->carton_rouge ?? '0' }}</td>
+															<td>{{ $item->faute_comise ?? '0' }}</td>
+															<td>{{ $item->faute_subies ?? '0' }}</td>
+															<td>{{ $item->hors_jeux ?? '0' }}</td>
+														</tr>
+														<tr>
+															<td>Moyenne / Match</td>
+															@php
+															if ($detail->total_match != 0) {
+																$carton_jaune = $item->carton_jaune/$detail->total_match;
+																$carton_rouge = $item->carton_rouge/$detail->total_match;
+																$faute_comise = $item->faute_comise/$detail->total_match;
+																$faute_subies = $item->faute_subies/$detail->total_match;
+																$hors_jeux = $item->hors_jeux/$detail->total_match;
+															}
+															@endphp
+															<td>{{ $carton_jaune ?? '0' }}</td>
+															<td>{{ $carton_rouge ?? '0' }}</td>
+															<td>{{ $faute_comise ?? '0' }}</td>
+															<td>{{ $faute_subies ?? '0' }}</td>
+															<td>{{ $hors_jeux ?? '0' }}</td>
+														</tr>
+														@endforeach
+														@endforeach
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<!--/.row -->
+									</div>
+									<!--/column -->
+
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+												<h4 class="display-8 mb-3">Attaque</h4>
+												<table class="table table-striped">
+													<tbody>
+														@foreach($details as $detail)
+														<tr>
+															<td>Buts Marqués / Match</td>
+															@php
+															if ($detail->total_match != 0) {
+																$total_but_marque = $detail->total_but_marque/$detail->total_match;
+															}
+															@endphp
+															<td>{{ $total_but_marque ?? '0' }}</td>
+														</tr>
+														@endforeach
+														@foreach($stat_atatque as $item)
+														<tr>
+															<td>Tirs</td>
+															<td>{{ $item->tir ?? '0' }}</td>
+														</tr>
+														<tr>
+															<td>Tirs Cadrés</td>
+															<td>{{ $item->tir_cadre ?? '0' }}</td>
+														</tr>
+														<tr>
+															<td>Penaltys Marqués</td>
+															<td>{{ $item->penalty_marque ?? '0' }}</td>
+														</tr>
+														<tr>
+															<td>Corners</td>
+															<td>{{ $item->corner ?? '0' }}</td>
+														</tr>
+														@endforeach
+													</tbody>
+												</table>
+												<!--/.card-body -->
+											</div>
+										</div>
+										<!--/.row -->
+									</div>
+									<!--/column -->
+
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+												<h4 class="display-8 mb-3">Défense</h4>
+												<table class="table table-striped">
+													<tbody>
+														@foreach($details as $detail)
+														<tr>
+															<td>Buts Encaissés / Match</td>
+															@php
+															if ($detail->total_match != 0) {
+																$total_but_encaisse = $detail->total_but_encaisse/$detail->total_match;
+															}
+															@endphp
+															<td>{{ $total_but_encaisse ?? '0' }}</td>
+														</tr>
+														@endforeach
+														@foreach($but_contre_camp as $item)
+														<tr>
+															<td>Match Sans Encaisser</td>
+															<td>{{ $item->nbre_match ?? '0' }}</td>
+														</tr>
+														<tr>
+															<td>Buts Contre Son Camp</td>
+															<td>{{ $item->but_contre_camp ?? '0' }}</td>
+														</tr>
+														@endforeach
+													</tbody>
+												</table>
+												<!--/.card-body -->
+											</div>
+										</div>
+										<!--/.row -->
+									</div>
+									<!--/column -->
+
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+												<h4 class="display-8 mb-3">Meilleurs buteurs</h4>
+												<table>
+													<tbody>
+														<tr>
+															<td><img src="{{ asset($photo) }}" alt=""></td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th scope="col">Rang</th>
+															<th scope="col">Jouers</th>
+															<th scope="col">Buts</th>
+														</tr>
+													</thead>
+													<tbody>
+														@php
+															$rang = 0;
+														@endphp
+														@foreach($buteurs as $buteur)
+														@php
+															$rang++;
+														@endphp
+														<tr>
+															<td>{{ $rang }}</td>
+															<td>{{ $buteur->nom  }}</td>
+															<td>{{ $buteur->but }}</td>
+														</tr>
+														@endforeach
+													</tbody>
+												</table>
+												<!--/.card-body -->
+											</div>
+										</div>
+										<!--/.row -->
+									</div>
+									<!--/column -->
+
+									<div class="col-lg-6">
+										<div class="row gy-3 gx-xl-8">
+											<div class="card table-responsive">
+											<h4 class="display-8 mb-3">Meilleurs passeurs</h4>
+												<table>
+													<tbody>
+														<tr>
+															<td><img src="{{ asset($photo2) }}" alt=""></td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th scope="col">Rang</th>
+															<th scope="col">Jouers</th>
+															<th scope="col">Passes</th>
+														</tr>
+													</thead>
+													<tbody>
+														@php
+															$rang = 0;
+														@endphp
+														@foreach($passeurs as $passeur)
+														@php
+															$rang++;
+														@endphp
+														<tr>
+															<td>{{ $rang }}</td>
+															<td>{{ $passeur->nom  }}</td>
+															<td>{{ $passeur->passe }}</td>
+														</tr>
+														@endforeach
+													</tbody>
+												</table>
+												<!--/.card-body -->
+											</div>
+										</div>
+										<!--/.row -->
+									</div>
+									<!--/column -->
 								</div>
-								<!--/.row -->
 							</div>
 						</div>
 
 						<div class="tab-pane fade" id="tab1-6">
 							<div class="col-md-12">
-								<h4 class="display-6 mb-8 mt-6 text-center">CLASSEMENT PASSEURS DECISIFS</h4>
+								<h4 class="display-6 mb-8 mt-6 text-center">{{ $club->nom }}</h4>
 								<div class="row mb-6">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
 												<option value="">Selectionner une saison</option>
@@ -523,7 +708,7 @@
 										</div>
 									</div>
 
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-select-wrapper mb-4">
 											<select class="form-select" aria-label="Default select example">
 												<option value="">Selectionner une journée</option>
@@ -534,7 +719,7 @@
 										</div>
 									</div>
 									<div class="col-md-3">
-										<button class="btn btn-primary">Rechercher</button>
+										<button type="submit" class="btn btn-primary">Rechercher</button>
 									</div>
 								</div>
 								<div class="row gy-12 gx-xl-12">
@@ -618,7 +803,7 @@
 											</div>
 										</div>
 										<div class="col-md-3">
-											<button class="btn btn-primary">Rechercher</button>
+											<button type="submit" class="btn btn-primary">Rechercher</button>
 										</div>
 									</div>
 								</form>

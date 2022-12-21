@@ -22,12 +22,14 @@ class StatistiqueClubFactory extends Factory
             'but_marque' => rand(1,20),
             'but_encaisse' => rand(1,15),
             'faute_comise' => rand(1,10),
+            'faute_subies' => rand(1,10),
             'hors_jeux' => rand(1,5),
             'carton_jaune' => rand(1,6),
             'carton_rouge' => rand(1,3),
             'penelty_marque' => rand(1,8),
             'Coup_franc_marque' => rand(1,5),
-            'penalty_concede' => rand(1,3)
+            'penalty_concede' => rand(1,3),
+            'corner' => rand(1,10)
         ];
     }
 }

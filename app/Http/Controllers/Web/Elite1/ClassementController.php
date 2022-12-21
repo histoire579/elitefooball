@@ -34,9 +34,9 @@ class ClassementController extends Controller
             $liste = new SupportCollection([]);
             foreach ($classements as $classement) {
                 $details = StatistiqueClub::select(DB::raw('COUNT(match_id) as total_match'), DB::raw('SUM(but_marque) as total_but_marque'), DB::raw('SUM(but_encaisse) as total_but_encaisse'))->where('club_id', $classement->club->id)->where('saison_id', $saisons->first()->id)->get()->toArray();
-                $match_gagnes = StatistiqueClub::where('statut_match', 'G')->where('club_id', $classement->club->id)->where('saison_id', $saisons->first()->id)->count();
-                $match_perdu = StatistiqueClub::where('statut_match', 'P')->where('club_id', $classement->club->id)->where('saison_id', $saisons->first()->id)->count();
-                $match_null = StatistiqueClub::where('statut_match', 'N')->where('club_id', $classement->club->id)->where('saison_id', $saisons->first()->id)->count();
+                $match_gagnes = StatistiqueClub::where('statut_match', 'Gagné')->where('club_id', $classement->club->id)->where('saison_id', $saisons->first()->id)->count();
+                $match_perdu = StatistiqueClub::where('statut_match', 'Perdu')->where('club_id', $classement->club->id)->where('saison_id', $saisons->first()->id)->count();
+                $match_null = StatistiqueClub::where('statut_match', 'Null')->where('club_id', $classement->club->id)->where('saison_id', $saisons->first()->id)->count();
                 $forme = StatistiqueClub::select('id', 'statut_match')->where('club_id', $classement->club->id)->where('saison_id', $saisons->first()->id)->latest()->limit(5)->get()->toArray();
                 $array = array_merge($details[0], array('match_gagnes' => $match_gagnes, 'match_perdu' => $match_perdu, 'match_null' => $match_null, 'forme' => $forme));
                 $array2 =  $classement->toArray();

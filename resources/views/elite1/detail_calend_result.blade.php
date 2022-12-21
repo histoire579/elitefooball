@@ -146,40 +146,37 @@
 									<div class="col-lg-4">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
-												<div class="card-body">
-													<h4 class="display-8 mb-3">Homme du match</h4>
-                                                    <table>
-														@foreach($homme_match as $homme)
-                                                        <tbody>
-                                                            <tr>
-                                                                <td><img src="{{ asset($homme->photo) }}" alt=""></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Nom du joueur : {{ $homme->nom }}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Club du joueur : {{ $homme->club }}</td>
-                                                            </tr>
-                                                        </tbody>
-														@endforeach
-                                                    </table>
-													<br>
-													<h4 class="display-8 mb-3">Infos du match</h4>
-													<table class="table table-striped">
-														<tbody>
-															<tr>
-                                                                <td>...</td>
-                                                            </tr>
-															<tr>
-                                                                <td>...</td>
-                                                            </tr>
-															<tr>
-                                                                <td>...</td>
-                                                            </tr>
-														</tbody>
-													</table>
-													<!--/.card-body -->
-												</div>
+												<h4 class="display-8 mb-3">Homme du match</h4>
+												<table>
+													@foreach($homme_match as $homme)
+													<tbody>
+														<tr>
+															<td><img src="{{ asset($homme->photo) }}" alt=""></td>
+														</tr>
+														<tr>
+															<td>Nom du joueur : {{ $homme->nom }}</td>
+														</tr>
+														<tr>
+															<td>Club du joueur : {{ $homme->club }}</td>
+														</tr>
+													</tbody>
+													@endforeach
+												</table>
+												<br>
+												<h4 class="display-8 mb-3">Infos du match</h4>
+												<table class="table table-striped">
+													<tbody>
+														<tr>
+															<td>...</td>
+														</tr>
+														<tr>
+															<td>...</td>
+														</tr>
+														<tr>
+															<td>...</td>
+														</tr>
+													</tbody>
+												</table>
 												<!--/.card-body -->
 											</div>
 										</div>
