@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Web\Guinness;
 
 use App\Http\Controllers\Controller;
-use App\Models\DetailClubSaison;
+use App\Models\Joueur;
 use App\Models\Saison;
 use App\Models\Competition;
 use App\Models\DetailCompetitionSaison;

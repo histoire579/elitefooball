@@ -120,17 +120,17 @@
 														<tr>
 															<th scope="row">{{ $rang }}</th>
 															<td><i class="uil uil-arrow-up"></i></td>
-															<td><img class="avatar w-10" src="{{ $item['club']['photo'] ?? '' }}"
+															<td><img class="avatar w-10" src="{{ $item['photo']['club'] ?? '' }}"
 																	alt="" />{{ $item['club']['nom'] ?? '' }}
 															</td>
-															<th>{{ $item['point'] ?? '' }}</th>
-															<td>{{ $item['total_match'] ?? '' }}</td>
-															<td>{{ $item['match_gagnes'] ?? '' }}</td>
-															<td>{{ $item['match_null'] ?? '' }}</td>
-															<td>{{ $item['match_perdu'] ?? '' }}</td>
-															<th>{{ $item['total_but_marque'] ?? '' }}</th>
-															<td>{{ $item['total_but_encaisse'] ?? '' }}</td>
-															<td>{{ $item['total_but_marque'] - $item['total_but_encaisse'] ?? '' }}</td>
+															<th>{{ $item['point'] ?? '0' }}</th>
+															<td>{{ $item['total_match'] ?? '0' }}</td>
+															<td>{{ $item['match_gagnes'] ?? '0' }}</td>
+															<td>{{ $item['match_null'] ?? '0' }}</td>
+															<td>{{ $item['match_perdu'] ?? '0' }}</td>
+															<th>{{ $item['total_but_marque'] ?? '0' }}</th>
+															<td>{{ $item['total_but_encaisse'] ?? '0' }}</td>
+															<td>{{ $item['total_but_marque'] - $item['total_but_encaisse'] ?? '0' }}</td>
 															<td>
 																@foreach ($item['forme'] as $item)
 																	<span

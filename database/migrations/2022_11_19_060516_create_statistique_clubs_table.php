@@ -21,18 +21,20 @@ class CreateStatistiqueClubsTable extends Migration
             $table->foreign('match_id')->references('id')->on('matches')->onDelete('restrict');
             $table->unsignedInteger('club_id');
             $table->foreign('club_id')->references('id')->on('clubs')->onDelete('restrict');
-            $table->string('statut_match')->default('N')->comment('N:Null, P:Perdu, G:Gagné');
+            $table->string('statut_match')->default('Null')->comment('N:Null, P:Perdu, G:Gagné');
             $table->integer('tir');
             $table->integer('tir_cadre');
             $table->integer('but_marque');
             $table->integer('but_encaisse');
             $table->integer('faute_comise');
+            $table->integer('faute_subies');
             $table->integer('hors_jeux');
             $table->integer('carton_jaune');
             $table->integer('carton_rouge');
             $table->integer('penelty_marque');
             $table->integer('Coup_franc_marque');
             $table->integer('penalty_concede');
+            $table->integer('corner');
             $table->timestamps();
         });
     }
