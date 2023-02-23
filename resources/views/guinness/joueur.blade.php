@@ -68,9 +68,9 @@
 											<tbody>
 												@foreach ($joueurs as $joueur)
 													<tr>
-														<td><img src="{{ asset($joueur->photo) }}" style="height: 50px; width: 50px;" alt="">  <a href="{{ route('detail_joueur_guinness', [$joueur->saison_id, $joueur->joueur_id]) }}" style="color: dimgray;">{{ $joueur->nom }}</a></td>
-														<td><img src="{{ asset($joueur->logo) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->club }}</td>
-														<td><img src="{{ asset($joueur->drapeau) }}" style="height: 50px; width: 50px;" alt="">  {{ $joueur->nationalite }}</td>
+														<td><img src="{{ asset($joueur->photo) }}" style="height: 20px; width: 20px;" alt="">  <a href="{{ route('detail_joueur_one', [$joueur->saison_id, $joueur->joueur_id]) }}" style="color: dimgray;">{{ $joueur->nom }}</a></td>
+														<td><img src="{{ asset($joueur->logo) }}" style="height: 20px; width: 20px;" alt="">  {{ $joueur->club }}</td>
+														<td><img src="{{ asset($joueur->drapeau) }}" style="height: 20px; width: 20px;" alt="">  {{ $joueur->nationalite }}</td>
 														<td>{{ $joueur->poste }}</th>
 														<td>{{ $joueur->dorssad }}</td>
 														<td>{{ $joueur->pied_fort }}</td>
