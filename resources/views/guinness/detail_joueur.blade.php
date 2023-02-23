@@ -38,7 +38,7 @@
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">{{ $detail_club_saison->joueur->nom }}</h4>
-								<div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
+								<div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17">
 									<div class="col-lg-4">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card">
@@ -55,7 +55,7 @@
 									<div class="col-lg-8">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card">
-												<table class="table table-striped">
+												<table style="margin-top: 20px;" class="table table-striped">
 													<tbody>
 														<tr>
 															<td>Club</td>
@@ -117,7 +117,7 @@
 														<tr>
 															<td>{{ $statistique->saison }}</td>
 															<td>...</td>
-															<td><img src="" style="height: 50px; width: 50px;" alt="">...</td>
+															<td><img src="" style="height: 20px; width: 20px;" alt="">...</td>
 															<td>{{ $statistique->nbre_match ?? '0' }}</td>
 															<td>{{ $statistique->minute_jouer ?? '0' }}</td>
 															<td>{{ $statistique->but ?? '0' }}</td>
@@ -233,7 +233,7 @@
 									<div class="col-lg-6">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
-												<table class="table table-striped">
+												<table style="margin-top: 20px;" class="table table-striped">
 													<tbody>
 														@foreach ($stats as $stat)
 														<tr>
@@ -288,7 +288,7 @@
 									<div class="col-lg-6">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
-												<table class="table table-striped">
+												<table style="margin-top: 20px;" class="table table-striped">
 													<tbody>
 														@foreach ($stats as $stat)
 														<tr>

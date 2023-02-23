@@ -286,89 +286,59 @@
     </header>
     <!-- /header -->
     @yield('content')
-  <!-- /.content-wrapper py-13 py-md-15 -->
-  <footer class="bg-dark text-inverse">
-    <div class="container py-13 py-md-15">
-      <div class="row gy-6 gy-lg-0">
-        <div class="col-lg-4">
-          <div class="widget">
-            <img class="mb-4" src="dist/assets/img/logo-light.png" srcset="dist/assets/img/logo-light@2x.png 2x" alt="" />
-            <p class="mb-4">© 2021 Sandbox. All rights reserved.</p>
-            <nav class="nav social social-white">
-              <a href="#"><i class="uil uil-twitter"></i></a>
-              <a href="#"><i class="uil uil-facebook-f"></i></a>
-              <a href="#"><i class="uil uil-dribbble"></i></a>
-              <a href="#"><i class="uil uil-instagram"></i></a>
-              <a href="#"><i class="uil uil-youtube"></i></a>
-            </nav>
-            <!-- /.social -->
-          </div>
-          <!-- /.widget -->
-        </div>
-        <!-- /column -->
-        <div class="col-md-4 col-lg-2 offset-lg-2">
-          <div class="widget">
-            <h4 class="widget-title mb-3 text-white">Need Help?</h4>
-            <ul class="list-unstyled mb-0">
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Get Started</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
-          </div>
-          <!-- /.widget -->
-        </div>
-        <!-- /column -->
-        <div class="col-md-4 col-lg-2">
-          <div class="widget">
-            <h4 class="widget-title mb-3 text-white">Learn More</h4>
-            <ul class="list-unstyled mb-0">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Our Story</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Features</a></li>
-            </ul>
-          </div>
-          <!-- /.widget -->
-        </div>
-        <!-- /column -->
-        <div class="col-md-4 col-lg-2">
-          <div class="widget">
-            <h4 class="widget-title mb-3 text-white">Get in Touch</h4>
-            <address>Moonshine St. 14/05 Light City, London, United Kingdom</address>
-            <a href="mailto:first.last@email.com">info@email.com</a><br /> 00 (123) 456 78 90
-          </div>
-          <!-- /.widget -->
-        </div>
-        <!-- /column -->
-      </div>
-      <!--/.row -->
-    </div>
-    <!-- /.container -->
-  </footer>
-  <div class="progress-wrap">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
-  </div>
-  <script src="{{ asset('dist/assets/js/plugins.js') }}" defer></script>
-  <script src="{{ asset('dist/assets/js/theme.js') }}" defer></script>
   
-  <!--Start of Tawk.to Script-->
-{{--   <script type="text/javascript">
-      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-      (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/626fb4507b967b11798d6ac2/1g225gn4e';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-      })();
-  </script> --}}
-		<!--End of Tawk.to Script-->
-		<!--End of Tawk.to Script-->
+    <!-- /section -->
+    <section class="wrapper bg-light wrapper-border">
+      <div class="container py-1 py-md-5">
+        <h2 class="fs-15 text-uppercase text-muted text-center mb-8"></h2>
+        <div class="swiper-container clients mb-0" data-margin="30" data-dots="false" data-autoplay-timeout="3000" data-items-xxl="7" data-items-xl="6" data-items-lg="5" data-items-md="4" data-items-xs="2">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c1.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c2.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c3.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c4.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c5.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c6.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c7.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c8.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c9.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c10.png" alt="" /></div>
+              <div class="swiper-slide px-5"><img src="dist/assets/img/brands/c11.png" alt="" /></div>
+            </div>
+            <!--/.swiper-wrapper -->
+          </div>
+          <!-- /.swiper -->
+        </div>
+        <!-- /.swiper-container -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+    <!-- /.content-wrapper py-13 py-md-15 -->
+    <footer>
+      <div class="container pb-7">
+        <div class="d-md-flex align-items-center justify-content-between">
+          <p class="mb-2 mb-lg-0">© 2021 Sandbox. All rights reserved.</p>
+          <nav class="nav social social-muted mb-0 text-md-end">
+            <a href="#"><i class="uil uil-twitter"></i></a>
+            <a href="#"><i class="uil uil-facebook-f"></i></a>
+            <a href="#"><i class="uil uil-dribbble"></i></a>
+            <a href="#"><i class="uil uil-instagram"></i></a>
+            <a href="#"><i class="uil uil-youtube"></i></a>
+          </nav>
+          <!-- /.social -->
+        </div>
+      </div>
+      <!-- /.container -->
+    </footer>
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <script src="{{ asset('dist/assets/js/plugins.js') }}" defer></script>
+    <script src="{{ asset('dist/assets/js/theme.js') }}" defer></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		@yield('extra-js')
 </body>

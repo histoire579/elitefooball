@@ -53,7 +53,7 @@
 						<li class="nav-item">
 							<a class="nav-link" data-bs-toggle="tab" href="#tab1-6">
 								<i class="uil uil-laptop-cloud pe-1"></i>
-								<span>EVALUTION</span>
+								<span>EVOLUTION</span>
 							</a>
 						</li>
 						<li class="nav-item">
@@ -69,7 +69,7 @@
 						<div class="tab-pane fade show active" id="tab1-1">
 							<div class="col-md-12">
 								<h4 class="display-6 mb-8 mt-6 text-center">{{ $club->nom }}</h4>
-								<div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
+								<div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17">
 									<div class="col-lg-7">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
@@ -136,7 +136,7 @@
 									<div class="col-lg-5">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
-												<table class="table table-striped">
+												<table style="margin-top: 20px;" class="table table-striped">
 													<tbody>
 														<tr>
 															<td>Siege Social</td>
@@ -345,7 +345,7 @@
 													<td>{{ $calendier->competition->libelle }}</td>
 													<td>{{ $calendier->journee->libelle }} / {{ $calendier->phase->libelle }}</td>
 													<td>{{ $calendier->date }}</td>
-													<td>{{ $calendier->club1->nom }} <img src="{{ asset($calendier->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong>VS</strong> <img src="{{ asset($calendier->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $calendier->club2->nom }}</td>
+													<td>{{ $calendier->club1->nom }} <img src="{{ asset($calendier->club1->logo) }}" style="height: 20px; width: 20px;" alt=""> <strong>VS</strong> <img src="{{ asset($calendier->club2->logo) }}" style="height: 20px; width: 20px;" alt=""> {{ $calendier->club2->nom }}</td>
 													<td>{{ $calendier->heure }}</td>
 													<td>{{ $calendier->stade->nom }}</td>
 												</tr>
@@ -397,7 +397,7 @@
 													<td>{{ $resultat->competition->libelle }}</td>
 													<td>{{ $resultat->journee->libelle }} / {{ $resultat->phase->libelle }}</td>
 													<td>{{ $resultat->date }}</td>
-													<td>{{ $resultat->club1->nom }} <img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong> <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club2->nom }}</td>
+													<td>{{ $resultat->club1->nom }} <img src="{{ asset($resultat->club1->logo) }}" style="height: 20px; width: 20px;" alt=""> <strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong> <img src="{{ asset($resultat->club2->logo) }}" style="height: 20px; width: 20px;" alt=""> {{ $resultat->club2->nom }}</td>
 													<td>{{ $resultat->heure }}</td>
 													<td>{{ $resultat->stade->nom }}</td>
 												</tr>
@@ -527,7 +527,7 @@
 									<div class="col-lg-6">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
-												<h4 class="display-8 mb-3">Attaque</h4>
+												<h4 style="margin-top: 10px;" class="display-8 mb-3">Attaque</h4>
 												<table class="table table-striped">
 													<tbody>
 														@foreach($details as $detail)
@@ -571,7 +571,7 @@
 									<div class="col-lg-6">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
-												<h4 class="display-8 mb-3">Défense</h4>
+												<h4 style="margin-top: 10px;" class="display-8 mb-3">Défense</h4>
 												<table class="table table-striped">
 													<tbody>
 														@foreach($details as $detail)
@@ -607,11 +607,11 @@
 									<div class="col-lg-6">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
-												<h4 class="display-8 mb-3">Meilleurs buteurs</h4>
+												<h4 style="margin-top: 10px;" class="display-8 mb-3">Meilleurs buteurs</h4>
 												<table>
 													<tbody>
 														<tr>
-															<td><img src="{{ asset($photo) }}" alt=""></td>
+															<td><img style="height: 100px; width: 100px;" src="{{ asset($photo) }}" alt=""></td>
 														</tr>
 													</tbody>
 												</table>
@@ -650,11 +650,11 @@
 									<div class="col-lg-6">
 										<div class="row gy-3 gx-xl-8">
 											<div class="card table-responsive">
-											<h4 class="display-8 mb-3">Meilleurs passeurs</h4>
+												<h4 style="margin-top: 10px;" class="display-8 mb-3">Meilleurs passeurs</h4>
 												<table>
 													<tbody>
 														<tr>
-															<td><img src="{{ asset($photo2) }}" alt=""></td>
+															<td><img style="height: 100px; width: 100px;" src="{{ asset($photo2) }}" alt=""></td>
 														</tr>
 													</tbody>
 												</table>

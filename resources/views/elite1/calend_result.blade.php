@@ -87,7 +87,7 @@
 												<table class="table table-striped">
 													<tbody>
 														<tr>
-															<td><a href="{{ route('detail_calend_result_one', $calendier->id) }}" style="color: dimgray;">{{ $calendier->club1->nom }} <img src="{{ asset($calendier->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong>{{ $calendier->heure }}</strong> <img src="{{ asset($calendier->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $calendier->club2->nom }}</a></td>
+															<td><a href="{{ route('detail_calend_result_one', $calendier->id) }}" style="color: dimgray;">{{ $calendier->club1->nom }} <img src="{{ asset($calendier->club1->logo) }}" style="height: 20px; width: 20px;" alt=""> <strong>{{ $calendier->heure }}</strong> <img src="{{ asset($calendier->club2->logo) }}" style="height: 20px; width: 20px;" alt=""> {{ $calendier->club2->nom }}</a></td>
 															<td>{{ $calendier->stade->nom }}</td>
 														</tr>
 													</tbody>
@@ -207,7 +207,7 @@
 												<table class="table table-striped">
 													<tbody>
 														<tr>
-															<td><a href="{{ route('detail_calend_result_one', $resultat->id) }}">{{ $resultat->club1->nom }} <img src="{{ asset($resultat->club1->logo) }}" style="height: 50px; width: 50px;" alt=""> <strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong> <img src="{{ asset($resultat->club2->logo) }}" style="height: 50px; width: 50px;" alt=""> {{ $resultat->club2->nom }}</a></td>
+															<td><a href="{{ route('detail_calend_result_one', $resultat->id) }}">{{ $resultat->club1->nom }} <img src="{{ asset($resultat->club1->logo) }}" style="height: 20px; width: 20px;" alt=""> <strong> {{ $resultat->nbre_but_club1 }} -- {{ $resultat->nbre_but_club2 }} </strong> <img src="{{ asset($resultat->club2->logo) }}" style="height: 20px; width: 20px;" alt=""> {{ $resultat->club2->nom }}</a></td>
 															<td>{{ $resultat->stade->nom }}</td>
 														</tr>
 													</tbody>
