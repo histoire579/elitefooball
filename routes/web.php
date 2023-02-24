@@ -246,5 +246,43 @@ Route::namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/administration/feuille/edit/{id}','FeuilleMatchController@edit')->name('administration.feuille.edit');
     Route::post('/administration/feuille/edit/{id}','FeuilleMatchController@update');
     Route::get('/administration/feuille/destroy/{id}','FeuilleMatchController@destroy')->name('administration.feuille.delete');
+
+    //detail-match
+    Route::get('/administration/detail-match','DetailMatchController@index')->name('administration.detail-match');
+    Route::get('/administration/getMatch','DetailMatchController@getMatch')->name('administration.getMatch');
+
+    Route::get('/administration/getClubByMatch','DetailMatchController@getClubByMatch')->name('administration.getClubByMatch');
+
+    Route::get('/administration/getDetail/{id}','DetailMatchController@getDetail')->name('administration.getDetail');
+    Route::post('/administration/detail-match','DetailMatchController@store');
+    Route::get('/administration/detail-match/add','DetailMatchController@Add')->name('administration.detail-match.add');
+    Route::get('/administration/detail-match/edit/{id}','DetailMatchController@edit')->name('administration.detail-match.edit');
+    Route::post('/administration/detail-match/edit/{id}','DetailMatchController@update');
+    Route::get('/administration/detail-match/destroy/{id}','DetailMatchController@destroy')->name('administration.detail-match.delete');
+
+    //classement
+    Route::get('/administration/classement','ClassementController@index')->name('administration.classement');
+    Route::post('/administration/classement','ClassementController@store');
+    Route::get('/administration/classement/add','ClassementController@Add')->name('administration.classement-add');
+    Route::get('/administration/classement/edit/{id}','ClassementController@edit')->name('administration.classement.edit');
+    Route::post('/administration/classement/edit/{id}','ClassementController@update');
+    Route::get('/administration/classement/destroy/{id}','ClassementController@destroy')->name('administration.classement.delete');
+
+    //statistique-joueur
+    Route::get('/administration/statistique-joueur','StatistiqueJoueurController@index')->name('administration.statistique-joueur');
+
+    Route::get('/administration/statistique-joueur-liste','StatistiqueJoueurController@Liste')->name('administration.statistique-joueur-liste');
+
+    Route::post('/administration/statistique-joueur-import','StatistiqueJoueurController@Import')->name('administration.statistique-joueur-import');
+
+    Route::get('/administration/getJoueur','StatistiqueJoueurController@getJoueur')->name('administration.getJoueur');
+
+    Route::get('/administration/getJoueurByClub','StatistiqueJoueurController@getJoueurByClub')->name('administration.getJoueurByClub');
+
+    Route::post('/administration/statistique-joueur','StatistiqueJoueurController@store');
+    Route::get('/administration/statistique-joueur/add','StatistiqueJoueurController@Add')->name('administration.statistique-joueur-add');
+    Route::get('/administration/statistique-joueur/edit/{id}','StatistiqueJoueurController@edit')->name('administration.statistique-joueur.edit');
+    Route::post('/administration/statistique-joueur/edit/{id}','StatistiqueJoueurController@update');
+    Route::get('/administration/statistique-joueur/destroy/{id}','StatistiqueJoueurController@destroy')->name('administration.statistique-joueur.delete');
 });
 

@@ -234,6 +234,27 @@
                             </li>
 
                             <li>
+                                <a href="/administration/detail-match" class=" waves-effect">
+                                    <i class="mdi mdi-format-underline"></i>
+                                    <span>Détail match</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/administration/classement" class=" waves-effect">
+                                    <i class="mdi mdi-format-underline"></i>
+                                    <span>Classement</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/administration/statistique-joueur" class=" waves-effect">
+                                    <i class="mdi mdi-poll"></i>
+                                    <span>Statistique joueur</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="/administration/actualite" class=" waves-effect">
                                     <i class="mdi mdi-format-underline"></i>
                                     <span>Actualités</span>

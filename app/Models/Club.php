@@ -38,7 +38,11 @@ class Club extends Model
     }
 
     public function match(){
-        return $this->hasMany('App\Models\Match');
+        return $this->hasMany('App\Models\Matche');
+    }
+
+    public function detail_match(){
+        return $this->hasMany('App\Models\DetailMatch');
     }
 
     public function feuille_match(){

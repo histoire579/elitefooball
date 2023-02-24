@@ -42,7 +42,7 @@ class StatistiqueJoueur extends Model
     }
 
     public function match(){
-        return $this->belongsTo('App\Models\Match','match_id');
+        return $this->belongsTo('App\Models\Matche','match_id');
     }
 
     public function joueur(){
