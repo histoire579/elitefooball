@@ -38,6 +38,7 @@ Route::get('/elite1/joueur_by_domiciliation', [App\Http\Controllers\Web\Elite1\D
 Route::get('/elite1/club', [App\Http\Controllers\Web\Elite1\ClubController::class, 'index'])->name('club_one');
 Route::get('/elite1/detail_club/{club_id}', [App\Http\Controllers\Web\Elite1\DetailClubController::class, 'index'])->name('detail_club_one');
 Route::get('/elite1/club_by_phase', [App\Http\Controllers\Web\Elite1\ClubController::class, 'club_by_phase'])->name('club_by_phase_one');
+Route::get('/elite1/club_by_saison', [App\Http\Controllers\Web\Elite1\ClubController::class, 'club_by_saison'])->name('club_by_saison_one');
 
 //Arbitre
 Route::get('/elite1/arbitre', [App\Http\Controllers\Web\Elite1\ArbitreController::class, 'index'])->name('arbitre_one');

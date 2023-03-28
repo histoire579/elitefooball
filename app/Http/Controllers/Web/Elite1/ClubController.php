@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web\Elite1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Club;
 use App\Models\Joueur;
 use App\Models\Stade;
 use App\Models\Saison;
@@ -79,6 +80,28 @@ class ClubController extends Controller
         } catch (Exception $e) {
             return $e->getMessage();
             abort(404, 'Cette page n\est pas disponible.');
+        }
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function club_by_saison(Request $request)
+    {
+        $validator = FacadesValidator::make($request->all(), [
+            'saison_id' => ['required', 'numeric']
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()->all()]);
+        }
+        else{
+            $competition = Competition::where('libelle', "Elite 1")->first();
+            $detail_competition_saisons = DetailCompetitionSaison::with('club')->where([['competition_id', $competition->id], ['saison_id', $request->saison_id]])->get();
+            return response()->json(['$detail_competition_saisons' => $detail_competition_saisons], 200);
         }
     }
 

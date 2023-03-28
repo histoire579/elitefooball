@@ -93,3 +93,41 @@
 	</section>
 	<!-- /section -->
 @endsection
+
+@section('extra-js')
+<script type="text/javascript">
+  //Charger les clubs par saison
+  $('#saison_id').change(function(e) {
+    var saison_id = $(this).children("option:selected").val();
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('client'),
+      },
+      type: "GET",
+      url: "{{ route('club_by_saison_one') }}",
+      data: {
+        'saison_id': saison_id,
+      },
+      dataType: "Json",
+      success: function(data) {
+        if ($.isEmptyObject(data.errors) && $.isEmptyObject(data.error)) {
+          $("#club_id").text('');
+          $("#club_id").append(
+            '<option selected>Selectionner un club</option>'
+          );
+          if (data.detail_competition_saisons != null && data.detail_competition_saisons.length > 0) {
+            data.detail_competition_saisons.forEach(element => {
+              $("#club_id").append(
+                '<option value="' + element.club.id + '">' + element.club.nom + '</option>'
+              );
+            });
+          }
+        }
+      },
+      error: function(data) {
+        //TODO : travailler sur l'affichage des messages d'erreur
+      }
+    });
+  });
+</script>
+@endsection
